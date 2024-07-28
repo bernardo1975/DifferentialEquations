@@ -6,27 +6,67 @@
 <frontmatter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="frontmatter">
   <titlepage>
     <author>
-      <personname>You</personname>
-      <department>Your department</department>
-      <institution>Your institution</institution>
+      <personname>Bernd Sing</personname>
+      <department>Department of Mathematics</department>
+      <institution>University of the West Indies, Cave Hill</institution>
     </author>
     <date>
       <today />
     </date>
   </titlepage>
 
+  <preface>
+    <p>This text is intended for a one-semester undergraduate course
+       in ordinary differential equations.</p>
+
+    <p>There are additional exercises and computer projects throughout 
+      the lecture notes. The computer projects often require a basic 
+      knowledge of Python/SageMath and GeoGebra. All of these exercises and 
+      projects are more substantial in nature and allow the exploration 
+      of new results and theory.</p>
+
+    <p>SageMath (<url href="http://sagemath.org"></url>) is a 
+      free, open source, software system for advanced mathematics, 
+      which is ideal for assisting with a study of ordinary 
+      differential equations. SageMath can be used either on your own 
+      computer, a local server, or on CoCalc 
+      (<url href="https://cocalc.com"></url>). 
+      The SageMath code in this document has been tested for accuracy with the most 
+      recent version available at this time: Sage Version 10.3 
+      (released 2024<ndash />03<ndash />19).</p>
+
+      <p>TODO GeoGebra</p>
+  </preface>
+
   <colophon>
 
     <website>
-      <url href="https://pretextbook.org">My Website</url>
+      <url href="https://bb-math.com/moodle/"></url>
     </website>
 
+
+
     <copyright>
-      <year>2020<ndash />2023</year>
-      <holder>You</holder>
-      <shortlicense> This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit <url href="http://creativecommons.org/licenses/by-sa/4.0/" visual="creativecommons.org/licenses/by-sa/4.0"> CreativeCommons.org</url>
+      <year>2020<ndash />2024</year>
+      <holder>Bernd Sing</holder>
+      <shortlicense> This work is licensed under the Creative Commons 
+        Attribution-ShareAlike 4.0 International License. To view a 
+        copy of this license, visit 
+        <url href="http://creativecommons.org/licenses/by-sa/4.0/" 
+        visual="creativecommons.org/licenses/by-sa/4.0"></url>.
       </shortlicense>
     </copyright>
   </colophon>
+
+  <!-- already included in backmatter.ptx
+  <acknowledgement>
+
+    <p>This book was written in PreTeXt.</p>
+
+  </acknowledgement>
+  -->
+
+
+
 </frontmatter>
 

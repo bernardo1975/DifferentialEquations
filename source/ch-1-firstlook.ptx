@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-1-firstlook" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>A First Look at Differential Equations: Modeling with Differential Equations</title>
+
+  <introduction>
+    <p> In Calculus we learned that the derivative of a function measures 
+        the rate of change of said function (while, e.g., the second 
+        derivative measures the curvature of said function). An equation relating a function to 
+        one or more of its derivatives is called a <term>differential 
+            equation</term>. The subject of differential equations is 
+        one of the most interesting and useful areas of mathematics. 
+        We can describe many interesting natural phenomena that involve 
+        change using differential equations. In addition, the theory 
+        of the subject has broad and important implications.</p>
+
+  </introduction>
+
+  <!-- include sections -->
+  <xi:include href="sec-section-name.ptx" />
+
+</chapter>

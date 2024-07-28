@@ -7,7 +7,7 @@
     <p> Text before the first section. </p>
   </introduction>
 
-  <!-- include sections -->
+  <!-- include sections 
   <xi:include href="sec-section-name.ptx" />
-
+-->
 </chapter>
