@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='utf-8'?>
+<webwork-representations>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="18" xml:id="extracted-webwork-1" ww-id="webwork-1">
+    <static seed="1" source="Library/Michigan/Chap11Sec11/Q27.pg">
+      <statement><p>If <m>y=e^{2 t}</m> is a solution to the differential 
+equation 
+<me>\frac{d^2y}{dt^2} - 7 \frac{dy}{dt} + ky = 0,</me>
+find the value of the constant  <m>k</m> and the general solution
+to this equation.</p>
+<p><m>k =</m> <fillin name="AnSwEr0001" characters="15"/></p>
+<p><m>y =</m> <fillin name="AnSwEr0002" characters="35"/></p>
+<p><em>(Use constants A, B, etc., for any constants
+in your solution formula.)</em></p>
+</statement>
+      <answer>
+        <p>
+          <m>10</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>Ae^{2t}+Be^{5t}</m>
+        </p>
+      </answer>
+      <solution><m>0 = \frac{d^2}{dt^2}(e^{2 t}) - 7 \frac{d}{dt}(e^{2 t})
+    + k e^{2 t}= 4 e^{2 t} - 14 e^{2 t} + k e^{2 t} =
+    e^{2 t}(k - 10)</m>.  Since <m>e^{2 t}\neq 0</m>,
+we must have <m>k-10=0</m>.  Therefore <m>k=10</m>.
+
+
+
+
+The characteristic equation is <m>r^2 - 7 r + 10 = 0</m>, so
+<m>r=2</m> or 5.
+Therefore <m>y(t) = A e^{2 t} + B e^{5 t}</m>.
+
+
+
+</solution>
+    </static>
+    <server-data sourceFilePath="Library/Michigan/Chap11Sec11/Q27.pg" domain="https://webwork.cavehill.uwi.edu" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/Michigan/Chap11Sec11/Q27.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="18" xml:id="extracted-webwork-2" ww-id="webwork-2">
+    <static seed="2" source="Library/Rochester/setDiffEQ1/ur_de_1_2.pg">
+      <statement><p>Just as there are simultaneous algebraic equations (where a pair of numbers have to
+satisfy a pair of equations) there are systems of differential equations,  (where a pair
+of functions have to satisfy a pair of differential equations).</p>
+<p>Indicate which pairs of functions satisfy this system.  It will take some time to
+make all of the calculations.</p>
+<p><me>y_1' = y_2 \qquad y_2' = - y_1</me></p>
+<p><var form="checkboxes">
+<li>
+<p><m>y_1 = \sin(x) \qquad y_2 = \cos(x)</m></p>
+</li>
+<li>
+<p><m>y_1 = e^{4x} \qquad y_2 = e^{4x}</m></p>
+</li>
+<li>
+<p><m>y_1 = \cos(x) \qquad y_2 = -\sin(x)</m></p>
+</li>
+<li>
+<p><m>y_1 = \sin(x) +\cos(x) \qquad y_2 = \cos(x) - \sin(x)</m></p>
+</li>
+<li>
+<p><m>y_1 = e^{-x} \qquad y_2=e^{-x}</m></p>
+</li>
+<li>
+<p><m>y_1 = e^x \qquad y_2=e^x</m></p>
+</li>
+<li>
+<p><m>y_1 = 2e^{-2x} \qquad y_2 = 3e^{-2x}</m></p>
+</li>
+</var></p>
+<p>As you  can see, finding all of the solutions, particularly of a system of equations, can
+be complicated and time
+consuming.  It helps greatly if we study the structure of the family of solutions to the
+equations.  Then if we find a few
+solutions we will be able to predict the rest of the solutions using the structure of the
+family of solutions.</p>
+</statement>
+    </static>
+    <server-data sourceFilePath="Library/Rochester/setDiffEQ1/ur_de_1_2.pg" domain="https://webwork.cavehill.uwi.edu" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/Rochester/setDiffEQ1/ur_de_1_2.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="18" xml:id="extracted-webwork-3" ww-id="webwork-3">
+    <static seed="3" source="UWI/Library/MiamiUOhio/DiffEq/Definitions_and_Terminology/Problem36_remove_help.pg">
+      <statement><p>Let <m>y'' - 16 y=0</m>.</p>
+<p>Find all values of <m>r</m> such that <m>y = k e^{rx}</m> satisfies the differential equation.  If there is more than
+one correct answer, enter your answers as a comma separated list.</p>
+<p><m>r =</m> 
+<fillin name="AnSwEr0001" characters="20"/></p>
+</statement>
+      <answer>
+        <p>
+          <m>4, -4</m>
+        </p>
+      </answer>
+    </static>
+    <server-data sourceFilePath="UWI/Library/MiamiUOhio/DiffEq/Definitions_and_Terminology/Problem36_remove_help.pg" domain="https://webwork.cavehill.uwi.edu" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="UWI/Library/MiamiUOhio/DiffEq/Definitions_and_Terminology/Problem36_remove_help.pg"/>
+  </webwork-reps>
+</webwork-representations>
