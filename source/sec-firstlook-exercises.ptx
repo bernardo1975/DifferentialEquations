@@ -35,7 +35,7 @@
 <exercise>
     <statement>
         <p>Consider the differential equation <m>y' = y(2 - y)</m>.
-        <ol label="a">
+        <ol marker="a.)">
 
             <li>Verify that <m>y(t) = 2/(1 + Ce^{-2t})</m> is a solution to this equation.</li>
 
@@ -62,7 +62,7 @@
 <exercise>
     <statement>
         <p>We can modify the logistic growth model to account for a threshold population. That is, if the population of a species drops below a certain level, the species is endanger of extinction.  Consider the case of the black rhinoceros, once the most numerous of all rhinoceros species and now critically endangered.  The black rhino, native to eastern and southern Africa, was estimated to have a population of about 100,000 around 1900.  Because of hunting, habitat changes, competing species, and most of all illegal poaching, the number of black rhinos today is estimated to be below 3000.  If the wild population becomes too low, the animals may not be able to find suitible mates and the black rhino will become extinct.  There must be a minimum population for the species to continue.  Suppose the this minimum or threshold population for the black rhino is 1000 animals and that remaining habitant in Africa will support no more that 20,000 rhinos.
-         <ol label="a">
+         <ol marker="a.)">
         
             <li>For what values of <m>P</m> is the rhino population increasing? What can be said about the value of <m>dP/dt</m> for these values of <m>P</m>?</li>
         
@@ -101,7 +101,7 @@
     <title>Radiocarbon Dating</title>
     <statement>
         <p>Carbon 14 is a radioactive isotope of carbon, the most common isotope of carbon being carbon 12. Carbon 14 is created when cosmic ray bombardment changes nitrogen 14 to carbon 14 in the upper atmosphere. The resulting carbon 14 combines with atmospheric oxygen to form radioactive carbon dioxide, which is incorporated into plants by photosynthesis. Animals acquire carbon 14 by eating plants. When an animal or plant dies, it ceases to take on carbon 14, and the amount of isotope in the organism begins to decay into the more common carbon 12. Carbon 14 has a very long half-life, about 5730 years. That is, given a sample of carbon 14, it will take 5730 years for half of the sample will decay to carbon 12. The long half-life is what makes carbon 14 dating is very useful in dating objects from antiquity.
-        <ol label="a">
+        <ol marker="a.)">
     
             <li>Consider at sample of material that contains <m>A(t)</m> atoms of carbon 14 at time <m>t</m>. During each unit of time a constant fraction of the radioactive atoms will spontaneously decay into another element or a different isotope of the same element.  Thus, the sample behaves like a population with a constant death rate and a zero birth rate.  Make use of the model of exponential growth to construct a differential equation that models radioactive decay for carbon 14.</li>
         
@@ -120,7 +120,7 @@
                 <mrow>\frac{dx}{dt} \amp =  -\frac{x}{2} + \frac{xy}{2 + y},</mrow>
                 <mrow>\frac{dy}{dt} \amp =  y(1 - y) - \frac{xy}{2 + y}.</mrow>
             </md>
-            <ol label="a">
+            <ol marker="a.)">
 
                 <li>Which equation models the prey population and which equation models the predator population?</li>
 

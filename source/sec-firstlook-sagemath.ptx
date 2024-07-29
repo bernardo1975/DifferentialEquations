@@ -60,13 +60,13 @@
                     k,t = var('k, t') #declare variables k and t
                     P = function('P')(t) #declare P to be a function of t
                     de = diff(P, t) == k*P  #differential equation
-                    #solve specifying initial conditions
-                    #and independent variable solution
+                    #solve specifying initial conditions (using ics)
+                    #and independent variable (using ivar) solution
                     solution = desolve(de, P, ivar=t, ics=[0, 1000]) 
-                    solution
+                    print("P(t) = {}".format(solution))
                     </input>
                     <output>
-                    1000*e^(k*t)
+                    P(t) = 1000*e^(k*t)
                     </output>
                 </sage>
         
