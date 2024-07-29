@@ -119,16 +119,16 @@ sagecell.makeSagecell({
 <link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
 <style>
 #sec-firstlook-exercises-5-1-1-2 { counter-set: sec-firstlook-exercises-5-1-1-2 0; }
-#sec-firstlook-exercises-5-1-1-2 > li::marker { content: ""counter(sec-firstlook-exercises-5-1-1-2,lower-alpha)""; }
+#sec-firstlook-exercises-5-1-1-2 > li::marker { content: ""counter(sec-firstlook-exercises-5-1-1-2,lower-alpha)".)"; }
 #sec-firstlook-exercises-5-1-1-2 > li { counter-increment: sec-firstlook-exercises-5-1-1-2; }
 #sec-firstlook-exercises-7-1-1-1 { counter-set: sec-firstlook-exercises-7-1-1-1 0; }
-#sec-firstlook-exercises-7-1-1-1 > li::marker { content: ""counter(sec-firstlook-exercises-7-1-1-1,lower-alpha)""; }
+#sec-firstlook-exercises-7-1-1-1 > li::marker { content: ""counter(sec-firstlook-exercises-7-1-1-1,lower-alpha)".)"; }
 #sec-firstlook-exercises-7-1-1-1 > li { counter-increment: sec-firstlook-exercises-7-1-1-1; }
 #sec-firstlook-exercises-9-2-1-1 { counter-set: sec-firstlook-exercises-9-2-1-1 0; }
-#sec-firstlook-exercises-9-2-1-1 > li::marker { content: ""counter(sec-firstlook-exercises-9-2-1-1,lower-alpha)""; }
+#sec-firstlook-exercises-9-2-1-1 > li::marker { content: ""counter(sec-firstlook-exercises-9-2-1-1,lower-alpha)".)"; }
 #sec-firstlook-exercises-9-2-1-1 > li { counter-increment: sec-firstlook-exercises-9-2-1-1; }
 #sec-firstlook-exercises-10-1-1-2 { counter-set: sec-firstlook-exercises-10-1-1-2 0; }
-#sec-firstlook-exercises-10-1-1-2 > li::marker { content: ""counter(sec-firstlook-exercises-10-1-1-2,lower-alpha)""; }
+#sec-firstlook-exercises-10-1-1-2 > li::marker { content: ""counter(sec-firstlook-exercises-10-1-1-2,lower-alpha)".)"; }
 #sec-firstlook-exercises-10-1-1-2 > li { counter-increment: sec-firstlook-exercises-10-1-1-2; }
 </style>
 </head>
@@ -221,10 +221,10 @@ P(0) &amp; = 1000.
 <pre id="sec-firstlook-sage-7" class="ptx-sagecell sagecell-sage"><script type="text/x-sage">k,t = var('k, t') #declare variables k and t
 P = function('P')(t) #declare P to be a function of t
 de = diff(P, t) == k*P  #differential equation
-#solve specifying initial conditions
-#and independent variable solution
+#solve specifying initial conditions (using ics)
+#and independent variable (using ivar) solution
 solution = desolve(de, P, ivar=t, ics=[0, 1000]) 
-solution
+print("P(t) = {}".format(solution))
 </script></pre>
 <div class="para" id="sec-firstlook-sage-8">We will provide abundant examples of how to use <em class="emphasis">SageMath</em> to solve and analyze differential equations throughout the book, and we encourage the reader to experiment by altering the SageMath commands inside the individual Sage cells. If you make a mistake, you can simply reload the webpage and start again.</div>
 <div class="para" id="sec-firstlook-sage-9">The reader will find plenty of resources to learn how to use <em class="emphasis">SageMath</em>. A good place to start is <a class="external" href="http://www.sagemath.org/help.html" target="_blank"><code class="code-inline tex2jax_ignore">http://www.sagemath.org/help.html</code></a> or <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "bard-2015" missing or not unique]</code>.  Although we will be using <em class="emphasis">SageMath</em> as the technology of choice, this book can be read independently of <em class="emphasis">SageMath</em>.  Finally, we would like to emphasize once again that the reader who chooses not to use some sort of technology will be at a disadvantage.</div></section></div>
