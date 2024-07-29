@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-firstlook-logistic-growth" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Logistic Growth</title>
+
+  <p>Not all populations grow exponentially; otherwise, a bacteria culture 
+    in a petri dish would grow unbounded and soon be much larger than the 
+    size of the laboratory. To see what happens if there are limiting 
+    factors to population growth, let us consider the population of fish 
+    in a children's trout pond. The number of trout will be limited by 
+    the available resources, food supply, and spawning habitat. A small 
+    population of fish might grow exponentially if the pond is large and 
+    food is abundant, but the growth rate will decline as the population 
+    increases and the availability of resources declines.  We can use the 
+    <term>logistic equation</term><idx><h>logistic equation</h></idx> 
+    to model population growth in a resource limited environment<fn>The 
+        logistic model was first used by the Belgian mathematician and 
+        physician Pierre François Verhulst in 1836 to predict the 
+        populations of Belgium and France.</fn>.</p>
+
+  <p>To see how the logistic model works, let us try to adjust our model 
+    of exponential growth to account for the limited resources of the 
+    pond. We will make the following assumptions.
+  <ul>
+
+      <li>If the population of trout is small and the pond is large with 
+        abundant resources, the rate of growth will be approximately 
+        exponential,
+          <me>\frac{dP}{dt} \approx kP.</me></li>
+
+      <li>If <m>N</m> is the maximum population of trout that the pond 
+        can support, then any population larger than <m>N</m> will 
+        decrease.  In other words,
+          <me>\frac{dP}{dt} \lt 0</me>
+      for <m>P \gt N</m>.  We say that <m>N</m> is the 
+      <term>carrying capacity</term><idx><h>carrying capacity</h></idx> 
+      for the population.</li>
+
+  </ul>
+  Our assumptions suggest that we might try an equation of the form
+      <me>\frac{dP}{dt} = k f(P) P,</me>
+  where <m>f(P)</m> is a function of <m>P</m> that is close to 1 if 
+  the population is small, but negative if the population is greater 
+  than <m>N</m>. The simplest function satisfying these conditions is
+      <me>f(P) = \left( 1 - \frac{P}{N} \right).</me>
+  Thus, the <term>logistic population model</term> is given by the 
+  differential equation
+      <me>\frac{dP}{dt} = k \left( 1 - \frac{P}{N} \right) P.</me></p>
+
+  <example xml:id="example-firstlook-logistic-growth">
+      <title>Logistic growth of fish</title>
+      <p>Suppose we have a pond will support 1000 fish, and the initial 
+        population is 100 fish. In order to determine the number of fish 
+        in the lake at any time <m>t</m>, we must solve the initial value 
+        problem
+          <md>
+              <mrow>\frac{dP}{dt} &amp; = k \left( 1 - \frac{P}{1000} \right) P</mrow>
+              <mrow>P(0) &amp; = 100.</mrow>
+          </md>
+      It is easy to verify that
+              <me>P(t) = \frac{1000}{9e^{-kt} + 1}</me>
+      is the solution to our initial value problem<fn>We will learn how to 
+        solve initial-value problems such as the one described here in 
+        Section<nbsp /><xref ref="firstlook02"/>. For the time being, we will 
+        be satisfied with being able to verify the fact that we have a 
+        solution.</fn>.</p>
+
+      <p>If we differentiate <m>P</m>, we will obtain the righthand side of 
+        the differential equation,
+          <md>
+              <mrow>\frac{dP}{dt} &amp; = \frac{d}{dt} \left(\frac{1000}{9e^{-kt} + 1}\right)</mrow>
+              <mrow>&amp; = 1000 k \frac{9e^{-kt}}{(9e^{-kt} + 1)^2}</mrow>
+              <mrow>&amp; = k \frac{9e^{-kt}}{(9e^{-kt} + 1)} \cdot \frac{1000}{9e^{-kt} + 1}</mrow>
+              <mrow>&amp; = k \frac{(9e^{-kt} + 1) - 1}{(9e^{-kt} + 1)} \cdot \frac{1000}{9e^{-kt} + 1}</mrow>
+              <mrow>&amp; = k \left( 1 - \frac{1000}{1000(9e^{-kt} + 1)}\right) \frac{1000}{9e^{-kt} + 1}</mrow>
+              <mrow>&amp; = k \left( 1 - \frac{P}{1000} \right) P,</mrow>
+          </md>
+      and certainly <m>P(0) = 100</m>. In addition, if we know that the 
+      population is 200 fish after one year, then 
+          <me>200 = P(1) = \frac{1000}{9e^{-k} + 1},</me>
+      and we can determine that 
+          <me>k = \ln\left(  \frac{9}{4}\right) \approx 0.8109.</me>
+      Consequently, the solution to our intial-value problem is
+          <me>P(t) = \frac{1000}{9e^{-0.8109 t} + 1}.</me>
+      The graph of our solution certainly fits the situation that we are 
+      modeling (<xref ref="figure-firstlook-logistic-growth"/>).
+    </p>
+
+      <p>Of course, we have not allowed for the possibility that children 
+        will be catching fish in our pond. We will examine how fishing affects 
+        our model in Section<nbsp /><xref ref="firstlook07"/>.</p>
+  </example>
+
+  <figure xml:id="figure-firstlook-logistic-growth">
+
+      <image width="70%" xml:id="firstlook-logistic-growth">
+          <sageplot>
+              f(x) = 1000/(9*exp(-0.8109 * x) + 1)
+              p = plot(f(x), (x, -3, 16), xmin=-3, xmax=16, ymin = -100, ymax = 1100, color='blue', thickness=2, aspect_ratio=0.01, axes_labels=['$t$','$P(t)$'], fontsize=12)
+              p
+          </sageplot>
+      </image>
+
+      <caption>Logistic growth</caption>
+
+  </figure>
+
+</section>

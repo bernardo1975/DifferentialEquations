@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-firstlook-predator-prey" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>A Predator-Prey System</title>
+
+  <p>Some situations require more than one differential equation to 
+    model a particular situation. We might use a system of 
+    differential equations to model two interacting species, say 
+    where one species preys on the other<fn>The predator-prey 
+        model was discovered independently by Lotka (1925) and 
+        Volterra (1926).</fn>. For example, we can model how the 
+    population of Canadian lynx (<em>lynx canadienis</em>) interacts 
+    with a the population of snowshoe hare (<em>lepus americanis</em>) 
+    (see <url href="https://www.youtube.com/watch?v=ZWucOrSOdCs" />).
+  </p>
+
+  <p>We have good historical data for the populations of the lynx 
+    and snowshoe hare from the Hudson Bay Company. This large 
+    Canadian retail company, which owns and operates a large number 
+    of retail stores in North America and Europe, including 
+    Galeria Kaufhof, Hudson's Bay, Home Outfitters, 
+    Lord &amp; Taylor, and Saks Fifth Avenue, was originally 
+    founded in 1670 as a fur trading company. The Hudson Bay 
+    Company kept accurate records on the number of lynx pelts that 
+    were bought from trappers from 1821 to 1940. The company noticed 
+    that the number of pelts varied from year to year and that the 
+    number of lynx pelts reached a peak about every ten years 
+    <xref ref="elton-1942"/>. The ten year cycle for lynx can be 
+    best understood using a system of differential equations.</p>
+
+  <p>The primary prey for the Canadian lynx is the snowshoe hare. 
+    We will denote the population of hares by <m>H(t)</m> and the 
+    population of lynx by <m>L(t)</m>, where <m>t</m> is the time 
+    measured in years. We will make the following assumptions for 
+    our predator-prey model.
+    <ul>
+
+        <li>If no lynx are present, we will assume that the hares 
+            reproduce at a rate proportional to their population 
+            and are not affected by overcrowding. That is, the 
+            hare population will grow exponentially,
+            <me>\frac{dH}{dt} = aH.</me></li>
+
+        <li>Since the lynx prey on the hares, we can argue that 
+            the rate at which the hares are consumed by the lynx 
+            is proportional to the rate at which the hares and 
+            lynx interact.  Thus, the equation that predicts the 
+            rate of change of the hare population becomes
+                <me>\frac{dH}{dt} = aH - bHL.</me>
+            We are thinking of <m>HL</m> as the number of possible 
+            interactions between the lynx and the hare populations.
+        </li>
+
+        <li>If there is no food, the lynx population will decline 
+            at a rate proportional to itself,
+            <me>\frac{dL}{dt} = -cL.</me></li>
+
+        <li>The lynx receive benefit from the hare population. 
+            The rate at which lynx are born is proportional to 
+            the number of hares that are eaten, and this is 
+            proportional to the rate at which the hares and lynx 
+            interact. Consequently, the growth rate of the lynx 
+            population can be described by
+            <me>\frac{dL}{dt} = -cL + dHL.</me></li>
+
+    </ul>
+    We now have a <term>system</term> of differential equations 
+    that describe how the two populations interact,
+      <md>
+          <mrow>\frac{dH}{dt}  &amp; =  aH - bHL,</mrow>
+          <mrow>\frac{dL}{dt}  &amp; =  -cL + dHL.</mrow>
+      </md >
+    We will learn how to analyze and solve systems of differential 
+    equations in subsequent chapters; however, we will give a 
+    graphical solution in 
+    <xref ref="figure-firstlook-lynx-snowshoe-hare"/> 
+    to the system
+      <md>
+          <mrow>\frac{dH}{dt} &amp; =  0.4H - 0.01HL,</mrow>
+          <mrow>\frac{dL}{dt} &amp; =  -0.3L + 0.005HL.</mrow>
+      </md>
+    Notice that the predator population, <m>L</m>, begins to grow 
+    and reaches a peak after the prey population, <m>H</m> reaches 
+    its peak.  As the prey population declines, the predator 
+    population also declines. Once the predator population is 
+    smaller, the prey population has a chance to recover that the 
+    cycle begins again<fn>An excellent account of the actual lynx 
+      and snowshoe hare data and model can be found in 
+      <xref ref="bauer-2001"/>.</fn>.</p>
+
+  <figure xml:id="figure-firstlook-lynx-snowshoe-hare">
+      <image width="80%" xml:id="firstlook-lynx-snowshoe-hare">
+          <sageplot>
+              from sage.calculus.desolvers import desolve_system_rk4
+              H,L,t = var('H L t')
+              F = [0.4*H - 0.01*H*L, -0.3*L + 0.005*H*L]
+              P=desolve_system_rk4(F,[H,L],ics=[0,70,50],ivar=t,end_points=100)
+              Q=[ [i, j] for i,j,k in P]
+              R=[ [i, k] for i,j,k in P]
+              p = line(Q, color='red', axes_labels=['$t$','$H(t), L(t)$'], legend_label='$H(t)$', legend_color='red',thickness=2)
+              p += line(R, color='blue', legend_label='$L(t)$', legend_color='blue',thickness=2)
+              p
+          </sageplot>
+      </image>
+      <caption>The predator-prey relationship between the lynx and 
+        the snowshoe hare</caption>
+  </figure>
+
+</section>

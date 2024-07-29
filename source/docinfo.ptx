@@ -36,8 +36,10 @@
   <!-- for those in the next element. -->
   <latex-image-preamble> 
     \usepackage{tikz, pgfplots} 
+    \usetikzlibrary{backgrounds}
     \usetikzlibrary{positioning,matrix,arrows} 
-    \usetikzlibrary{shapes,decorations,shadows,fadings,patterns} 
+    \usetikzlibrary{shapes,decorations,shadows,fadings,patterns}
+    \usetikzlibrary{snakes} 
     \usetikzlibrary{decorations.markings} 
   </latex-image-preamble>
 

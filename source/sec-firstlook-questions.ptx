@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-firstlook-questions-for-thought" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Some Questions for Thought</title>
+
+  <p>In this section we have provided a general notion of what a 
+    differential equation is as well as several modeling situations 
+    where differential equations are useful; however, we have left 
+    many questions unanswered. 
+    <ul>
+        <li>First, we need a more rigorous definition of a 
+            differential equation; so, what is the proper way to 
+            define a system of differential equations? </li>
+        <li>Does a differential equation or a system of differential 
+            equations always have a solution?  </li>
+        <li>Are solutions to differential equations unique?</li> 
+        <li>If a unique solution to a differential equation exists, 
+            (how) can we find it? </li>
+        <li>If it is not possible to find a precise solution 
+            algebraically, can we estimate the solution numerically? </li> 
+        <li>If neither is possible, can we still say anything useful 
+            about the solution?</li>
+    </ul> 
+    Of course, other questions will come to mind as 
+    we continue our study of differential equations.</p>
+    
+</section>  

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-firstlook-SIR" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Childhood Diseases: The SIR-model</title>
+
+  <p>Differential equations are used to model diseases. Most 
+    childhood diseases, such as measels, can be represented 
+    diagrammatically by
+    <me>S\ \to\ I\ \to\ R.</me>
+    Here, we assume that the population consists of susceptibles 
+    (<m>S</m>, i.e., persons who are healthy but can acquire the 
+    disease), infected (<m>I</m>) and removed (<m>R</m>, either 
+    by acquired immunity, isolation or death) persons. Individuals 
+    are born susceptible, then may acquire the infection and 
+    finally recover. As mathematical model, one thinks of three 
+    <em>compartments</em>, labelled S, I and R, and individuals 
+    are tranferred between these compartments according to the 
+    diagram above<fn>This model was for the first time proposed 
+        by the Scottish biochemist William Ogilvy Kermack and the 
+        Scottish military physician and epidemiologist Anderson 
+        Gray McKendrick as a special case of what we now call 
+        Kermack-McKendrick theory, and followed work McKendrick 
+        had done with the British medical doctor Ronald Ross; 
+        A. G. McKendrick and W. O. Kermack published their theory 
+        in a set of three articles from 1927, 1932, and 1933. </fn>. 
+    Since susceptible persons become sick when they have contact 
+    with infected persons, but recover after a certain time span, 
+    a simple model for such an SIR-disease using a system of 
+    differential equations is:
+    <mdn>
+        <mrow number="no">\frac{\operatorname{d}\!{S}}{\operatorname{d}\!{t}} &amp; = -\beta\cdot S\cdot I,</mrow>
+        <mrow xml:id="eq-SIR">\frac{\operatorname{d}\!{I}}{\operatorname{d}\!{t}} &amp; = \beta\cdot S\cdot I - \gamma\cdot I,</mrow>
+        <mrow number="no">\frac{\operatorname{d}\!{R}}{\operatorname{d}\!{t}} &amp; = \gamma\cdot I.</mrow>
+    </mdn>
+    The parameter <m>\beta</m> is called the <em>pairwise infectious 
+    contact rate</em> and gives the rate of infection when a 
+    susceptible meets an infected person. The parameter <m>\gamma</m> 
+    is the <em>rate of recovery</em>.</p> 
+
+    <p>Analysing this system of differential equation, one finds: 
+        If the fraction of susceptibles is low enough, the fraction 
+        of infected persons will decline and the disease will die 
+        out. However, if the fraction of susceptibles is higher 
+        than a certain threshold, the number of infected people 
+        increases: an <em>epidemic</em> occurs. During an epidemic, 
+        the number of susceptible individuals falls rapidly as more 
+        of them are infected. Afterwards the disease cannot break 
+        out again until the number of susceptibles has built back 
+        up as a result of newborns.</p> 
+
+    <p>Here, vaccines come into play: A vaccine reduces the number 
+        of susceptibles by immunization, thus <mdash> if the enough 
+        people are vaccinated </mdash> an epidemic will not break 
+        out and the disease will eventually die out. Smallpox was 
+        the first (and until recently only<fn>Smallpox was officially 
+            declared eradiacted in 1979. Rinderpest was unofficially 
+            declared eradicated in 2010.  For an update of the current 
+            status for other diseases (e.g., polio), have a look at  
+            <url href="http://en.wikipedia.org/wiki/Eradication_of_infectious_diseases"/>.
+        </fn>) disease that was successfully eradicated by this 
+        method <mdash /> mainly because the fraction of 
+        susceptibles that need to be successfully vaccinated is 
+        lower than in other diseases like measels, mumps, 
+        diphtheria etc.</p> 
+
+    <p>In the Spanish invasion of South America, the Aztecs were 
+        devasted by a smallpox epidemic introduced by one of Cortez' 
+        men. In the figure below we used the above system of 
+        differential equations to model this situation: The disease 
+        was introduced to a wholly susceptible population (blue), 
+        the epidemic broke out reaching its high point after 
+        approximately three years (the infected are colored in red). 
+        Eventually, around <m>98\%</m> suffered from the disease 
+        (smallpox is a very deadly disease).</p>
+
+    <figure xml:id="figure-firstlook-SIR">
+        <image width="80%" xml:id="firstlook-SIR">
+            <sageplot>
+            from sage.calculus.desolvers import desolve_system_rk4
+            S,I,R,t = var('S I R t')
+            F = [-3.5*S*I,3.5*S*I-.5*I,.5*I ]
+            P=desolve_system_rk4(F,[S,I,R],ics=[0,.999,.001,0],ivar=t,end_points=10)
+            SQ=[ [i, j] for i,j,k,l in P]
+            IQ=[ [i, k] for i,j,k,l in P]
+            RQ=[ [i, l] for i,j,k,l in P]
+            p = line(SQ, color='blue', axes_labels=['$t$','$S(t),I(t),R(t)$'], legend_label='$S(t)$', legend_color='blue',thickness=2)
+            p += line(IQ, color='red', legend_label='$I(t)$', legend_color='red',thickness=2)
+            p += line(RQ, color='darkgreen', legend_label='$R(t)$', legend_color='darkgreen',thickness=2)
+            p
+            </sageplot>
+        </image>
+        <caption>Susceptibles, infected and recovered over time (as fraction of the total population) as predicted by the SIR-model during an epidemic.</caption>
+    </figure>
+
+</section>
+
+
+

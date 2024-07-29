@@ -17,6 +17,16 @@
   </introduction>
 
   <!-- include sections -->
-  <xi:include href="sec-I1-exponential-growth.ptx" />
+  <xi:include href="sec-firstlook-exponential-growth.ptx" />
+  <xi:include href="sec-firstlook-logistic-growth.ptx" />
+  <xi:include href="sec-firstlook-spring-mass-model.ptx" />
+  <xi:include href="sec-firstlook-predator-prey.ptx" />
+  <xi:include href="sec-firstlook-SIR.ptx" />  
+  <xi:include href="sec-firstlook-COVID19.ptx" />
+  <xi:include href="sec-firstlook-HIV.ptx" />
+  <xi:include href="sec-firstlook-sagemath.ptx" />
+  <xi:include href="sec-firstlook-questions.ptx" />
+  <xi:include href="sec-firstlook-lessons.ptx" /> 
+  <xi:include href="sec-firstlook-exercises.ptx" />
 
 </chapter>

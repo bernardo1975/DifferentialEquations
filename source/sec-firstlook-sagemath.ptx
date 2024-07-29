@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-firstlook-sage" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>SageMath <mdash /> Open Source Software</title>
+        
+        <p>Technology can prove very useful when studying 
+            differential equations. Software packages such Maple, 
+            Mathematica, and Matlab each have their advantages and 
+            disadvantages. We will use <em>SageMath</em>, a readily 
+            available open source computer algebra system, as our 
+            choice of software. <em>SageMath</em> can be run on an 
+            individual computer or over the internet on a server or 
+            is available inside <em>CoCalc</em> at 
+            <url ref="https://cocalc.com" />. You can even access 
+            <em>SageMath</em> from your smart phone. 
+            For our purposes, <em>SageMath</em> cells are embedded 
+            into the textbook, so there is nothing to install on 
+            your computer. Simply, evaluate the cell.  
+            You can even change the preloaded commands in the cell 
+            if you wish. For example, let us evaluate the derivative 
+            of <m>f(x) = x^2 \cos x</m>.</p>
+        
+                <sage>
+                    <input>
+                    x = var('x')
+                    y = x^2*cos(x)
+                    diff(y, x)
+                    </input>
+                    <output>
+                    -x^2*sin(x) + 2*x*cos(x)
+                    </output>
+                </sage>
+
+                <p>We can use SageMath to plot functions. For example, 
+                    we can plot the function <m>f(x) = x^2 \cos x</m> 
+                    as well as its derivative on the same graph.</p>
+
+                <sage>
+                    <input>
+                    x = var('x')
+                    y = x^2*cos(x)
+                    yprime = diff(y, x)
+                    p = plot(y, (x, -2, 2), color ='blue', legend_label='$f$', legend_color='blue')
+                    p += plot(yprime, (x, -2, 2), color='red', legend_label='$df/dx$', legend_color='red')
+                    p
+                    </input>
+                </sage>
+        
+                <p>We can use <em>SageMath</em> to solve 
+                    differential equations. Suppose that we wish to 
+                    solve the initial value problem
+                    <md>
+                        <mrow>\frac{dP}{dt} &amp; = kP</mrow>
+                        <mrow>P(0) &amp; = 1000.</mrow>
+                    </md>
+                We can use the following commands.</p>
+
+                <sage>
+                    <input>
+                    k,t = var('k, t') #declare variables k and t
+                    P = function('P')(t) #declare P to be a function of t
+                    de = diff(P, t) == k*P  #differential equation
+                    #solve specifying initial conditions
+                    #and independent variable solution
+                    solution = desolve(de, P, ivar=t, ics=[0, 1000]) 
+                    solution
+                    </input>
+                    <output>
+                    1000*e^(k*t)
+                    </output>
+                </sage>
+        
+                <p>We will provide abundant examples of how to 
+                    use <em>SageMath</em> to solve and analyze 
+                    differential equations throughout the book, 
+                    and we encourage the reader to experiment by 
+                    altering the SageMath commands inside the 
+                    individual Sage cells. If you make a mistake, 
+                    you can simply reload the webpage and start 
+                    again.</p>
+
+                <p>The reader will find plenty of resources to 
+                    learn how to use <em>SageMath</em>.  
+                    A good place to start is 
+                    <url href="http://www.sagemath.org/help.html" /> 
+                    or <xref ref="bard-2015" />.  Although we will 
+                    be using <em>SageMath</em> as the technology of 
+                    choice, this book can be read independently of 
+                    <em>SageMath</em>.  Finally, we would like to 
+                    emphasize once again that the reader who chooses not 
+                    to use some sort of technology will be at a 
+                    disadvantage.</p>
+</section>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-firstlook-modeling-HIV" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Modeling the HIV-1 Virus</title>
+
+<!---
+  <todo>Check all of the details on this example</todo>
+-->
+  <p>The interaction of the HIV-1 virus with the body's immune 
+    system can be modeled by a system of differential equations 
+    similar to a predator-prey system. After an individual is 
+    infected with the HIV-1 virus, the amount of the virus in the 
+    bloodstream rises dramatically and the person will often suffer 
+    from flu-like symptoms. However, these symptoms will disappear 
+    after a period of weeks or months as the body begins to 
+    manufacture antibodies against the virus. Tests have been 
+    developed to determine the presence of HIV-1 antibodies. If an 
+    individual has such antibodies, then they are said to be 
+    HIV-1 positive. Once infected with the HIV-1 virus, it can 
+    be years before an HIV-positive patient exhibits the full 
+    symptoms of AIDS. The body's immune system fights the HIV-1 
+    virus with white blood cells. The CD4-positive T-helper cells, 
+    a specific type of white blood cell, is especially important 
+    since it helps other cells fight the virus. However, the HIV-1 
+    virus can destroy CD4-positive T-helper cells.</p>
+
+  <p>We can develop a system of differential equations to better 
+    understand the dynamics of the HIV-1 virus 
+    <xref ref="perelson-2002"/>. 
+    Let <m>V = V(t)</m> be the population of the HIV-1 virus at 
+    time <m>t</m>. We will assume that the virus concentration 
+    is governed by the following differential equation,
+      <me>\frac{dV}{dt} = P - cV.</me>
+    The first term, <m>P</m> is some function of <m>t</m> that 
+    determines the rate at which new viral particles are created. 
+    The term <m>-cV</m> is the death rate for the virions. If 
+    someone discovers a drug that blocks the creation of new 
+    HIV-1 virions, then <m>P</m> would be zero and the virions 
+    would clear the body at the following rate,
+      <me>\frac{dV}{dt} = - cV,</me>
+    and <m>V(t) = V_0 e^{-ct}</m>, where <m>V_0</m> is the initial 
+    viral population.</p>
+
+    <p>Now let us consider a model for the concentration of 
+        <m>T = T(t)</m> of (uninfected) CD4-positive T-helper cells,
+      <me>\frac{dT}{dt} = s + pT\left(1 - \frac{T}{T_{\text{max}}}  \right) - d_T T.</me>
+    The constant <m>s</m> represents the rate at which T cells are 
+    created from sources in the body, such as the thymus. New 
+    CD4-positive T-helper cells can also be created from the 
+    proliferation of existing CD4-positive T-helper cells, and the 
+    second term in the equation represents the logistic growth of 
+    the T cells, where <m>p</m> is the maximum proliferation rate 
+    and <m>T_{\text{max}}</m> is the T cell population density 
+    where proliferation ceases. Finally, <m>d_T</m> is the death 
+    rate of the T cells.</p>
+
+    <p>Like the influenza virus, the HIV-1 virus is an RNA virus. 
+        An RNA virus cannot reproduce on its own and must use the 
+        DNA from a host cell. To do this, the virus attaches itself 
+        to a CD4-positive T-helper cell and injects its RNA into 
+        the cell. This way the virus can use the T cell's DNA to 
+        replicate itself using a process called reverse 
+        transcription, where a DNA copy of the virus's RNA is made. 
+        New virus particles are created, and the T cell eventually 
+        bursts releasing the virions into the body. If we let 
+        <m>T^*</m> be the concentration of infected T cells, we can 
+        model this process with the following system of equations,
+        <md>
+           <mrow>\frac{dT^*}{dt} &amp; =  kTV - \delta T^*</mrow>
+           <mrow>\frac{dV}{dt} &amp; =  N \delta T^* - cV,</mrow>
+        </md>
+        where <m>\delta</m> is the rate of loss of the virus 
+        producing T cells and <m>N</m> is the number of virions 
+        produced per infected T cell during its lifetime. The term 
+        <m>kTV</m> tells us the rate at which the HIV-1 virus 
+        infects T cells. This is the same idea as modeling how 
+        predators interact with prey in a predator-prey model. 
+        Thus, our complete model becomes
+        <md>
+           <mrow>\frac{dT}{dt} &amp; =  s + pT\left(1 - \frac{T}{T_{\text{max}}}  \right) - d_T T - kTV</mrow>
+           <mrow>\frac{dT^*}{dt} &amp; =  kTV - \delta T^*</mrow>
+           <mrow>\frac{dV}{dt} &amp; =  N \delta T^* - cV.</mrow>
+        </md></p>
+
+    <p>One class of drugs that HIV infected patients receive are 
+        reverse transcriptase (RT) inhibitors. RT inhibitors 
+        block the action of reverse transcription and prevent 
+        the virus from duplicating. If one could find the perfect 
+        RT inhibitor, then <m>k =0</m> and our system becomes
+        <md>
+            <mrow>\frac{dT}{dt} &amp; = s + pT\left(1 - \frac{T}{T_{\text{max}}}  \right) - d_T T</mrow>
+            <mrow>\frac{dT^*}{dt} &amp; = - \delta T^*</mrow>
+            <mrow>\frac{dV}{dt} &amp; = N \delta T^* - cV.</mrow>
+        </md>
+        Unfortunately, no one has discovered a perfect RT inhibitor, 
+        so we will need to modify the system to account for the 
+        effectiveness of the RT inhibitor. We can accomplish this 
+        by adding an effectiveness factor, <m>1 - \eta</m>, to the 
+        <m>kVT</m> term. Our system now becomes
+        <md>
+            <mrow>\frac{dT}{dt} &amp; =  s + pT\left(1 - \frac{T}{T_{\text{max}}}  \right) - d_T T - k(1 - \eta)TV</mrow>
+            <mrow>\frac{dT^*}{dt} &amp; =  k(1 - \eta)TV - \delta T^*</mrow>
+            <mrow>\frac{dV}{dt} &amp; =  N \delta T^* - cV.</mrow>
+        </md>
+        If <m>\eta = 1</m>, then the RT inhibitor is completely 
+        effective. On the other hand, if <m>\eta = 0</m>, then the 
+        RT inhibitor is completely ineffective. We now have a model 
+        for how the HIV-1 virus interacts we the immune system. 
+        Researchers can use data to estimate the parameters and see 
+        exactly what types of solutions are possible.</p>
+
+</section>
