@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-I1-exponential-growth" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Exponential Growth</title>
+
+  <p>We begin our study of ordinary differential equations by 
+    modeling some real world phenomena. For a particular situation 
+    that we might wish to investigate, our first task is to write 
+    an equation (or equations) that best describes the phenomenon. 
+    Suppose that we wish to study how a population <m>P(t)</m> 
+    grows with time <m>t</m>.  We might make the assumption that 
+    a constant fraction of population is having offspring at any 
+    particular time. If we also assume that the population has a 
+    constant death rate, the change in the population 
+    <m>\Delta P</m> during a small time interval <m>\Delta t</m> 
+    will be
+    <me>\Delta P \approx  k_{\text{birth}} P(t) \Delta t - 
+        k_{\text{death}} P(t) \Delta t,</me>
+    where <m>k_{\text{birth}}</m> is the fraction of the population 
+    having offspring during the interval and 
+    <m>k_{\text{death}}</m> is the fraction of the population that 
+    dies during the interval. Equivalently, we can write
+    <me>\frac{\Delta P}{ \Delta t} \approx k P(t),</me>
+    where <m>k =  k_{\text{birth}} - k_{\text{death}}</m>. Since 
+    the derivative of <m>P</m> is
+    <me>\frac{dP}{dt} = 
+        \lim_{\Delta t \to 0} \frac{\Delta P}{ \Delta t},</me>
+    the rate of change of the population is proportional to the 
+    size of the population, or
+    <men xml:id="equation-firstlook-exponential">\frac{dP}{dt} 
+        = kP.</men></p>
+
+    <p>The equation
+    <me>\frac{dP}{dt} = kP</me>
+    is one of the simplest differential equations that we will 
+    consider. The equation tells us that the population grows in 
+    proportion to its current size. It is not too difficult to see 
+    that <m>P(t) = Ce^{kt}</m> is a <term>solution</term> to this 
+    equation, where <m>C</m> is an arbitrary constant.  Indeed, if 
+    we differentiate <m>P(t)</m>, we obtain
+    <me>\frac{d}{dt} P(t) = kCe^{kt} = kP(t).</me>
+    In addition, if we know the value of <m>P(t)</m>, say when 
+    <m>t = 0</m>, we can also determine the value of <m>C</m>. 
+    For example, if the population at the time <m>t = 0</m> is 
+    <m>P(0) = P_0</m>, then
+    <me>P_0 = P(0) = Ce^{k \cdot 0} = C</me>
+    or <m>P(t) = P_0 e^{kt}</m>. The differential equation
+    <md>
+        <mrow>P'(t) &amp; = k P(t),</mrow>
+        <mrow>P(0) &amp; = P_0</mrow>
+    </md>
+    is an example of an <term>initial value problem</term>
+    <idx><h>initial value problem</h></idx>
+    <idx><h>IVP</h><see>initial value problem</see></idx>, 
+    and we say that <m>P(0) = P_0</m> is an 
+    <term>initial condition</term><idx><h>initial condition</h></idx>. 
+    Since the solution to equation 
+    <xref ref="equation-firstlook-exponential"/> is 
+    <m>P(t) = Ce^{kt}</m>, and we say that the population grows 
+    <term>exponentially</term><idx><h>exponential growth</h></idx>.</p>
+
+
+    <example xml:id="example-exponential-growth">
+        <title>Exponential growth of bacteria</title>
+        <p>As an example, suppose that <m>P(t)</m> is a population 
+            of a colony of bacteria at time <m>t</m>, whose initial 
+            population is 1000 at <m>t = 0</m>, where time is 
+            measured in hours.  Then
+            <me>1000 = P(0) = C e^0 = C,</me>
+            and our solution becomes <m>P(t) = 1000e^{kt}</m>. 
+            If the population grows at three percent per hour, 
+            then
+            <me>1030 = P(1) = 1000 e^k,</me>
+            after one hour.  Consequently,
+            <me>k = \ln 1.03 \approx 0.0296</me>
+            and the solution to our initial value problem is 
+            <me>P(t) = 1000e^{0.0296 t}.</me>
+            Of course, it is important to realize that this is 
+            only a model. If <m>t</m> is small, our model might be 
+            reasonably accurate. However, if we let <m>t</m> be 
+            very large, our colony of bacteria could very well 
+            exceed the mass of the earth.</p>
+    </example>
+
+
+    <p>The growth rate of a population need not be positive. For 
+        example, Japan has experienced negative growth in recent 
+        years.<fn>See 
+            <url href="http://data.worldbank.org/indicator/SP.POP.GROW" />.</fn> The equation <m>dP/dt = kP</m> can also be used to model such phenomena such as radioactive decay and compound interest<mdash/>topics which we will explore later.</p>
+
+    <p>To summarize, we say that the expression 
+        <m>x(t) = Ce^{kt}</m> is a <term>general solution</term>
+        <idx><h>solution</h><h>general</h></idx> of the equation 
+        <m>x' = kx</m>, and <m>x(t) = x_0 e^{kt}</m> is a 
+        <term>particular solution</term>
+        <idx><h>solution</h><h>particular</h></idx> 
+        to the differential equation. The general solution to 
+        our equation <m>x(t) = Ce^{kt}</m> graphs as an infinite 
+        family of curves, which we will call 
+        <term>integral curves</term><idx>
+            <h>integral curves</h></idx> or 
+            <term>solution curves</term><idx><h>solution</h><h>curves</h></idx> 
+            (<xref ref="figure-firstlook-integral-curves"/>).
+        </p>
+
+    <figure  xml:id="figure-firstlook-integral-curves">
+        <image width="60%" xml:id="firstlook-integral-curves">
+            <sageplot>
+                p = plot(exp(x), (x, -2.1, 2.1), xmax=4, ymin = -350, ymax = 350, color='blue',aspect_ratio=0.005, axes_labels=['$t$','$x(t)$'], fontsize=12)
+                for n in range(1,4):
+                    f(x) = exp(n*x)
+                    p += plot(f(x), (x, -2.1, 2.1), xmax=4, ymin = -350, ymax = 350, color='blue', aspect_ratio=0.005)
+                    p += plot(-f(x), (x, -2.1, 2.1), xmax=4, ymin = -350, ymax = 350, color='blue', aspect_ratio=0.005)
+                label = text('$x(t) = Ce^{kt}$', (-1.5, 100), color='black', fontsize=14)
+                p + label
+            </sageplot>
+        </image>
+        <caption>Integral curves</caption>
+    </figure>
+
+</section>
