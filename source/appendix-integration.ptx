@@ -1,0 +1,696 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<appendix xml:id="appendix-integration" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Methods of Integration</title>
+    
+    <section xml:id="integration-rules" xmlns:xi="http://www.w3.org/2001/XInclude">
+        <title>Integration Rules</title>
+        
+        <p> Because of the fundamental theorem of calculus, every differentiation rule yields a corresponding integration rule. For example, the product rule for derivatives, yields the following: </p>
+
+
+        <theorem xml:id="theorem-integration-by-parts">
+            <title>Integration by Parts</title>
+            <statement>
+                <p>If <m>u, v:[a,b]\to\mathbb{R}</m> are continuously differentiable functions, then
+                    <me>\int_a^b u(x)\,v'(x)\operatorname{d}\!{x} = \left. u(x)\,v(x)\right|_a^b - \int_a^b u'(x)\,v(x)\operatorname{d}\!{x}.</me>
+                </p>
+            </statement>
+        </theorem> 
+
+        <p>Integration by parts is typically used for integrals
+        <ul>
+            <li>of the form <m>\int_a^b p(x)\, e^x\operatorname{d}\!{x}</m> where <m>p</m> is a polynomial,</li>
+            <li>of the form <m>\int_a^b p(x)\, \ln(x)\operatorname{d}\!{x}</m> where <m>p</m> is a polynomial,</li>
+            <li> with trigonometric functions, e.g., <m>\int_a^b e^{c\,x}\sin(x)\operatorname{d}\!{x}</m>.</li>
+        </ul>
+        </p>
+
+        <example xml:id="example-integration-by-parts-1">
+            <title>Integration by parts: Polynomial and exponential function</title>
+            <p> To evaluate <m>\int_a^b x^2\,e^x\operatorname{d}\!{x}</m>, we use integration by parts twice (each time with <m>v'(x)=e^x=v(x)</m> in the above formula) to obtain
+            <md>
+                <mrow> \int_a^b x^2\,e^x\operatorname{d}\!{x} &amp; = \left.x^2\,e^x\right|_a^b-\int_a^b 2x\,e^x\operatorname{d}\!{x} </mrow>
+                <mrow> &amp; =  \left.x^2\,e^x\right|_a^b -\left( \left.2x\,e^x\right|_a^b-\int_a^b2\,e^x\operatorname{d}\!{x}\right)</mrow>
+                <mrow> &amp; =  \left.\left(x^2-2x+2\right)\,e^x\right|_a^b </mrow>
+                <mrow> &amp; = \left(b^2-2b+2\right)\,e^b-\left(a^2-2a+2\right)\,e^a.</mrow>
+            </md></p>
+        </example>
+        <example xml:id="example-integration-by-parts-2">
+            <title>Integration by parts: Trigonometric functions</title>
+            <p> To evaluate  <m>\int_a^b \cos^2(x)\operatorname{d}\!{x}</m> we use <m>u(x)=\cos(x)=v'(x)</m> and <m>\sin^2(x)=1-\cos^2(x)</m> to obtain
+            <md>
+                <mrow> \int_a^b  \cos^2(x)\operatorname{d}\!{x} &amp; = \left.\cos(x)\,\sin(x)\right|_a^b-\int_a^b (-\sin(x))\,\sin(x)\operatorname{d}\!{x} </mrow>
+                <mrow> &amp; = \left.\cos(x)\,\sin(x)\right|_a^b+\int_a^b\sin^2(x)\operatorname{d}\!{x} </mrow>
+                <mrow> &amp; = \left.\cos(x)\,\sin(x)\right|_a^b+\int_a^b1-\cos^2(x)\operatorname{d}\!{x} </mrow>
+                <mrow> &amp; = \left.\cos(x)\,\sin(x)\right|_a^b+\int_a^b1\operatorname{d}\!{x}-\int_a^b\cos^2(x)\operatorname{d}\!{x},</mrow>
+            </md>
+            and thus 
+                <me> 2\int_a^b  \cos^2(x)\operatorname{d}\!{x}  =  \left.\left(\cos(x)\,\sin(x)+x\right)\right|_a^b, </me> 
+            i.e.,
+                <me> \int_a^b  \cos^2(x)\operatorname{d}\!{x}  =   \frac12(b-a)+\frac12\cos(b)\,\sin(b)-\frac12\cos(a)\,\sin(a). </me>    
+
+            </p>
+        </example>
+
+
+
+        <p>The chain rule for derivatives yields the following:</p>
+
+        <theorem xml:id="theorem-integration-by-substitution">
+            <title>Integration by Substitution</title>
+            <statement>
+                <p>If <m>u:[c,d]\to[a,b]</m>  is a continuously differentiable function and <m>f:[a,b]\to\mathbb{R}</m> is a continuous function, then
+                    <me>\int_{u(c)}^{u(d)} f(x)\operatorname{d}\!{x}= \int_c^d f(u(t))\,u'(t)\operatorname{d}\!{t}.</me>
+                </p>
+            </statement>
+        </theorem> 
+
+        <p>Note that there are two possibilities how to read this last formula: Either from left to right, or from right to left.  We look at both these possibilities here.</p>
+
+        <p>Reading the above formula from right to left, our task is the following: In order to evaluate <m>\int_a^b g(x)\operatorname{d}\!{x}</m>, we try to write the integrand in the from <m>g(x)=f(u(x))\,u'(x)</m> with an appropriate function <m>u</m>. Often it is straight forward, at least with some practice and experience, to recognize this function <m>u</m>.</p>
+
+        <example xml:id="example-integration-by-substitution-1">
+            <title>Integration by substitution: Integrand is a product</title>
+            <p><m>\int_a^b x\,e^{-x^2/2}\operatorname{d}\!{x} = \int_{-\frac12a^2}^{-\frac12b^2} -e^u\operatorname{d}\!{u} = \left. -e^u\right|_{-\frac12a^2}^{-\frac12b^2} = -e^{-b^2/2}+e^{-a^2/2}</m> where we use <m>u(x)=-\frac{x^2}2</m> and thus <m>u'(x)=-x</m>, <m>u(a)=-\frac12a^2</m> and <m>u(b)=-\frac12b^2</m>.</p>
+        </example>  
+
+        <example xml:id="example-integration-by-substitution-2">
+            <title>Integration by substitution: Integrand is a function of sine and cosine</title>
+            <p><md>
+                <mrow>\int_a^b\tan(x)\operatorname{d}\!{x} = \int_a^b\frac{\sin(x)}{\cos(x)}\operatorname{d}\!{x} = \int_{\cos(a)}^{\cos(b)} -\frac1{u}\operatorname{d}\!{u} </mrow>
+                <mrow>= \left.-\ln|{u}|\right|_{\cos(a)}^{\cos(b)}= -\ln|{\cos(b)}|+\ln|{\cos(a)}| = \ln\left|{\frac{\cos(a)}{\cos(b)}}\right|</mrow>
+                </md> 
+            where we use <m>u(x)=\cos(x)</m> and thus <m>u'(x)=-\sin(x)</m> (i.e., <m>\tan(x)=-\frac{\cos'(x)}{\cos(x)}</m>), <m>u(a)=\cos(a)</m> and <m>u(b)=\cos(b)</m>. </p>
+            <p>We note that we also assumed that the cosine does not become zero in the interval <m>[a,b]</m>; in particular, <m>\cos(a)</m> and <m>\cos(b)</m> must both be either positive or negative for the above formula to hold.</p>
+            <p> Integrals of the form <m>\int_a^b \sin(x)\,f(\cos(x))\operatorname{d}\!{x}</m> and  <m>\int_a^b \cos(x)\,g(\sin(x))\operatorname{d}\!{x}</m> (for some functions <m>f,g</m>) are evaluated similarly.</p>
+        </example>    
+
+        <p>An important special case here is:
+            <me> \int_a^b\frac{u'(x)}{u(x)} \operatorname{d}\!{x} = \ldots = \ln\left|{\frac{u(b)}{u(a)}}\right|</me>
+        as long as the continuously differentiable function <m>u</m> does not become zero in the interval <m>[a,b]</m>.</p>
+
+        <p>Reading the integration by substitution formula from left to right, our task is the following: In order to evaluate <m> \int_a^b f(x)\operatorname{d}\!{x}</m>, we substitute <m>u(t)</m> for <m>x</m> where <m>u:[c,d]\to [a,b]</m> is a bijective (and therefore invertible), continuously differentiable function, to obtain
+            <me>\int_a^bf(x)\operatorname{d}\!{x} = \int_{u^{-1}(a)}^{u^{-1}(b)} f(u(t))\,u'(t)\operatorname{d}\!{t}.</me>
+        Note that it might happen that for the inverse function <m>u^{-1}</m> we have <m>u^{-1}(a)>u^{-1}(b)</m>. Finding an appropriate substitution <m>u</m> here is often an art and requires lots of experience. In fact, one might consider it as one of the (most obvious) manifestitions showing that integration is much harder than differentiation.</p>
+
+         <example xml:id="example-integration-by-substitution-3">
+            <title>Integration by substitution: Integrand with square roots</title>
+            <p>In order to evaluate <m>\int_a^b \frac1{\sqrt{x}}\ln(\sqrt{x})\operatorname{d}\!{x}</m> with <m>0 \lt a \lt b</m>, we use <m>x=u(t)=t^2</m> (note that this function is bijective on the domain <m>[0,+\infty)</m>). Then, <m>\frac{\operatorname{d}\!{x}}{\operatorname{d}\!{t}}=u'(t)=2t</m> and <m>u^{-1}(t)=\sqrt{t}</m> and thus
+            <md>
+                <mrow> \int_a^b \frac1{\sqrt{x}}\ln(\sqrt{x})\operatorname{d}\!{x} &amp; =  \int_{\sqrt{a}}^{\sqrt{b}} \frac1{t} \ln(t)\,2\,t\operatorname{d}\!{t} </mrow>
+                <mrow> &amp; = \int_{\sqrt{a}}^{\sqrt{b}} 2 \ln(t)\operatorname{d}\!{t} \ = \ 2 \int_{\sqrt{a}}^{\sqrt{b}} \ln(t)\operatorname{d}\!{t} </mrow>
+                <mrow> &amp; = \left.2\left(x\ln(x)-x\right)\right|_{\sqrt{a}}^{\sqrt{b}}</mrow>
+            </md>
+            where we obtain <m>\int_{\sqrt{a}}^{\sqrt{b}} \ln(t)\operatorname{d}\!{t}</m> using integration by parts:
+            <md>
+                <mrow>\int_{\sqrt{a}}^{\sqrt{b}} \ln(t)\operatorname{d}\!{t} &amp; =  \int_{\sqrt{a}}^{\sqrt{b}} 1\cdot \ln(t)\operatorname{d}\!{t} </mrow>
+                <mrow> &amp; = \left.x\,\ln(x)\right|_{\sqrt{a}}^{\sqrt{b}} -  \int_{\sqrt{a}}^{\sqrt{b}}\frac{t}{t} \operatorname{d}\!{t}\ = \ \left.x\,\ln(x)\right|_{\sqrt{a}}^{\sqrt{b}} -  \int_{\sqrt{a}}^{\sqrt{b}}1\operatorname{d}\!{t} </mrow>
+                <mrow> &amp; = \left.\left(x\,\ln(x)-x\right)\right|_{\sqrt{a}}^{\sqrt{b}}. </mrow>
+            </md>
+            Obviously, the integral <m>\int_a^b \frac1{\sqrt{x}}\ln(\sqrt{x})\operatorname{d}\!{x}</m> can also (and usually, will) be solved by applying integration by substitution from right to left, in which case we take <m>u(t)=\sqrt{t}</m> and <m>u'(t)=\frac1{2\sqrt{t}}</m>. However, our goal here was to go the other way.</p>
+        </example>  
+       
+        <example xml:id="example-integration-by-substitution-4">
+            <title>Integration by substitution: Art at play</title>
+            <p>In order to evaluate <m>\int_a^b \frac1{\sqrt{1+x^2}}\operatorname{d}\!{x}</m> with <m>0 \lt a \lt b</m>, we use <m> x=u(t) = \frac{t^2-1}{2t}</m>; this function <m>u: (0,+\infty)\to\mathbb{R}</m> is strictly increasing and surjective, and therefore invertible. Its inverse function is <m>u^{-1}(x)=x+\sqrt{1+x^2}</m> (which is positive for all real <m>x</m>). Noting that <m>\sqrt{1+x^2}=\frac{t^2+1}{2t}</m>, we obtain
+                <me> \frac{\operatorname{d}\!{x}}{\operatorname{d}\!{t}}=\frac{t^2+1}{2\,t^2}=\frac{\sqrt{1+x^2}}{t},</me>
+            i.e., <m>\frac{\operatorname{d}\!{t}}{t}=\frac{\operatorname{d}\!{x}}{\sqrt{1+x^2}}</m>. Thus, we get 
+            <md>
+                <mrow> \int_a^b \frac1{\sqrt{1+x^2}}\operatorname{d}\!{x} &amp; =  \int_{a+\sqrt{1+a^2}}^{b+\sqrt{1+b^2}} \frac{1}{t}\operatorname{d}\!{t} </mrow>
+                <mrow> &amp; = \left.\ln|{t}|\right|_{a+\sqrt{1+a^2}}^{b+\sqrt{1+b^2}} = \ln\left(\frac{b+\sqrt{1+b^2}}{a+\sqrt{1+a^2}}\right).</mrow>
+            </md>
+            As a side note, the derivative of the inverse hyperbolic sine <m>\operatorname{arsinh}(x)</m> is <m>\operatorname{arsinh}'(x)=\frac1{\sqrt{1+x^2}}</m>; thus, we have actually obtained an explicit formula for the inverse hyperbolic sine here, namely, <m>\operatorname{arsinh}(x)=\ln(x+\sqrt{1+x^2})</m>, and we can also write <m>\int_a^b \frac1{\sqrt{1+x^2}}\operatorname{d}\!{x} = \operatorname{arsinh}(b) - \operatorname{arsinh}(a)</m>. </p> <p>(Oh, and it is <m>\operatorname{arsinh}(x)</m>, not <m>\operatorname{arcsinh}(x)</m>! For hyperbolic trigonometric functions, it is an area not an arc length we are talking about!)</p>
+        </example>  
+
+
+        <exercise xml:id="exercises-integration-rules-parts-1">
+            <p> Use integration by parts to evaluate the following: 
+            <ol marker="a.)">
+                <li> <m> \int x^3\ln(x)\operatorname{d}\!{x}</m></li>
+                <li><m>\int \arctan(x) \operatorname{d}\!{x}</m></li>
+                <li><m>\int x\, (\ln(x))^2 \operatorname{d}\!{x}</m></li>
+                <li><m>\int x\,\sin(x)\,\operatorname{d}\!{x}</m></li>
+                <li><m>\int\frac{\ln(x)}{\sqrt{x}}\operatorname{d}\!{x}</m></li>
+            </ol></p>
+        </exercise>
+
+        
+        <exercise xml:id="exercises-integration-rules-parts-2">
+            <p> Let <m>I=\int e^{ax}\cos(bx)\operatorname{d}\!{x}</m>. By integrating by parts twice, show that
+                <me>I=\frac{e^{ax}\left(a\cos(bx)+b\sin(bx)\right)}{a^2+b^2}+C.</me>
+            </p>
+        </exercise>
+
+        <exercise xml:id="exercises-integration-rules-substitution-1">
+            <p>Evaluate the following integrals:
+            <ol marker="a.)">
+                <li><m>\int_0^{\pi/4}\sin(\sin\theta)\cos\theta\operatorname{d}\!{\theta}</m></li>
+                <li><m>\int_0^2 x\,\exp(2\,x)\operatorname{d}\!{x}</m></li>
+                <li><m>\int_3^{12} x\sqrt{x-3}\operatorname{d}\!{x}</m></li>
+                <li><m>\int_{\sqrt{\operatorname{e}}}^{\operatorname{e}} \frac{\ln(x)}{x^2}\operatorname{d}\!{x}</m></li>
+                <li><m>\int_0^{\pi/2}\frac{\sin 2x}{\cos x}\operatorname{d}\!{x}</m></li>
+                <li><m>\int_0^{\pi/3}\tan^2(x)\operatorname{d}\!{x}</m></li>
+            </ol></p>
+        </exercise>
+
+        <exercise xml:id="exercises-integration-rules-substitution-2">
+            <p>Evaluate the following integrals using appropriate substitutions:
+            <ol marker="a.)">
+                <li><m>\int_{1/\pi}^{2/\pi}\frac{\cos(1/x)}{x^2}\operatorname{d}\!{x}</m></li>
+                <li><m>\int_1^2\frac{2x+1}{x^2+2x+2}\operatorname{d}\!{x}</m></li>
+                <li><m>\int_0^{1/3}\sqrt{1-4t^2}\operatorname{d}\!{t}</m></li>
+            </ol></p>
+        </exercise>
+
+        <exercise xml:id="exercises-integration-rules-substitution-3">
+            <p>Evaluate the following integrals using appropriate substitutions:
+            <ol marker="a.)">
+                <li><m>\int \frac{\operatorname{e}^x}{1+\operatorname{e}^x}\,\operatorname{d}\!{x}</m></li>
+                <li><m>\int x\,\sin(x^2)\,\operatorname{d}\!{x}</m></li>
+                <li><m>\int\left(\tan^2(x)+\tan^4(x)\right)\operatorname{d}\!{x}</m></li>
+            </ol></p>
+        </exercise>
+
+
+    </section>
+
+
+    <section xml:id="improper-integrals" xmlns:xi="http://www.w3.org/2001/XInclude">
+        <title>Improper Integrals</title>
+
+        <p>We begin by looking at the following two examples: We would like to determine the area 
+        <ul>
+            <li>of the region under the graph of <m>x\mapsto \frac1{x^2}</m> for <m>x\ge 1</m>, and</li>
+            <li>of the region under the graph of <m>x\mapsto \frac1{\sqrt{x}}</m> for <m>0\lt x\le 1</m>.</li>
+        </ul></p>
+
+        <figure xml:id="figure-improper-integral-1onxsquared">
+
+            <image width="70%" xml:id="improper-integral-1onxsquared">
+                <sageplot>
+                    p=plot(1/x^2,(x,0,5),ymax=5,aspect_ratio=1)+plot(1/x^2,(x,1,5),fill=True,fillcolor='darkgreen',axes_labels=['$x$','$y$'])
+                    p
+                </sageplot>
+            </image>
+
+            <caption>The improper integral <m>\int_1^{\infty} \frac1{x^2}\operatorname{d}\!{x}</m>.</caption>
+
+        </figure>
+
+
+        <figure xml:id="figure-improper-integral-1onsqrtx">
+
+            <image width="70%" xml:id="improper-integral-1onsqrtx">
+                <sageplot>
+                    p=plot(1/sqrt(x),(x,0,5),ymax=5,aspect_ratio=1)+plot(1/sqrt(x),(x,0,1),fill=True,fillcolor='darkgreen',axes_labels=['$x$','$y$'])
+                    p
+                </sageplot>
+            </image>
+
+            <caption>The improper integral <m>\int_0^{1} \frac1{\sqrt{x}}\operatorname{d}\!{x}</m>.</caption>
+
+        </figure>
+
+
+        <p>The approach using Riemann sums does not work here: In the first case, partitioning <m>[1,\infty)</m> into finitely many subintervals always gives at least one subinterval with infinite width; in the second case, the height of the first rectangle becomes infinite.</p>
+
+        <p>However, for <m>r\gt 0</m> we have
+            <me>\int_1^r\frac1{x^2}\operatorname{d}\!{x} = \left.-\frac1{x}\right|_1^r= 1-\frac1{r},</me> 
+        and thus
+            <me>\lim_{r\to\infty} \int_1^r\frac1{x^2}\operatorname{d}\!{x} = \lim_{r\to\infty} \left( 1-\frac1{r}\right)=1.</me>
+        Since this limit exists (i.e., converges to a finite value),  it is reasonable to set
+            <me>\int_1^{\infty}\frac1{x^2}\operatorname{d}\!{x} =  \lim_{r\to\infty} \int_1^r\frac1{x^2}\operatorname{d}\!{x} = 1.</me>
+        </p>
+
+        <p>Similarly, for <m>\varepsilon\gt 0</m> we have
+            <me>\int_{\varepsilon}^1\frac1{\sqrt{x}}\operatorname{d}\!{x} = \left. 2\sqrt{x}\right|_{\varepsilon}^1=2-2\sqrt{\varepsilon},</me>
+        and thus
+            <me>\lim_{\varepsilon\to 0^+}\int_{\varepsilon}^1\frac1{\sqrt{x}}\operatorname{d}\!{x} = \lim_{\varepsilon\to 0^+}2-2\sqrt{\varepsilon}=2.</me>
+        Again, since this limit exists, we set
+            <me>\int_{0}^1\frac1{\sqrt{x}}\operatorname{d}\!{x} =  \lim_{\varepsilon\to 0^+} \int_{\varepsilon}^1\frac1{\sqrt{x}}\operatorname{d}\!{x} = 2.</me>
+        </p>
+
+        <p>So, in both situations we suceed in calculating the area, although the usual approach using Riemann sums does not work. Such integrals are called improper integrals.</p>
+
+        <p>However, this does not always work.</p> 
+        <ul>
+            <li><p> Neither does <m>\int_1^\infty \frac1{x}\operatorname{d}\!{x}</m> exist: Since
+                <me>\int_1^r\frac1{x}\operatorname{d}\!{x} = \left.\ln|{x}|\right|_1^r=\ln(r)</me>
+            for <m>r\gt 0</m>, and thus <m>\ln(r)\to\infty</m> as <m>r\to\infty</m>, the integral <m>\int_1^\infty \frac1{x}\operatorname{d}\!{x}</m> does not converge. We also say that the integral <m>\int_1^\infty \frac1{x}\operatorname{d}\!{x}</m> diverges (to infinity) or that <m>\frac1{x}</m> is not integrable over <m>[1,\infty)</m>.</p></li>
+            <li><p>Nor does <m>\int_0^1 \frac1{x}\operatorname{d}\!{x}</m> exist: Since
+                <me>\int_{\varepsilon}^1\frac1{x}\operatorname{d}\!{x} = \left.\ln|{x}|\right|_{\varepsilon}^1=-\ln(\varepsilon)=\ln(1/\varepsilon)</me>
+            for <m>\varepsilon\gt 0</m>, and thus <m>\ln(1/\varepsilon)\to\infty</m> as <m>\varepsilon\to 0^+</m>, the integral <m>\int_0^1 \frac1{x}\operatorname{d}\!{x}</m> does not converge. We also say that the integral <m>\int_0^1 \frac1{x}\operatorname{d}\!{x}</m> diverges (to infinity) or that <m>\frac1{x}</m> is not integrable over <m>(0,1]</m>.</p></li>
+        </ul>
+
+        <p>An integral can also be improper if the integrand is not defined at an interior point of the interval we are integrating over. E.g., the integral
+            <me>\int_{-1}^1\frac1{\sqrt{|{x}|}}\operatorname{d}\!{x}</me>
+        is improper, and we calculate
+        <md>
+            <mrow>\int_{-1}^1\frac1{\sqrt{|{x}|}}\operatorname{d}\!{x} =\int_{-1}^0\frac1{\sqrt{|{x}|}}\operatorname{d}\!{x}+\int_{0}^1\frac1{\sqrt{|{x}|}}\operatorname{d}\!{x} </mrow> 
+            <mrow>=\lim_{\tilde{\varepsilon}\to 0^-} \int_{-1}^{\tilde{\varepsilon}}\frac1{\sqrt{|{x}|}}\operatorname{d}\!{x}+\lim_{\varepsilon\to 0^+} \int_{\varepsilon}^1\frac1{\sqrt{|{x}|}}\operatorname{d}\!{x} =\lim_{\tilde{\varepsilon}\to 0^-} \int_{-1}^{\tilde{\varepsilon}}\frac1{\sqrt{-x}}\operatorname{d}\!{x}+\lim_{\varepsilon\to 0^+} \int_{\varepsilon}^1\frac1{\sqrt{x}}\operatorname{d}\!{x} </mrow>
+            <mrow> = \lim_{\tilde{\varepsilon}\to 0^-} \left.-2\sqrt{-x}\right|_{-1}^{\tilde{\varepsilon}} + \lim_{\varepsilon\to 0^+} \left.2\sqrt{x}\right|_{\varepsilon}^1=(-0+2)+(2-0)=4. </mrow>
+        </md></p>
+
+        <example xml:id="example-improper-integral">
+            <title>Diverging cross-section and finite volume</title>
+            <p>As we have seen above, the area enclosed by the graph of <m>x\mapsto\frac1{x}</m> for <m>x\ge 1</m> diverges to infinity. However, the solid of revolution that we obtain by rotating this area around the <m>x</m>-axis has finite volume: In general, rotating the area under <m>x\mapsto f(x)</m> over the interval <m>[a,b]</m> around the <m>x</m>-axis, yields a solid of revolution with volume <m>\pi\int_a^b (f(x))^2\operatorname{d}\!{x}</m>. So, in the case <m>f(x)=\frac1{x}</m> for <m>x\ge 1</m>, we get the volume
+                <me>\pi \int_1^{\infty} \frac1{x^2}\operatorname{d}\!{x} = \pi\cdot 1 = \pi.</me>
+            </p> 
+
+            <figure xml:id="figure-improper-integral-oneonx">
+
+                <image width="70%" xml:id="improper-integral-oneonx">
+                    <sageplot>
+                        p=plot(1/x,(x,0,5),ymax=5,aspect_ratio=1)+plot(1/x,(x,1,5),fill=True,fillcolor='darkgreen',axes_labels=['$x$','$y$'])
+                        p
+                    </sageplot>
+                </image>
+
+                <caption>The diverging (improper) integral <m>\int_1^{\infty} \frac1{x}\operatorname{d}\!{x}</m>.</caption>
+
+            </figure>
+
+            <figure xml:id="figure-improper-integral-1onx-revolution">
+
+                <image width="100%" xml:id="improper-integral-1onx-revolution">
+                    <sageplot>
+                        from sage.manifolds.utilities import set_axes_labels
+                        x,y=var('x,y')
+                        p=parametric_plot3d([x,cos(y)/x,sin(y)/x],(x,1,4.8),(y,0,2*pi),color='darkgreen')+point((.2,-1.8,-1.8),opacity=0)+point((.2,2,2),opacity=0)
+                        pa = set_axes_labels(p, 'x', 'y', 'z', color='red')
+                        pa
+                    </sageplot>
+                </image>
+
+                <caption>The solid of revolution corresponding to <m>\int_1^{\infty} \frac1{x}\operatorname{d}\!{x}</m>. This solid of revolution with diverging cross section has finite volume.</caption>
+
+            </figure>
+
+
+        </example>
+
+        <exercise  xml:id="exercise-improper-integrals">
+            <p>Evaluate the integral <m>\int_{-1}^2\frac{y}{\sqrt{y+1}}\operatorname{d}\!{y}</m>.</p>
+        </exercise>
+
+    </section>
+
+
+    <section xml:id="integration-using-partial-fractions" xmlns:xi="http://www.w3.org/2001/XInclude">
+        <title>Special Integration Techniques: Partial Fractions</title>
+
+        <p>Integrals of rational functions can explicitly be calculated. More precisely, if <m>p, q</m> are polynomials (with real coefficients) and <m>q(x)\neq 0</m> for all <m>x\in[a,b]</m>, then we can evaluate the integral
+            <me>\int_a^b \frac{p(x)}{q(x)}\operatorname{d}\!{x}</me>
+        once we know the roots of <m>q(x)</m> (i.e., for which <m>x</m> the polynomial <m>q(x)</m> becomes zero), since this enables us to find an antiderivative of the continuous function <m>\frac{p(x)}{q(x)}</m>.</p>
+
+        <p>We first note that if the degree of <m>p</m> is greater than or equal to the degree of <m>q</m>, polynomial division yields
+            <me> \frac{p(x)}{q(x)} = f(x)+\frac{r(x)}{q(x)},</me>
+        where <m>f</m> and <m>r</m> are polynomials, and the degree of <m>r</m> is strictly less than the degree of <m>q</m>. Note that the polynomial <m>f</m> can be easily integrated. </p>
+
+        <p>We now simplify the rational function <m>\frac{r(x)}{q(x)}</m> using partial fractions. This is based on the following facts:</p>
+        <ul>
+            <li><p>Every polynomial <m>q(x)</m> with real coefficients is the product of a constant, linear polynomials of the form <m>x-c</m> with <m>c\in \mathbb{R}</m>, and quadratic polynomials of the form <m>x^2 + d\,x + \tilde{d}</m> with <m>d,\tilde{d}\in\mathbb{R}</m> and <m>d^2 - 4\tilde{d} \lt 0</m> (which is the same thing as saying that the polynomial <m>x^2 + d\,x + \tilde{d}</m> has no real roots, but a pair <m>z,\overline{z}</m> of complex conjugate roots).</p>
+
+            <p>This result is a consequence of the so-called <em>Fundamental Theorem of Algebra</em>. see Theorem <xref ref="theorem-FTA" />.</p></li>
+            <li><p>We can thus write the denominator <m>q(x)</m> as the product
+            <md>
+                <mrow>q(x) = &amp; C\cdot (x-c_1)^{k_1}\cdot  (x-c_2)^{k_2}\cdots (x-c_n)^{k_n}\cdot</mrow>
+                <mrow> &amp; (x^2 + d_1\,x + \tilde{d}_1)^{\ell_1}\cdot  (x^2 + d_2\,x + \tilde{d}_2)^{\ell_2}\cdots (x^2 + d_m\,x + \tilde{d}_m)^{\ell_m} </mrow>
+            </md>
+            where <m>c_i, d_i, \tilde{d}_i, C\in\mathbb{R}</m>, <m>k_i, \ell_i\in\mathbb{N}</m> and <m>n,m\in\mathbb{N}\cup\{0\}</m> (where <m>n=0</m> means that there is no linear factors, and <m>m=0</m> that there is no quadratic factor).</p></li>
+            <li><p>Assuming that <m>C=1</m> (in other words, that the coefficient of the highest power of <m>q(x)</m> is <m>1</m>) and that <m>r(x)</m> and <m>q(x)</m> have no common factor, we can express <m>\frac{r(x)}{q(x)}</m> using partial fractions. To this end, any factor <m>(x-c)^{k}</m> of <m>q(x)</m> contributes
+                <me>\frac{A_1}{x-c}+\frac{A_2}{(x-c)^2}+\ldots+\frac{A_k}{(x-c)^k},</me>
+            and any factor <m>(x^2 + d\,x + \tilde{d})^{\ell}</m> contributes
+                <me> \frac{B_1x+D_1}{x^2 + d\,x + \tilde{d}}+\frac{B_2x+D_2}{(x^2 + d\,x + \tilde{d})^2}+\ldots+\frac{B_{\ell}x+D_{\ell}}{(x^2 + d\,x + \tilde{d})^{\ell}} </me>
+            where <m>A_i, B_i, D_i\in\mathbb{R}</m> are (uniquely determined) constants.</p></li>
+            <li><p>Therefore, expressing <m>\frac{r(x)}{q(x)}</m> using partial fractions leads to a sum of expressions that can be individually integrated.</p></li>
+        </ul>
+
+        <p>We look at two examples.</p>
+
+        <example xml:id="example-integration-using-partial-fractions-1">
+            <title>Using partial fractions: Only linear terms</title>
+            <p>We want to find an antiderivative of <m>\frac{5x^2+12 x+47}{(x-3)(x+5)^2}</m>. Using partial fractions, we have to find real constants <m>A, B_1</m> and <m>B_2</m> such that
+                <me>\frac{5x^2+12 x+47}{(x-3)(x+5)^2} = \frac{A}{x-3}+\frac{B_1}{x+5}+\frac{B_2}{(x+5)^2}.</me>
+            To this end, we multiply this equation with the denominator <m>q(x)=(x-3)(x+5)^2</m> to obtain
+            <md>
+                <mrow> 5x^2+12x+47 &amp; = A\, (x+5)^2+B_1\,(x-3)(x+5)+B_2\,(x+3) </mrow>
+                <mrow> &amp; = (A+B_1)\, x^2+(10\,A+2\,B_1+B_3)\,x</mrow>
+                <mrow> &amp; \qquad +(25\,A-15\,B_1-3\,B_2).</mrow>
+            </md>
+            Either by comparing coefficients or by using appropriate values for <m>x</m>, this yields
+                <me>A=2,\quad B_1=3,\quad\text{and}\quad B_2=-14.</me>
+            Thus, we have
+                <me>\frac{5x^2+12 x+47}{(x-3)(x+5)^2} = \frac{2}{x-3}+\frac{3}{x+5}+\frac{-14}{(x+5)^2},</me>
+            and we therefore find 
+                <md>
+                    <mrow>\int\frac{5x^2+12 x+47}{(x-3)(x+5)^2}\operatorname{d}\!{x} &amp; =2\,\ln|{x-3}| +3\,\ln|{x+5}| + \frac{14}{x+5}+C</mrow>
+                    <mrow> &amp; =\ln\left(({x-3})^2\cdot|{x+5}|^3\right) + \frac{14}{x+5}+C.</mrow>
+                </md>
+            </p>
+        </example>
+
+        <example xml:id="example-integration-using-partial-fractions-2">
+            <title>Using partial fractions: Including a quadratic term</title>
+            <p>We want to find an antiderivative of <m>\frac{3x^2+4x+29}{(x-1)(x^2+4x+13)}</m>. Since <m>x^2+4x+13=(x+2)^2+9</m>, the second factor in the denominator has no real roots. Using partial fractions, we here have to find real constants <m>A, B</m> and <m>D</m> such that
+                <me>\frac{3x^2+4x+29}{(x-1)(x^2+4x+13)} = \frac{A}{x-1}+\frac{Bx+D}{x^2+4x+13}.</me>
+            To this end, we multply this equation with the denominator <m>q(x)=(x-1)(x^2+4x+13)</m> to obtain
+            <md>
+                <mrow>3x^2+4x+29 &amp; = A\, (x^2+4x+13)+(Bx+D)(x-1) </mrow>
+                <mrow> &amp; = (A+B)\, x^2+(4\,A-B+D)\,x+(13\,A-D) </mrow>
+            </md>
+            Either by comparing coefficients or by using appropriate values for <m>x</m>, this yields
+                <me>A=2,\quad B=1,\quad\text{and}\quad D=-3.</me>
+            Thus, we have
+            <md>
+                <mrow>\frac{3x^2+4x+29}{(x-1)(x^2+4x+13)} &amp; = \frac{2}{x-1}+\frac{x-3}{x^2+4x+13}</mrow>
+                <mrow> &amp; = \frac{2}{x-1}+\frac{\frac12(2x+4)-5}{x^2+4x+13}</mrow>
+                <mrow> &amp; = \frac{2}{x-1}+\frac12\cdot \frac{2x+4}{x^2+4x+13}+\frac{-5}{x^2+4x+13}</mrow>
+                <mrow> &amp; = \frac{2}{x-1}+\frac12\cdot \frac{2x+4}{x^2+4x+13}-\frac{5}{(x+2)^2+9}</mrow>
+                <mrow> &amp; = \frac{2}{x-1}+\frac12\cdot \frac{2x+4}{x^2+4x+13}-\frac{5}{9}\cdot \frac1{\left(\frac{x+2}3\right)^2+1},</mrow>
+            </md>
+            and we therefore find
+            <md>
+                <mrow>\int \frac{3x^2+4x+29}{(x-1)(x^2+4x+13)}\operatorname{d}\!{x} </mrow>
+                <mrow> = 2\,\ln|{x-1}|+\frac12\,\ln|{x^2+4x+13}|-\frac59\cdot 3\,\arctan\left(\frac{x+2}3\right)+C </mrow>
+                <mrow> = 2\,\ln|{x-1}|+\frac12\,\ln|{x^2+4x+13}|-\frac53\, \arctan\left(\frac{x+2}3\right)+C</mrow>
+                <mrow> = \ln\left((x-1)^2\cdot\sqrt{x^2+4x+13}\right)-\frac53\, \arctan\left(\frac{x+2}3\right)+C.</mrow>
+            </md></p>
+        </example>
+
+        <p>The only difficulty left now, are integrals with an 
+            integrand of the form 
+            <m>\frac{Bx+D}{(x^2 + d\,x + \tilde{d})^{k}}</m>. 
+            To this end, we note that 
+            <m>\frac{x+d}{(x^2 + d\,x + \tilde{d})^{k}}</m> 
+            is easy to integrate, so really all that is left are 
+            integrands of the form 
+            <m>\frac{1}{(x^2 + d\,x + \tilde{d})^{k}}</m>, or 
+            actually (after completing the square etc., compare 
+            <xref ref="example-integration-using-partial-fractions-2"/>) 
+            integrands of the form <m>\frac{1}{(x^2+1)^{k}}</m>. 
+            In order to evaluate the latter, one use a (recursive) reduction 
+            formula that is discussed in 
+            <xref ref="exercise-integration-partial-fractions-reduction-1"/>.
+        </p>
+
+
+        <exercise xml:id="exercise-integration-partial-fractions-1">
+            <p>Evaluate the following indefinite integrals using partial fractions:
+            <ol marker="a.)">
+                <li><m>\int\frac{3x+8}{x^2+5x+6}\operatorname{d}\!{x}</m></li>
+                <li><m>\int\frac{2t^2-1}{t(2t+1)}\operatorname{d}\!{t}</m></li>
+                <li><m>\int\frac{\operatorname{d}\!{z}}{(z+1)(z+2)^2}</m></li>
+                <li><m>\int\frac{x^3-3x^2+2x-3}{x^2+1}\operatorname{d}\!{x}</m></li>
+            </ol></p>
+        </exercise>
+
+        <exercise  xml:id="exercise-integration-partial-fractions-2">
+            <p>Evaluate the following indefinite integrals using partial fractions:
+            <ol marker="a.)">
+                <li><m>\int\frac{1}{x^2+4x+3}\,\operatorname{d}\!{x}</m></li>
+                <li><m>\int\frac{1}{x^2+4x+5}\,\operatorname{d}\!{x}</m></li>
+                <li><m>\int\frac{x^2}{x^2+4x+5}\,\operatorname{d}\!{x}</m></li>
+            </ol></p>
+        </exercise>
+
+        <exercise  xml:id="exercise-integration-partial-fractions-reduction-1">
+            <ol marker="a.)">
+                <li><p>Let <m>I_n=\int\frac1{(1+x^2)^n}\,\operatorname{d}\!{x}</m>, where <m>n</m> is a natural number. Use integration by parts to show that
+                    <me>I_n = \frac{x}{(1+x^2)^n}+2n\,(I_n-I_{n+1})</me>
+                and hence establish the reduction formula
+                    <me>2n\,I_{n+1} = \frac{x}{(1+x^2)^n}+(2n-1)\,I_n</me>
+                for <m>n\ge 1</m>. Hence find <m>I_2</m>.</p></li>
+                <li><p>Evaluate <m>\int\frac{1}{(x^2+4x+5)^2}\,\operatorname{d}\!{x}</m>.</p></li>
+           </ol>
+        </exercise>
+
+        <exercise  xml:id="exercise-integration-partial-fractions-3">
+            <ol marker="a.)">
+                <li><p>Integrate <m>\int\frac1{1-z^2}\,\operatorname{d}\!{z}</m> by splitting the integrand into partial fractions.</p></li>
+                <li><p>By making the substitution <m>z=\sin(x)</m>, show that
+                    <me>\int\frac1{\cos(x)}\,\operatorname{d}\!{x} = \frac12\,\ln\left(\frac{1+\sin(x)}{1-\sin(x)}\right)+C.</me></p></li>
+            </ol>
+        </exercise>
+
+
+    </section>
+
+     <section xml:id="integration-using-trig-substitution" xmlns:xi="http://www.w3.org/2001/XInclude">
+        <title>Special Integration Techniques: Trigonometric Substitutions (or the demise thereof)</title>
+
+        <p>There are four types of integrals that we can effectively compute using trigonometric substitutions. They are
+        <ul>
+            <li><m>\int x^n R^k\operatorname{d}\!{x}</m>,</li>
+            <li><m>\int \frac{x^n}{R^k}\operatorname{d}\!{x}</m>,</li>
+            <li><m>\int \frac{R^k}{x^n}\operatorname{d}\!{x}</m>, and </li>
+            <li><m>\int \frac1{x^n R^k}\operatorname{d}\!{x}</m>,</li>
+        </ul>
+        where <m>n\ge 0</m>, <m>k\gt 0</m> are integers, <m>k</m> is odd, and <m>R</m> has one of the following three forms
+        <ul>
+            <li><m>R = \sqrt{a^2-x^2}</m>; in this case the domain of integration is contained in <m>[-a,a]</m>,</li>
+            <li><m>R = \sqrt{a^2+x^2}</m>; in this case the domain of integration is contained in <m>\mathbb{R}</m>,</li>
+            <li><m>R = \sqrt{x^2-a^2}</m>; in this case the domain of integration is contained either in <m>(-\infty,-a]</m> or <m>[a,+\infty)</m>,</li>
+        </ul>
+        where <m>a\in\mathbb{R}</m> is some constant.
+        </p>
+
+        <p>Note that if <m>k</m> is even, we are in the situation of the last section, i.e., we have a rational function.</p>
+
+        <remark>
+            <title>Approach using trigonometric functions</title>
+            <p>For trigonometric substitutions, the form of the term <m>R</m> determines which substitution to use. If the integral involves<fn>Hyperbolic trigonometric functions can also be used, for <m>R = \sqrt{a^2+x^2}</m> substitute <m>x=a\sinh(t)</m> (note that <m>\frac{\operatorname{d}\!{x}}{\operatorname{d}\!{t}}=a\cos(t)</m>) and use the identity <m>1+\sinh^2(t)=\cosh^2(t)</m>.</fn>
+            <ul>
+                <li><m>R = \sqrt{a^2-x^2}</m> then substitute <m>x=a\sin(t)</m> (note that <m>\frac{\operatorname{d}\!{x}}{\operatorname{d}\!{t}}=a\cos(t)</m>) and use the identity <m>1-\sin^2(t)=\cos^2(t)</m>;</li>
+                <li><m>R = \sqrt{a^2+x^2}</m> then substitute <m>x=a\tan(t)=a\frac{\sin(t)}{\cos(t)}</m> (note that <m>\frac{\operatorname{d}\!{x}}{\operatorname{d}\!{t}}=a(1+\tan^2(t))=a/\cos^2(t)</m>) and use the<fn>Yes, we avoid mentioning the secant function here and do not write <m>1+\tan^2(t)=\sec^2(t)</m>. If calculus textbooks use the secant and cosecant function excessively, alarm bells should ring <mdash /> probably, there is cleaner alternative way!</fn> identity <m>1+\tan^2(t)=\frac1{\cos^2(t)}</m>;</li>
+                <li><m>R = \sqrt{x^2-a^2}</m> then substitute <m>x=a/\cos(t)</m> (note that <m>\frac{\operatorname{d}\!{x}}{\operatorname{d}\!{t}}=a\tan(t)/\cos(t)=a\sin(t)/\cos^2(t)</m>) and use the identity <m>\frac1{\cos^2(t)}-1=\tan^2(t)</m>.</li>
+            </ul>
+            The outcome in each case is a function in <m>\cos(t)</m> and <m>\sin(t)</m>, and we got rid of the square root expression. So, let us now explore how we can integrate functions in <m>\cos(t)</m> and <m>\sin(t)</m>.</p>
+        </remark>
+
+        <note>
+            <title>Integrating functions with sine and cosine</title>
+            <p>In order to evaluate an integral of the form <m>\int f(\cos(t),\sin(t))\operatorname{d}\!{t}</m>, where <m>f</m> is some function, one can use yet another substitution: If we put <m>u=\tan\left(\frac{t}2\right)</m>, elementary trigonometry yields the simple formulas
+                <me>\sin(t) = \frac{2u}{1+u^2}\qquad \cos(t) = \frac{1-u^2}{1+u^2},</me>
+            and by differentiation we obtain
+                <me>\frac{\operatorname{d}\!{u}}{\operatorname{d}\!{t}}=\frac1{2\cos^2(t/2)}=\frac{1+u^2}2.</me>
+            What is the result on the integrals we consider in this section? After the two substitutions we now arrived at an integral of the form <m>\int \frac{p(u)}{q(u)}\operatorname{d}\!{u}</m> where <m>p</m> and <m>q</m> are polynomials in <m>u</m>, i.e., the integrand is now a rational function in <m>u</m>. Using partial fractions, see the previous section (Section <xref ref="integration-using-partial-fractions" />), we can now evaluate this integral.</p>
+        </note>
+
+        <p>This two-stage process should leave you wondering if we really need the trigonometric substitutions. After all, their only purpose, in some sense, is only to get rid of the quare root term before another substitution brings us back to <xref ref="integration-using-partial-fractions" />.</p>
+
+        <p>In fact, the integrals of the four forms <m>\int x^n R^k\operatorname{d}\!{x}, \ldots, \int \frac1{x^n R^k}\operatorname{d}\!{x}</m> can be computed using one of two<fn>Recall that we needed a different trigonometric substitution for each of the three forms of <m>R</m>.</fn> substitutions; namely, we let 
+            <me>u^2 = R^2 \quad\text{for}\ n\ \text{odd}</me>
+        and
+            <me>u^2 = \frac{R^2}{x^2} \quad\text{for}\ n\ \text{even}.</me>
+        Notice that the form of <m>R</m> does not play a role here, only the power <m>n</m> of the polynomial term.</p>
+
+        <example xml:id="example-trig-substitution-demise-odd-1">
+            <title>Integrand with odd <m>n</m></title>
+
+            <p>Let us evaluate <m>\int\frac{x^3}{(9-x^2)^{5/2}}\operatorname{d}\!{x}</m>. This is an integral of the form  <m>\int \frac{x^n}{R^k}\operatorname{d}\!{x}</m> where <m>R=\sqrt{9-x^2}=\sqrt{3^2-x^2}</m>, <m>k=5</m> and <m>n=3</m>. Since <m>n</m> is odd, we choose the substitution <m>u^2=9-x^2</m> which by implicit differentiation yields <m>2u \frac{\operatorname{d}\!{u}}{\operatorname{d}\!{x}}=-2x</m> and thus <m>\operatorname{d}\!{x} = -\frac{u}{x}\operatorname{d}\!{u}</m>. We therefore obtain
+                <md>
+                    <mrow>\int\frac{x^3}{(9-x^2)^{5/2}}\operatorname{d}\!{x} &amp; = \int\frac{x^3}{u^{5}}\,\left(-\frac{u}{x}\right)\operatorname{d}\!{u}</mrow>
+                    <mrow> &amp; = -\int\frac{x^2}{u^{4}}\operatorname{d}\!{u}</mrow>
+                    <mrow> &amp; = -\int\frac{9-u^2}{u^{4}}\operatorname{d}\!{u}</mrow>
+                    <mrow> &amp; = -\int\left(\frac9{u^4}-\frac1{u^2}\right)\operatorname{d}\!{u}</mrow>
+                    <mrow> &amp; = -\left(-\frac13\cdot\frac9{u^3}+\frac1{u}\right)+C</mrow>
+                    <mrow> &amp; = \frac3{u^3}-\frac1{u}+C</mrow>
+                    <mrow> &amp; = \frac3{(\sqrt{9-x^2})^3}-\frac1{\sqrt{9-x^2}}+C.</mrow>
+                </md>
+            </p>
+        </example>
+
+        <example xml:id="example-trig-substitution-demise-even-1">
+            <title>Integrand with even <m>n</m></title>
+
+            <p>Let us evaluate <m>\int\frac{\sqrt{16+x^2}}{x^4}\operatorname{d}\!{x}</m>. This is an integral of the form  <m>\int \frac{R^k}{x^n}\operatorname{d}\!{x}</m> where <m>R=\sqrt{16+x^2}=\sqrt{4^2+x^2}</m>, <m>k=1</m> and <m>n=4</m>. Since <m>n</m> is even, we choose the substitution <m>u^2=\frac{16+x^2}{x^2}=\frac{16}{x^2}+1</m> which by implicit differentiation yields <m>2u \frac{\operatorname{d}\!{u}}{\operatorname{d}\!{x}}=-\frac{32}{x^3}</m> and thus <m>\operatorname{d}\!{x} = -\frac{x^3u}{16}\operatorname{d}\!{u}</m>. Noting that <m>x^2 u^2=R^2=16+x^2</m>, and thus <m>\sqrt{16+x^2}=x\,u</m>, we obtain
+                <md>
+                    <mrow>\int\frac{\sqrt{16+x^2}}{x^4}\operatorname{d}\!{x} &amp; = \int\frac{x\,u}{x^{4}}\,\left(-\frac{x^3 u}{16}\right)\operatorname{d}\!{u}</mrow>
+                    <mrow> &amp; = -\frac1{16}\int {u^{2}} \operatorname{d}\!{u}</mrow>>
+                    <mrow> &amp; = -\frac1{48} u^3+C</mrow>
+                    <mrow> &amp; = -\frac1{48} \frac{(\sqrt{16+x^2})^3}{x^3}+C.</mrow>
+                </md>
+            </p>
+        </example>
+
+
+        <p>Notice that the resulting integrands in <m>u</m> are, as expected, again rational functions. As a consequence, compare the previous <xref ref="integration-using-partial-fractions" />, the resulting integrals in <m>u</m> involve only linear combinations of integral power functions, the functions <m>\ln|1+u|</m>, <m>\ln|1-u|</m>, and the inverse tangent function <m>\arctan(u)</m>. In particular, we do not need the inverse sine or the inverse secant functions<fn>In fact, one has <m>\arcsin(x)=\arctan\left(\frac{x}{\sqrt{1-x^2}}\right)</m> (where <m>|x|\le 1</m>) and <m>\operatorname{arcsec}(x)=\arccos\left(\frac1{x}\right) = \frac{\pi}2-\arctan\left(\frac{\operatorname{sgn}(x)}{\sqrt{x^2-1}}\right)</m> (where <m>|x|\gt 1</m> and <m>\operatorname{sgn}(x)</m> denotes the sign of <m>x</m>). One may obtain these identities, e.g., by noting that <m>\frac{\operatorname{d}}{\operatorname{d}\!{x}}{\arcsin(x)}=\frac1{\sqrt{1-x^2}}</m>, which is obtained by the <em>inverse function theorem</em>, and calculating the anti-derivative of <m>\frac1{\sqrt{1-x^2}}</m> alternatively using the substitution discussed in this section. 
+        There are similar formulas for <m>\arccos</m> and <m>\operatorname{arccosec}</m> as well as further formulas like <m>\arcsin(x) = 2\arctan\left(\frac{x}{1+\sqrt{1-x^2}}\right)</m> and <m>\arccos(x)=2\arctan\left(\frac{\sqrt{1-x}}{\sqrt{1+x}}\right)</m>. Note that the inverse tangent is therefore the only inverse trigonometric function really needed (well, one also only needs one trigonometric function to calculate the values of any other one, so this is should not come as a surprise), and the inverse tangent function appears here through the partial fraction expansion, see Section <xref ref="integration-using-partial-fractions" />.</fn> to compute integrals of the types considered in this section.</p>
+
+        <exercise>
+            <p>Find the following integrals:
+            <ol marker="a.)">
+                <li><m>\int\frac{\sqrt{x^2-25}}{x}\operatorname{d}\!{x}</m> where <m>x\gt 5</m>;</li>
+                <li><m>\int x^2{\sqrt{1+x^2}}\operatorname{d}\!{x}</m></li>
+                <li><m>\int\frac{x^2}{\sqrt{16x^2-25}}\operatorname{d}\!{x}</m> where <m>x\gt \frac54</m>;</li>
+                <li><m>\int {(\sqrt{4x^2-5})^3}\operatorname{d}\!{x}</m> where <m>x\gt \sqrt{5}/2</m>.</li>
+            </ol></p>
+        </exercise>
+
+
+    </section>
+
+    <section xml:id="integration-exercises">
+        <title>Exercises</title>
+
+        <exercise xml:id="exercises-integration-rules-derivative-2">
+            <p>Show that <m>\frac{\operatorname{d}}{\operatorname{d}\!{x}} \cot(x)=-\frac1{\sin^2(x)}</m>, and use this result to evaluate the integral <m>\int\limits_{\pi/6}^{\pi/2} \left(x+\frac2{\sin^2(x)}\right)\operatorname{d}\!{x}</m>.</p>
+        </exercise>
+
+        <exercise xml:id="exercises-integration-rules-derivative-1">
+            <p>Sketch the curve <m>y=\sqrt{x(2-x)}</m> between <m>x=0</m> and <m>x=2</m>.
+            Show that
+                <me>\frac{\operatorname{d}}{\operatorname{d}\!{x}}\left((x-1)\sqrt{x(2-x)}+\arcsin(x-1)\right)=2\sqrt{x(2-x)}.</me>
+            Hence find the area under the curve by integration.
+            </p>
+        </exercise>
+
+        <exercise xml:id="exercises-integration-rules-absolute-value-1">
+            <p>Evaluate the following integral: <m>\int\limits_0^{3\pi}|{\sin x}|\operatorname{d}\!{x}</m>.</p>
+        </exercise>
+
+        <exercise xml:id="exercises-integration-rules-fourier">
+            <p>Show that, if <m>m</m> and <m>n</m> are distinct non-negative integers, then
+            <m>\int\limits_0^{2\pi} \cos(mx)\,\cos(nx)\,\operatorname{d}\!{x} = 0</m>.</p>
+        </exercise>
+
+
+        <p>WeBWorK exercises:</p>
+
+        <exercise>
+            <webwork source="Library/Michigan/Chap6Sec2/Q31.pg" />
+        </exercise>
+
+        <exercise>
+            <webwork source="Library/Michigan/Chap6Sec2/Q17.pg" />
+        </exercise>
+        
+        <exercise>
+            <webwork source="Library/Rochester/setDerivatives20Antideriv/s3_10_8func_mo.pg" />
+        </exercise>
+        
+        <exercise>
+            <webwork source="Library/NAU/setCalcI/antiExp.pg" />
+        </exercise>
+        
+        <exercise>
+            <webwork source="Library/OSU/accelerated_calculus_and_analytic_geometry_i/hmwk5/prob6.pg" />
+        </exercise>
+        
+        <exercise>
+            <webwork source="Library/Utah/Quantitative_Analysis/set8_Indefinite_Integrals/pr_4.pg" />
+        </exercise>
+        
+        <exercise>
+            <webwork source="UWI/Library/Utah/Quantitative_Analysis/set11_Indefinite_Integrals/s1p3.pg" />
+        </exercise>
+        
+        <exercise>
+            <webwork source="Library/ma122DB/set12/s5_4_25.pg" />
+        </exercise>
+        
+        <exercise>
+            <webwork source="UWI/Library/Utah/Quantitative_Analysis/set11_Indefinite_Integrals/s1p6.pg" />
+        </exercise>
+        
+        <exercise>
+            <webwork source="Library/OSU/accelerated_calculus_and_analytic_geometry_i/hmwk5/prob2.pg" />
+        </exercise>
+        
+        <exercise>
+            <webwork source="Library/ma122DB/set12/s5_4_14.pg" />
+        </exercise>
+        
+        <exercise>
+            <webwork source="Library/UCSB/Stewart5_5_4/Stewart5_5_4_13.pg" />
+        </exercise>
+        
+        <exercise>
+            <webwork source="Library/UCSB/Stewart5_5_4/Stewart5_5_4_14.pg" />
+        </exercise>
+        
+        <exercise>
+            <webwork source="Library/UCSB/Stewart5_5_4/Stewart5_5_4_37.pg" />
+        </exercise>
+        
+        <exercise>
+            <webwork source="UWI/Library/UVA-Stew5e/setUVA-Stew5e-C05S04-IndefInts/5-4-22.pg" />
+        </exercise>
+        
+        <exercise>
+            <webwork source="Library/Union/setIntBasic/an7_2_13.pg" />
+        </exercise>
+        
+        <exercise>
+            <webwork source="Library/OSU/accelerated_calculus_and_analytic_geometry_i/hmwk6/prob6.pg" />
+        </exercise>
+        
+        <exercise>
+            <webwork source="Library/ma122DB/set12/s5_5_28.pg" />
+        </exercise>
+        
+        <exercise>
+            <webwork source="Library/ma122DB/set12/s5_5_31.pg" />
+        </exercise>
+        
+        <exercise>
+            <webwork source="Library/UCSB/Stewart5_5_4/Stewart5_5_4_10.pg" />
+        </exercise>
+        
+        <exercise>
+            <webwork source="Library/ma122DB/set12/s5_5_55.pg" />
+        </exercise>
+        
+        <exercise>
+            <webwork source="Library/OSU/accelerated_calculus_and_analytic_geometry_i/hmwk5/prob4.pg" />
+        </exercise>
+
+        <exercise>
+            <webwork source="Library/UCSB/Stewart5_5_4/Stewart5_5_4_1.pg" />
+        </exercise>
+                
+        <exercise>
+            <webwork source="Library/UCSB/Stewart5_5_4/Stewart5_5_4_4.pg" />
+        </exercise>
+                
+        <exercise>
+            <webwork source="Library/OSU/accelerated_calculus_and_analytic_geometry_i/hmwk5/prob1.pg" />
+        </exercise>
+
+        <exercise>
+            <webwork source="Library/UCSB/Stewart5_5_4/Stewart5_5_4_39.pg" />
+        </exercise>
+                
+        <exercise>
+            <webwork source="Library/UCSB/Stewart5_5_4/Stewart5_5_4_40.pg" />
+        </exercise>
+                
+        <exercise>
+            <webwork source="UWI/Library/Utah/AP_Calculus_I/set6_The_Integral/q4.pg" />
+        </exercise>
+
+        <exercise>
+            <webwork source="Library/Rochester/setIntegrals12Methods/mec_int2.pg" />
+        </exercise>
+
+        <exercise>
+            <webwork source="Library/NAU/setCalcI/simple_int.pg" />
+        </exercise>
+
+        <exercise>
+            <webwork source="UWI/Library/Utah/Calculus_II/set15_Practice/sc5_5_29a.pg" />
+        </exercise>
+
+        <exercise>
+                <webwork source="Library/ma122DB/set12/s5_5_70.pg" />
+        </exercise>
+
+
+    </section>
+
+    
+    
+    
+</appendix>
