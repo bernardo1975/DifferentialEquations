@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr">
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Integration Rules</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="MATH2305 — Differential Equations">
+<meta property="book:author" content="Bernd Sing">
+<script src="https://sagecell.sagemath.org/static/embedded_sagecell.js"></script><script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math",
+    "renderActions": {
+      "findScript": [
+        10,
+        function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        },
+        ""
+      ]
+    }
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script src="_static/pretext/js/pretext-webwork/2.18/pretext-webwork.js"></script><script src="https://webwork.cavehill.uwi.edu/webwork2_files/node_modules/iframe-resizer/js/iframeResizer.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><link href="_static/pretext/css/pretext_search.css" rel="stylesheet" type="text/css">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script><link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz,wdth,wght@8..144,50..150,100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<link href="_static/pretext/css/pretext.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/pretext_add_on.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/shell_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/banner_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/navbar_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/toc_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/knowls_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/style_default.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/colors_blue_red.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/setcolors.css" rel="stylesheet" type="text/css">
+<style>
+#sec-firstlook-exercises-5-1-1-2 { counter-set: sec-firstlook-exercises-5-1-1-2 0; }
+#sec-firstlook-exercises-5-1-1-2 > li::marker { content: ""counter(sec-firstlook-exercises-5-1-1-2,lower-alpha)".)"; }
+#sec-firstlook-exercises-5-1-1-2 > li { counter-increment: sec-firstlook-exercises-5-1-1-2; }
+#sec-firstlook-exercises-7-1-1-1 { counter-set: sec-firstlook-exercises-7-1-1-1 0; }
+#sec-firstlook-exercises-7-1-1-1 > li::marker { content: ""counter(sec-firstlook-exercises-7-1-1-1,lower-alpha)".)"; }
+#sec-firstlook-exercises-7-1-1-1 > li { counter-increment: sec-firstlook-exercises-7-1-1-1; }
+#sec-firstlook-exercises-9-2-1-1 { counter-set: sec-firstlook-exercises-9-2-1-1 0; }
+#sec-firstlook-exercises-9-2-1-1 > li::marker { content: ""counter(sec-firstlook-exercises-9-2-1-1,lower-alpha)".)"; }
+#sec-firstlook-exercises-9-2-1-1 > li { counter-increment: sec-firstlook-exercises-9-2-1-1; }
+#sec-firstlook-exercises-10-1-1-2 { counter-set: sec-firstlook-exercises-10-1-1-2 0; }
+#sec-firstlook-exercises-10-1-1-2 > li::marker { content: ""counter(sec-firstlook-exercises-10-1-1-2,lower-alpha)".)"; }
+#sec-firstlook-exercises-10-1-1-2 > li { counter-increment: sec-firstlook-exercises-10-1-1-2; }
+#exercises-integration-rules-parts-1-1-1 { counter-set: exercises-integration-rules-parts-1-1-1 0; }
+#exercises-integration-rules-parts-1-1-1 > li::marker { content: ""counter(exercises-integration-rules-parts-1-1-1,lower-alpha)".)"; }
+#exercises-integration-rules-parts-1-1-1 > li { counter-increment: exercises-integration-rules-parts-1-1-1; }
+#exercises-integration-rules-substitution-1-1-1 { counter-set: exercises-integration-rules-substitution-1-1-1 0; }
+#exercises-integration-rules-substitution-1-1-1 > li::marker { content: ""counter(exercises-integration-rules-substitution-1-1-1,lower-alpha)".)"; }
+#exercises-integration-rules-substitution-1-1-1 > li { counter-increment: exercises-integration-rules-substitution-1-1-1; }
+#exercises-integration-rules-substitution-2-1-1 { counter-set: exercises-integration-rules-substitution-2-1-1 0; }
+#exercises-integration-rules-substitution-2-1-1 > li::marker { content: ""counter(exercises-integration-rules-substitution-2-1-1,lower-alpha)".)"; }
+#exercises-integration-rules-substitution-2-1-1 > li { counter-increment: exercises-integration-rules-substitution-2-1-1; }
+#exercises-integration-rules-substitution-3-1-1 { counter-set: exercises-integration-rules-substitution-3-1-1 0; }
+#exercises-integration-rules-substitution-3-1-1 > li::marker { content: ""counter(exercises-integration-rules-substitution-3-1-1,lower-alpha)".)"; }
+#exercises-integration-rules-substitution-3-1-1 > li { counter-increment: exercises-integration-rules-substitution-3-1-1; }
+#exercise-integration-partial-fractions-1-1-1 { counter-set: exercise-integration-partial-fractions-1-1-1 0; }
+#exercise-integration-partial-fractions-1-1-1 > li::marker { content: ""counter(exercise-integration-partial-fractions-1-1-1,lower-alpha)".)"; }
+#exercise-integration-partial-fractions-1-1-1 > li { counter-increment: exercise-integration-partial-fractions-1-1-1; }
+#exercise-integration-partial-fractions-2-1-1 { counter-set: exercise-integration-partial-fractions-2-1-1 0; }
+#exercise-integration-partial-fractions-2-1-1 > li::marker { content: ""counter(exercise-integration-partial-fractions-2-1-1,lower-alpha)".)"; }
+#exercise-integration-partial-fractions-2-1-1 > li { counter-increment: exercise-integration-partial-fractions-2-1-1; }
+#exercise-integration-partial-fractions-reduction-1-1 { counter-set: exercise-integration-partial-fractions-reduction-1-1 0; }
+#exercise-integration-partial-fractions-reduction-1-1 > li::marker { content: ""counter(exercise-integration-partial-fractions-reduction-1-1,lower-alpha)".)"; }
+#exercise-integration-partial-fractions-reduction-1-1 > li { counter-increment: exercise-integration-partial-fractions-reduction-1-1; }
+#exercise-integration-partial-fractions-3-1 { counter-set: exercise-integration-partial-fractions-3-1 0; }
+#exercise-integration-partial-fractions-3-1 > li::marker { content: ""counter(exercise-integration-partial-fractions-3-1,lower-alpha)".)"; }
+#exercise-integration-partial-fractions-3-1 > li { counter-increment: exercise-integration-partial-fractions-3-1; }
+#integration-using-trig-substitution-11-1-1 { counter-set: integration-using-trig-substitution-11-1-1 0; }
+#integration-using-trig-substitution-11-1-1 > li::marker { content: ""counter(integration-using-trig-substitution-11-1-1,lower-alpha)".)"; }
+#integration-using-trig-substitution-11-1-1 > li { counter-increment: integration-using-trig-substitution-11-1-1; }
+</style>
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner">
+<a id="logo-link" class="logo-link" target="_blank" href=""></a><div class="title-container">
+<h1 class="heading"><a href="de-lecture-notes.html"><span class="title">MATH2305 — Differential Equations:</span> <span class="subtitle">Lecture Notes</span></a></h1>
+<p class="byline">Bernd Sing</p>
+</div>
+</div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><a class="index-button button" href="backmatter-4.html" title="Index"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe88e;</span><span class="name">Index</span></a><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="appendix-integration.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="appendix-integration.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="improper-integrals.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\NN}{\mathbb N} 
+\newcommand{\ZZ}{\mathbb Z} 
+\newcommand{\QQ}{\mathbb Q} 
+\newcommand{\RR}{\mathbb R} 
+\newcommand{\CC}{\mathbb C}
+\newcommand{\trace}{\operatorname{tr}}
+\newcommand{\real}{\operatorname{Re}}
+\newcommand{\imaginary}{\operatorname{Im}}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-2.html" class="internal"><span class="title">Preface</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-1-firstlook.html" class="internal"><span class="codenumber">1</span> <span class="title">A First Look at Differential Equations: Modeling with Differential Equations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-firstlook-exponential-growth.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Exponential Growth</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-firstlook-logistic-growth.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Logistic Growth</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-firstlook-spring-mass.html" class="internal"><span class="codenumber">1.3</span> <span class="title">A Spring-Mass Model</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-firstlook-predator-prey.html" class="internal"><span class="codenumber">1.4</span> <span class="title">A Predator-Prey System</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-firstlook-SIR.html" class="internal"><span class="codenumber">1.5</span> <span class="title">Childhood Diseases: The SIR-model</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-firstlook-covid19.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Modeling COVID-19</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-firstlook-modeling-HIV.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Modeling the HIV-1 Virus</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-firstlook-sage.html" class="internal"><span class="codenumber">1.8</span> <span class="title">SageMath — Open Source Software</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-firstlook-questions-for-thought.html" class="internal"><span class="codenumber">1.9</span> <span class="title">Some Questions for Thought</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-firstlook-important-lessons.html" class="internal"><span class="codenumber">1.10</span> <span class="title">Important Lessons</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-firstlook-exercises.html" class="internal"><span class="codenumber">1.11</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter"><div class="toc-title-box"><a href="ch-chapter-title.html" class="internal"><span class="codenumber">2</span> <span class="title">Chapter Title</span></a></div></li>
+<li class="toc-item toc-backmatter contains-active">
+<div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-appendix contains-active">
+<div class="toc-title-box"><a href="appendix-integration.html" class="internal"><span class="codenumber">A</span> <span class="title">Methods of Integration</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="integration-rules.html" class="internal"><span class="codenumber">A.1</span> <span class="title">Integration Rules</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="improper-integrals.html" class="internal"><span class="codenumber">A.2</span> <span class="title">Improper Integrals</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="integration-using-partial-fractions.html" class="internal"><span class="codenumber">A.3</span> <span class="title">Special Integration Techniques: Partial Fractions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="integration-using-trig-substitution.html" class="internal"><span class="codenumber">A.4</span> <span class="title">Special Integration Techniques: Trigonometric Substitutions (or the demise thereof)</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="integration-exercises.html" class="internal"><span class="codenumber">A.5</span> <span class="title">Exercises</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-index"><div class="toc-title-box"><a href="backmatter-4.html" class="internal"><span class="title">Index</span></a></div></li>
+<li class="toc-item toc-references"><div class="toc-title-box"><a href="backmatter-5.html" class="internal"><span class="title">Readings and References</span></a></div></li>
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="backmatter-6.html" class="internal"><span class="title">Colophon</span></a></div></li>
+</ul>
+</li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="integration-rules"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">A.1</span><span class="space"> </span><span class="title">Integration Rules</span>
+</h2>
+<div class="para" id="integration-rules-2">Because of the fundamental theorem of calculus, every differentiation rule yields a corresponding integration rule. For example, the product rule for derivatives, yields the following:</div>
+<article class="theorem theorem-like" id="theorem-integration-by-parts"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">A.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Integration by Parts.</span>
+</h3>
+<div class="para logical" id="theorem-integration-by-parts-2-1">
+<div class="para">If <span class="process-math">\(u, v:[a,b]\to\mathbb{R}\)</span> are continuously differentiable functions, then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_a^b u(x)\,v'(x)\operatorname{d}\!{x} = \left. u(x)\,v(x)\right|_a^b - \int_a^b u'(x)\,v(x)\operatorname{d}\!{x}.
+\end{equation*}
+</div>
+</div></article><div class="para logical" id="integration-rules-4">
+<div class="para">Integration by parts is typically used for integrals</div>
+<ul class="disc" id="integration-rules-4-1">
+<li id="integration-rules-4-1-1"><div class="para" id="p-derived-integration-rules-4-1-1">of the form <span class="process-math">\(\int_a^b p(x)\, e^x\operatorname{d}\!{x}\)</span> where <span class="process-math">\(p\)</span> is a polynomial,</div></li>
+<li id="integration-rules-4-1-2"><div class="para" id="p-derived-integration-rules-4-1-2">of the form <span class="process-math">\(\int_a^b p(x)\, \ln(x)\operatorname{d}\!{x}\)</span> where <span class="process-math">\(p\)</span> is a polynomial,</div></li>
+<li id="integration-rules-4-1-3"><div class="para" id="p-derived-integration-rules-4-1-3">with trigonometric functions, e.g., <span class="process-math">\(\int_a^b e^{c\,x}\sin(x)\operatorname{d}\!{x}\text{.}\)</span>
+</div></li>
+</ul>
+</div>
+<details id="example-integration-by-parts-1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">A.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Integration by parts: Polynomial and exponential function.</span>
+</h3></summary><article class="example example-like knowl__content"> <div class="para logical" id="example-integration-by-parts-1-2">
+<div class="para">To evaluate <span class="process-math">\(\int_a^b x^2\,e^x\operatorname{d}\!{x}\text{,}\)</span> we use integration by parts twice (each time with <span class="process-math">\(v'(x)=e^x=v(x)\)</span> in the above formula) to obtain</div>
+<div class="displaymath process-math" id="example-integration-by-parts-1-2-3">
+\begin{align*}
+\int_a^b x^2\,e^x\operatorname{d}\!{x} &amp; = \left.x^2\,e^x\right|_a^b-\int_a^b 2x\,e^x\operatorname{d}\!{x} \\
+&amp; =  \left.x^2\,e^x\right|_a^b -\left( \left.2x\,e^x\right|_a^b-\int_a^b2\,e^x\operatorname{d}\!{x}\right)\\
+&amp; =  \left.\left(x^2-2x+2\right)\,e^x\right|_a^b \\
+&amp; = \left(b^2-2b+2\right)\,e^b-\left(a^2-2a+2\right)\,e^a.
+\end{align*}
+</div>
+</div></article></details><details id="example-integration-by-parts-2" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">A.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">Integration by parts: Trigonometric functions.</span>
+</h3></summary><article class="example example-like knowl__content"> <div class="para logical" id="example-integration-by-parts-2-2">
+<div class="para">To evaluate  <span class="process-math">\(\int_a^b \cos^2(x)\operatorname{d}\!{x}\)</span> we use <span class="process-math">\(u(x)=\cos(x)=v'(x)\)</span> and <span class="process-math">\(\sin^2(x)=1-\cos^2(x)\)</span> to obtain</div>
+<div class="displaymath process-math" id="example-integration-by-parts-2-2-4">
+\begin{align*}
+\int_a^b  \cos^2(x)\operatorname{d}\!{x} &amp; = \left.\cos(x)\,\sin(x)\right|_a^b-\int_a^b (-\sin(x))\,\sin(x)\operatorname{d}\!{x} \\
+&amp; = \left.\cos(x)\,\sin(x)\right|_a^b+\int_a^b\sin^2(x)\operatorname{d}\!{x} \\
+&amp; = \left.\cos(x)\,\sin(x)\right|_a^b+\int_a^b1-\cos^2(x)\operatorname{d}\!{x} \\
+&amp; = \left.\cos(x)\,\sin(x)\right|_a^b+\int_a^b1\operatorname{d}\!{x}-\int_a^b\cos^2(x)\operatorname{d}\!{x},
+\end{align*}
+</div>
+<div class="para">and thus</div>
+<div class="displaymath process-math">
+\begin{equation*}
+2\int_a^b  \cos^2(x)\operatorname{d}\!{x}  =  \left.\left(\cos(x)\,\sin(x)+x\right)\right|_a^b, 
+\end{equation*}
+</div>
+<div class="para">i.e.,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_a^b  \cos^2(x)\operatorname{d}\!{x}  =   \frac12(b-a)+\frac12\cos(b)\,\sin(b)-\frac12\cos(a)\,\sin(a). 
+\end{equation*}
+</div>
+</div></article></details><div class="para" id="integration-rules-7">The chain rule for derivatives yields the following:</div>
+<article class="theorem theorem-like" id="theorem-integration-by-substitution"><h3 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">A.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Integration by Substitution.</span>
+</h3>
+<div class="para logical" id="theorem-integration-by-substitution-2-1">
+<div class="para">If <span class="process-math">\(u:[c,d]\to[a,b]\)</span>  is a continuously differentiable function and <span class="process-math">\(f:[a,b]\to\mathbb{R}\)</span> is a continuous function, then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_{u(c)}^{u(d)} f(x)\operatorname{d}\!{x}= \int_c^d f(u(t))\,u'(t)\operatorname{d}\!{t}.
+\end{equation*}
+</div>
+</div></article><div class="para" id="integration-rules-9">Note that there are two possibilities how to read this last formula: Either from left to right, or from right to left.  We look at both these possibilities here.</div>
+<div class="para" id="integration-rules-10">Reading the above formula from right to left, our task is the following: In order to evaluate <span class="process-math">\(\int_a^b g(x)\operatorname{d}\!{x}\text{,}\)</span> we try to write the integrand in the from <span class="process-math">\(g(x)=f(u(x))\,u'(x)\)</span> with an appropriate function <span class="process-math">\(u\text{.}\)</span> Often it is straight forward, at least with some practice and experience, to recognize this function <span class="process-math">\(u\text{.}\)</span>
+</div>
+<details id="example-integration-by-substitution-1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">A.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">Integration by substitution: Integrand is a product.</span>
+</h3></summary><article class="example example-like knowl__content"> <div class="para" id="example-integration-by-substitution-1-2">
+<span class="process-math">\(\int_a^b x\,e^{-x^2/2}\operatorname{d}\!{x} = \int_{-\frac12a^2}^{-\frac12b^2} -e^u\operatorname{d}\!{u} = \left. -e^u\right|_{-\frac12a^2}^{-\frac12b^2} = -e^{-b^2/2}+e^{-a^2/2}\)</span> where we use <span class="process-math">\(u(x)=-\frac{x^2}2\)</span> and thus <span class="process-math">\(u'(x)=-x\text{,}\)</span> <span class="process-math">\(u(a)=-\frac12a^2\)</span> and <span class="process-math">\(u(b)=-\frac12b^2\text{.}\)</span>
+</div></article></details><details id="example-integration-by-substitution-2" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">A.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">Integration by substitution: Integrand is a function of sine and cosine.</span>
+</h3></summary><article class="example example-like knowl__content"> <div class="para logical" id="example-integration-by-substitution-2-2">
+<div class="displaymath process-math" id="example-integration-by-substitution-2-2-1">
+\begin{gather*}
+\int_a^b\tan(x)\operatorname{d}\!{x} = \int_a^b\frac{\sin(x)}{\cos(x)}\operatorname{d}\!{x} = \int_{\cos(a)}^{\cos(b)} -\frac1{u}\operatorname{d}\!{u} \\
+= \left.-\ln|{u}|\right|_{\cos(a)}^{\cos(b)}= -\ln|{\cos(b)}|+\ln|{\cos(a)}| = \ln\left|{\frac{\cos(a)}{\cos(b)}}\right|
+\end{gather*}
+</div>
+<div class="para">where we use <span class="process-math">\(u(x)=\cos(x)\)</span> and thus <span class="process-math">\(u'(x)=-\sin(x)\)</span> (i.e., <span class="process-math">\(\tan(x)=-\frac{\cos'(x)}{\cos(x)}\)</span>), <span class="process-math">\(u(a)=\cos(a)\)</span> and <span class="process-math">\(u(b)=\cos(b)\text{.}\)</span>
+</div>
+</div> <div class="para" id="example-integration-by-substitution-2-3">We note that we also assumed that the cosine does not become zero in the interval <span class="process-math">\([a,b]\text{;}\)</span> in particular, <span class="process-math">\(\cos(a)\)</span> and <span class="process-math">\(\cos(b)\)</span> must both be either positive or negative for the above formula to hold.</div> <div class="para" id="example-integration-by-substitution-2-4">Integrals of the form <span class="process-math">\(\int_a^b \sin(x)\,f(\cos(x))\operatorname{d}\!{x}\)</span> and  <span class="process-math">\(\int_a^b \cos(x)\,g(\sin(x))\operatorname{d}\!{x}\)</span> (for some functions <span class="process-math">\(f,g\)</span>) are evaluated similarly.</div></article></details><div class="para logical" id="integration-rules-13">
+<div class="para">An important special case here is:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_a^b\frac{u'(x)}{u(x)} \operatorname{d}\!{x} = \ldots = \ln\left|{\frac{u(b)}{u(a)}}\right|
+\end{equation*}
+</div>
+<div class="para">as long as the continuously differentiable function <span class="process-math">\(u\)</span> does not become zero in the interval <span class="process-math">\([a,b]\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="integration-rules-14">
+<div class="para">Reading the integration by substitution formula from left to right, our task is the following: In order to evaluate <span class="process-math">\(\int_a^b f(x)\operatorname{d}\!{x}\text{,}\)</span> we substitute <span class="process-math">\(u(t)\)</span> for <span class="process-math">\(x\)</span> where <span class="process-math">\(u:[c,d]\to [a,b]\)</span> is a bijective (and therefore invertible), continuously differentiable function, to obtain</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_a^bf(x)\operatorname{d}\!{x} = \int_{u^{-1}(a)}^{u^{-1}(b)} f(u(t))\,u'(t)\operatorname{d}\!{t}.
+\end{equation*}
+</div>
+<div class="para">Note that it might happen that for the inverse function <span class="process-math">\(u^{-1}\)</span> we have <span class="process-math">\(u^{-1}(a)&gt;u^{-1}(b)\text{.}\)</span> Finding an appropriate substitution <span class="process-math">\(u\)</span> here is often an art and requires lots of experience. In fact, one might consider it as one of the (most obvious) manifestitions showing that integration is much harder than differentiation.</div>
+</div>
+<details id="example-integration-by-substitution-3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">A.1.7</span><span class="period">.</span><span class="space"> </span><span class="title">Integration by substitution: Integrand with square roots.</span>
+</h3></summary><article class="example example-like knowl__content"> <div class="para logical" id="example-integration-by-substitution-3-2">
+<div class="para">In order to evaluate <span class="process-math">\(\int_a^b \frac1{\sqrt{x}}\ln(\sqrt{x})\operatorname{d}\!{x}\)</span> with <span class="process-math">\(0 \lt a \lt b\text{,}\)</span> we use <span class="process-math">\(x=u(t)=t^2\)</span> (note that this function is bijective on the domain <span class="process-math">\([0,+\infty)\)</span>). Then, <span class="process-math">\(\frac{\operatorname{d}\!{x}}{\operatorname{d}\!{t}}=u'(t)=2t\)</span> and <span class="process-math">\(u^{-1}(t)=\sqrt{t}\)</span> and thus</div>
+<div class="displaymath process-math" id="example-integration-by-substitution-3-2-7">
+\begin{align*}
+\int_a^b \frac1{\sqrt{x}}\ln(\sqrt{x})\operatorname{d}\!{x} &amp; =  \int_{\sqrt{a}}^{\sqrt{b}} \frac1{t} \ln(t)\,2\,t\operatorname{d}\!{t} \\
+&amp; = \int_{\sqrt{a}}^{\sqrt{b}} 2 \ln(t)\operatorname{d}\!{t} \ = \ 2 \int_{\sqrt{a}}^{\sqrt{b}} \ln(t)\operatorname{d}\!{t} \\
+&amp; = \left.2\left(x\ln(x)-x\right)\right|_{\sqrt{a}}^{\sqrt{b}}
+\end{align*}
+</div>
+<div class="para">where we obtain <span class="process-math">\(\int_{\sqrt{a}}^{\sqrt{b}} \ln(t)\operatorname{d}\!{t}\)</span> using integration by parts:</div>
+<div class="displaymath process-math" id="example-integration-by-substitution-3-2-9">
+\begin{align*}
+\int_{\sqrt{a}}^{\sqrt{b}} \ln(t)\operatorname{d}\!{t} &amp; =  \int_{\sqrt{a}}^{\sqrt{b}} 1\cdot \ln(t)\operatorname{d}\!{t} \\
+&amp; = \left.x\,\ln(x)\right|_{\sqrt{a}}^{\sqrt{b}} -  \int_{\sqrt{a}}^{\sqrt{b}}\frac{t}{t} \operatorname{d}\!{t}\ = \ \left.x\,\ln(x)\right|_{\sqrt{a}}^{\sqrt{b}} -  \int_{\sqrt{a}}^{\sqrt{b}}1\operatorname{d}\!{t} \\
+&amp; = \left.\left(x\,\ln(x)-x\right)\right|_{\sqrt{a}}^{\sqrt{b}}. 
+\end{align*}
+</div>
+<div class="para">Obviously, the integral <span class="process-math">\(\int_a^b \frac1{\sqrt{x}}\ln(\sqrt{x})\operatorname{d}\!{x}\)</span> can also (and usually, will) be solved by applying integration by substitution from right to left, in which case we take <span class="process-math">\(u(t)=\sqrt{t}\)</span> and <span class="process-math">\(u'(t)=\frac1{2\sqrt{t}}\text{.}\)</span> However, our goal here was to go the other way.</div>
+</div></article></details><details id="example-integration-by-substitution-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">A.1.8</span><span class="period">.</span><span class="space"> </span><span class="title">Integration by substitution: Art at play.</span>
+</h3></summary><article class="example example-like knowl__content"> <div class="para logical" id="example-integration-by-substitution-4-2">
+<div class="para">In order to evaluate <span class="process-math">\(\int_a^b \frac1{\sqrt{1+x^2}}\operatorname{d}\!{x}\)</span> with <span class="process-math">\(0 \lt a \lt b\text{,}\)</span> we use <span class="process-math">\(x=u(t) = \frac{t^2-1}{2t}\text{;}\)</span> this function <span class="process-math">\(u: (0,+\infty)\to\mathbb{R}\)</span> is strictly increasing and surjective, and therefore invertible. Its inverse function is <span class="process-math">\(u^{-1}(x)=x+\sqrt{1+x^2}\)</span> (which is positive for all real <span class="process-math">\(x\)</span>). Noting that <span class="process-math">\(\sqrt{1+x^2}=\frac{t^2+1}{2t}\text{,}\)</span> we obtain</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{\operatorname{d}\!{x}}{\operatorname{d}\!{t}}=\frac{t^2+1}{2\,t^2}=\frac{\sqrt{1+x^2}}{t},
+\end{equation*}
+</div>
+<div class="para">i.e., <span class="process-math">\(\frac{\operatorname{d}\!{t}}{t}=\frac{\operatorname{d}\!{x}}{\sqrt{1+x^2}}\text{.}\)</span> Thus, we get</div>
+<div class="displaymath process-math" id="example-integration-by-substitution-4-2-10">
+\begin{align*}
+\int_a^b \frac1{\sqrt{1+x^2}}\operatorname{d}\!{x} &amp; =  \int_{a+\sqrt{1+a^2}}^{b+\sqrt{1+b^2}} \frac{1}{t}\operatorname{d}\!{t} \\
+&amp; = \left.\ln|{t}|\right|_{a+\sqrt{1+a^2}}^{b+\sqrt{1+b^2}} = \ln\left(\frac{b+\sqrt{1+b^2}}{a+\sqrt{1+a^2}}\right).
+\end{align*}
+</div>
+<div class="para">As a side note, the derivative of the inverse hyperbolic sine <span class="process-math">\(\operatorname{arsinh}(x)\)</span> is <span class="process-math">\(\operatorname{arsinh}'(x)=\frac1{\sqrt{1+x^2}}\text{;}\)</span> thus, we have actually obtained an explicit formula for the inverse hyperbolic sine here, namely, <span class="process-math">\(\operatorname{arsinh}(x)=\ln(x+\sqrt{1+x^2})\text{,}\)</span> and we can also write <span class="process-math">\(\int_a^b \frac1{\sqrt{1+x^2}}\operatorname{d}\!{x} = \operatorname{arsinh}(b) - \operatorname{arsinh}(a)\text{.}\)</span>
+</div>
+</div> <div class="para" id="example-integration-by-substitution-4-3">(Oh, and it is <span class="process-math">\(\operatorname{arsinh}(x)\text{,}\)</span> not <span class="process-math">\(\operatorname{arcsinh}(x)\text{!}\)</span> For hyperbolic trigonometric functions, it is an area not an arc length we are talking about!)</div></article></details><details id="exercises-integration-rules-parts-1" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">A.1.9</span><span class="period">.</span>
+</h3></summary><article class="exercise exercise-like knowl__content"><div class="para logical" id="exercises-integration-rules-parts-1-1">
+<div class="para">Use integration by parts to evaluate the following:</div>
+<ol class="lower-alpha" id="exercises-integration-rules-parts-1-1-1">
+<li id="exercises-integration-rules-parts-1-1-1-1"><div class="para" id="p-derived-exercises-integration-rules-parts-1-1-1-1"><span class="process-math">\(\displaystyle \int x^3\ln(x)\operatorname{d}\!{x}\)</span></div></li>
+<li id="exercises-integration-rules-parts-1-1-1-2"><div class="para" id="p-derived-exercises-integration-rules-parts-1-1-1-2"><span class="process-math">\(\displaystyle \int \arctan(x) \operatorname{d}\!{x}\)</span></div></li>
+<li id="exercises-integration-rules-parts-1-1-1-3"><div class="para" id="p-derived-exercises-integration-rules-parts-1-1-1-3"><span class="process-math">\(\displaystyle \int x\, (\ln(x))^2 \operatorname{d}\!{x}\)</span></div></li>
+<li id="exercises-integration-rules-parts-1-1-1-4"><div class="para" id="p-derived-exercises-integration-rules-parts-1-1-1-4"><span class="process-math">\(\displaystyle \int x\,\sin(x)\,\operatorname{d}\!{x}\)</span></div></li>
+<li id="exercises-integration-rules-parts-1-1-1-5"><div class="para" id="p-derived-exercises-integration-rules-parts-1-1-1-5"><span class="process-math">\(\displaystyle \int\frac{\ln(x)}{\sqrt{x}}\operatorname{d}\!{x}\)</span></div></li>
+</ol>
+</div></article></details><details id="exercises-integration-rules-parts-2" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">A.1.10</span><span class="period">.</span>
+</h3></summary><article class="exercise exercise-like knowl__content"><div class="para logical" id="exercises-integration-rules-parts-2-1">
+<div class="para">Let <span class="process-math">\(I=\int e^{ax}\cos(bx)\operatorname{d}\!{x}\text{.}\)</span> By integrating by parts twice, show that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+I=\frac{e^{ax}\left(a\cos(bx)+b\sin(bx)\right)}{a^2+b^2}+C.
+\end{equation*}
+</div>
+</div></article></details><details id="exercises-integration-rules-substitution-1" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">A.1.11</span><span class="period">.</span>
+</h3></summary><article class="exercise exercise-like knowl__content"><div class="para logical" id="exercises-integration-rules-substitution-1-1">
+<div class="para">Evaluate the following integrals:</div>
+<ol class="lower-alpha" id="exercises-integration-rules-substitution-1-1-1">
+<li id="exercises-integration-rules-substitution-1-1-1-1"><div class="para" id="p-derived-exercises-integration-rules-substitution-1-1-1-1"><span class="process-math">\(\displaystyle \int_0^{\pi/4}\sin(\sin\theta)\cos\theta\operatorname{d}\!{\theta}\)</span></div></li>
+<li id="exercises-integration-rules-substitution-1-1-1-2"><div class="para" id="p-derived-exercises-integration-rules-substitution-1-1-1-2"><span class="process-math">\(\displaystyle \int_0^2 x\,\exp(2\,x)\operatorname{d}\!{x}\)</span></div></li>
+<li id="exercises-integration-rules-substitution-1-1-1-3"><div class="para" id="p-derived-exercises-integration-rules-substitution-1-1-1-3"><span class="process-math">\(\displaystyle \int_3^{12} x\sqrt{x-3}\operatorname{d}\!{x}\)</span></div></li>
+<li id="exercises-integration-rules-substitution-1-1-1-4"><div class="para" id="p-derived-exercises-integration-rules-substitution-1-1-1-4"><span class="process-math">\(\displaystyle \int_{\sqrt{\operatorname{e}}}^{\operatorname{e}} \frac{\ln(x)}{x^2}\operatorname{d}\!{x}\)</span></div></li>
+<li id="exercises-integration-rules-substitution-1-1-1-5"><div class="para" id="p-derived-exercises-integration-rules-substitution-1-1-1-5"><span class="process-math">\(\displaystyle \int_0^{\pi/2}\frac{\sin 2x}{\cos x}\operatorname{d}\!{x}\)</span></div></li>
+<li id="exercises-integration-rules-substitution-1-1-1-6"><div class="para" id="p-derived-exercises-integration-rules-substitution-1-1-1-6"><span class="process-math">\(\displaystyle \int_0^{\pi/3}\tan^2(x)\operatorname{d}\!{x}\)</span></div></li>
+</ol>
+</div></article></details><details id="exercises-integration-rules-substitution-2" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">A.1.12</span><span class="period">.</span>
+</h3></summary><article class="exercise exercise-like knowl__content"><div class="para logical" id="exercises-integration-rules-substitution-2-1">
+<div class="para">Evaluate the following integrals using appropriate substitutions:</div>
+<ol class="lower-alpha" id="exercises-integration-rules-substitution-2-1-1">
+<li id="exercises-integration-rules-substitution-2-1-1-1"><div class="para" id="p-derived-exercises-integration-rules-substitution-2-1-1-1"><span class="process-math">\(\displaystyle \int_{1/\pi}^{2/\pi}\frac{\cos(1/x)}{x^2}\operatorname{d}\!{x}\)</span></div></li>
+<li id="exercises-integration-rules-substitution-2-1-1-2"><div class="para" id="p-derived-exercises-integration-rules-substitution-2-1-1-2"><span class="process-math">\(\displaystyle \int_1^2\frac{2x+1}{x^2+2x+2}\operatorname{d}\!{x}\)</span></div></li>
+<li id="exercises-integration-rules-substitution-2-1-1-3"><div class="para" id="p-derived-exercises-integration-rules-substitution-2-1-1-3"><span class="process-math">\(\displaystyle \int_0^{1/3}\sqrt{1-4t^2}\operatorname{d}\!{t}\)</span></div></li>
+</ol>
+</div></article></details><details id="exercises-integration-rules-substitution-3" class="exercise exercise-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Checkpoint</span><span class="space"> </span><span class="codenumber">A.1.13</span><span class="period">.</span>
+</h3></summary><article class="exercise exercise-like knowl__content"><div class="para logical" id="exercises-integration-rules-substitution-3-1">
+<div class="para">Evaluate the following integrals using appropriate substitutions:</div>
+<ol class="lower-alpha" id="exercises-integration-rules-substitution-3-1-1">
+<li id="exercises-integration-rules-substitution-3-1-1-1"><div class="para" id="p-derived-exercises-integration-rules-substitution-3-1-1-1"><span class="process-math">\(\displaystyle \int \frac{\operatorname{e}^x}{1+\operatorname{e}^x}\,\operatorname{d}\!{x}\)</span></div></li>
+<li id="exercises-integration-rules-substitution-3-1-1-2"><div class="para" id="p-derived-exercises-integration-rules-substitution-3-1-1-2"><span class="process-math">\(\displaystyle \int x\,\sin(x^2)\,\operatorname{d}\!{x}\)</span></div></li>
+<li id="exercises-integration-rules-substitution-3-1-1-3"><div class="para" id="p-derived-exercises-integration-rules-substitution-3-1-1-3"><span class="process-math">\(\displaystyle \int\left(\tan^2(x)+\tan^4(x)\right)\operatorname{d}\!{x}\)</span></div></li>
+</ol>
+</div></article></details></section></div>
+<div class="ptx-content-footer">
+<a class="previous-button button" href="appendix-integration.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="improper-integrals.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="338 3000 8772 6866"><g style="stroke-width:.025in; stroke:black; fill:none"><polyline points="472,3590 472,9732 " style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke:#000000;stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke:#000000;stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke:#000000;stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke:#000000;stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke:#000000;stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png"></a>
+</div>
+</body>
+</html>

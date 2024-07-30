@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">A.3.2</span><span class="period">.</span><span class="space"> </span><span class="title">Using partial fractions: Including a quadratic term.</span>
+</h3> <div class="para logical">
+<div class="para">We want to find an antiderivative of <span class="process-math">\(\frac{3x^2+4x+29}{(x-1)(x^2+4x+13)}\text{.}\)</span> Since <span class="process-math">\(x^2+4x+13=(x+2)^2+9\text{,}\)</span> the second factor in the denominator has no real roots. Using partial fractions, we here have to find real constants <span class="process-math">\(A, B\)</span> and <span class="process-math">\(D\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{3x^2+4x+29}{(x-1)(x^2+4x+13)} = \frac{A}{x-1}+\frac{Bx+D}{x^2+4x+13}.
+\end{equation*}
+</div>
+<div class="para">To this end, we multply this equation with the denominator <span class="process-math">\(q(x)=(x-1)(x^2+4x+13)\)</span> to obtain</div>
+<div class="displaymath process-math">
+\begin{align*}
+3x^2+4x+29 &amp; = A\, (x^2+4x+13)+(Bx+D)(x-1) \\
+&amp; = (A+B)\, x^2+(4\,A-B+D)\,x+(13\,A-D) 
+\end{align*}
+</div>
+<div class="para">Either by comparing coefficients or by using appropriate values for <span class="process-math">\(x\text{,}\)</span> this yields</div>
+<div class="displaymath process-math">
+\begin{equation*}
+A=2,\quad B=1,\quad\text{and}\quad D=-3.
+\end{equation*}
+</div>
+<div class="para">Thus, we have</div>
+<div class="displaymath process-math">
+\begin{align*}
+\frac{3x^2+4x+29}{(x-1)(x^2+4x+13)} &amp; = \frac{2}{x-1}+\frac{x-3}{x^2+4x+13}\\
+&amp; = \frac{2}{x-1}+\frac{\frac12(2x+4)-5}{x^2+4x+13}\\
+&amp; = \frac{2}{x-1}+\frac12\cdot \frac{2x+4}{x^2+4x+13}+\frac{-5}{x^2+4x+13}\\
+&amp; = \frac{2}{x-1}+\frac12\cdot \frac{2x+4}{x^2+4x+13}-\frac{5}{(x+2)^2+9}\\
+&amp; = \frac{2}{x-1}+\frac12\cdot \frac{2x+4}{x^2+4x+13}-\frac{5}{9}\cdot \frac1{\left(\frac{x+2}3\right)^2+1},
+\end{align*}
+</div>
+<div class="para">and we therefore find</div>
+<div class="displaymath process-math">
+\begin{gather*}
+\int \frac{3x^2+4x+29}{(x-1)(x^2+4x+13)}\operatorname{d}\!{x} \\
+= 2\,\ln|{x-1}|+\frac12\,\ln|{x^2+4x+13}|-\frac59\cdot 3\,\arctan\left(\frac{x+2}3\right)+C \\
+= 2\,\ln|{x-1}|+\frac12\,\ln|{x^2+4x+13}|-\frac53\, \arctan\left(\frac{x+2}3\right)+C\\
+= \ln\left((x-1)^2\cdot\sqrt{x^2+4x+13}\right)-\frac53\, \arctan\left(\frac{x+2}3\right)+C.
+\end{gather*}
+</div>
+</div></article><span class="incontext"><a class="internal" href="integration-using-partial-fractions.html#example-integration-using-partial-fractions-2">in-context</a></span>
+</body>
+</html>

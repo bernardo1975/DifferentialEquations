@@ -415,9 +415,648 @@ var ptx_lunr_docs = [
   "body": " Chapter Title   Text before the first section.    "
 },
 {
-  "id": "backmatter-2",
+  "id": "integration-rules",
   "level": "1",
-  "url": "backmatter-2.html",
+  "url": "integration-rules.html",
+  "type": "Section",
+  "number": "A.1",
+  "title": "Integration Rules",
+  "body": " Integration Rules  Because of the fundamental theorem of calculus, every differentiation rule yields a corresponding integration rule. For example, the product rule for derivatives, yields the following:   Integration by Parts   If are continuously differentiable functions, then     Integration by parts is typically used for integrals  of the form where is a polynomial,  of the form where is a polynomial,  with trigonometric functions, e.g., .     Integration by parts: Polynomial and exponential function  To evaluate , we use integration by parts twice (each time with in the above formula) to obtain    Integration by parts: Trigonometric functions  To evaluate we use and to obtain and thus i.e.,    The chain rule for derivatives yields the following:   Integration by Substitution   If is a continuously differentiable function and is a continuous function, then     Note that there are two possibilities how to read this last formula: Either from left to right, or from right to left. We look at both these possibilities here.  Reading the above formula from right to left, our task is the following: In order to evaluate , we try to write the integrand in the from with an appropriate function . Often it is straight forward, at least with some practice and experience, to recognize this function .   Integration by substitution: Integrand is a product  where we use and thus , and .    Integration by substitution: Integrand is a function of sine and cosine  where we use and thus (i.e., ), and .  We note that we also assumed that the cosine does not become zero in the interval ; in particular, and must both be either positive or negative for the above formula to hold.  Integrals of the form and (for some functions ) are evaluated similarly.   An important special case here is: as long as the continuously differentiable function does not become zero in the interval .  Reading the integration by substitution formula from left to right, our task is the following: In order to evaluate , we substitute for where is a bijective (and therefore invertible), continuously differentiable function, to obtain Note that it might happen that for the inverse function we have . Finding an appropriate substitution here is often an art and requires lots of experience. In fact, one might consider it as one of the (most obvious) manifestitions showing that integration is much harder than differentiation.   Integration by substitution: Integrand with square roots  In order to evaluate with , we use (note that this function is bijective on the domain ). Then, and and thus where we obtain using integration by parts: Obviously, the integral can also (and usually, will) be solved by applying integration by substitution from right to left, in which case we take and . However, our goal here was to go the other way.    Integration by substitution: Art at play  In order to evaluate with , we use ; this function is strictly increasing and surjective, and therefore invertible. Its inverse function is (which is positive for all real ). Noting that , we obtain i.e., . Thus, we get As a side note, the derivative of the inverse hyperbolic sine is ; thus, we have actually obtained an explicit formula for the inverse hyperbolic sine here, namely, , and we can also write .  (Oh, and it is , not ! For hyperbolic trigonometric functions, it is an area not an arc length we are talking about!)   Use integration by parts to evaluate the following:         Let . By integrating by parts twice, show that   Evaluate the following integrals:         Evaluate the following integrals using appropriate substitutions:      Evaluate the following integrals using appropriate substitutions:      "
+},
+{
+  "id": "theorem-integration-by-parts",
+  "level": "2",
+  "url": "integration-rules.html#theorem-integration-by-parts",
+  "type": "Theorem",
+  "number": "A.1.1",
+  "title": "Integration by Parts.",
+  "body": " Integration by Parts   If are continuously differentiable functions, then    "
+},
+{
+  "id": "example-integration-by-parts-1",
+  "level": "2",
+  "url": "integration-rules.html#example-integration-by-parts-1",
+  "type": "Example",
+  "number": "A.1.2",
+  "title": "Integration by parts: Polynomial and exponential function.",
+  "body": " Integration by parts: Polynomial and exponential function  To evaluate , we use integration by parts twice (each time with in the above formula) to obtain  "
+},
+{
+  "id": "example-integration-by-parts-2",
+  "level": "2",
+  "url": "integration-rules.html#example-integration-by-parts-2",
+  "type": "Example",
+  "number": "A.1.3",
+  "title": "Integration by parts: Trigonometric functions.",
+  "body": " Integration by parts: Trigonometric functions  To evaluate we use and to obtain and thus i.e.,   "
+},
+{
+  "id": "theorem-integration-by-substitution",
+  "level": "2",
+  "url": "integration-rules.html#theorem-integration-by-substitution",
+  "type": "Theorem",
+  "number": "A.1.4",
+  "title": "Integration by Substitution.",
+  "body": " Integration by Substitution   If is a continuously differentiable function and is a continuous function, then    "
+},
+{
+  "id": "example-integration-by-substitution-1",
+  "level": "2",
+  "url": "integration-rules.html#example-integration-by-substitution-1",
+  "type": "Example",
+  "number": "A.1.5",
+  "title": "Integration by substitution: Integrand is a product.",
+  "body": " Integration by substitution: Integrand is a product  where we use and thus , and .  "
+},
+{
+  "id": "example-integration-by-substitution-2",
+  "level": "2",
+  "url": "integration-rules.html#example-integration-by-substitution-2",
+  "type": "Example",
+  "number": "A.1.6",
+  "title": "Integration by substitution: Integrand is a function of sine and cosine.",
+  "body": " Integration by substitution: Integrand is a function of sine and cosine  where we use and thus (i.e., ), and .  We note that we also assumed that the cosine does not become zero in the interval ; in particular, and must both be either positive or negative for the above formula to hold.  Integrals of the form and (for some functions ) are evaluated similarly.  "
+},
+{
+  "id": "example-integration-by-substitution-3",
+  "level": "2",
+  "url": "integration-rules.html#example-integration-by-substitution-3",
+  "type": "Example",
+  "number": "A.1.7",
+  "title": "Integration by substitution: Integrand with square roots.",
+  "body": " Integration by substitution: Integrand with square roots  In order to evaluate with , we use (note that this function is bijective on the domain ). Then, and and thus where we obtain using integration by parts: Obviously, the integral can also (and usually, will) be solved by applying integration by substitution from right to left, in which case we take and . However, our goal here was to go the other way.  "
+},
+{
+  "id": "example-integration-by-substitution-4",
+  "level": "2",
+  "url": "integration-rules.html#example-integration-by-substitution-4",
+  "type": "Example",
+  "number": "A.1.8",
+  "title": "Integration by substitution: Art at play.",
+  "body": " Integration by substitution: Art at play  In order to evaluate with , we use ; this function is strictly increasing and surjective, and therefore invertible. Its inverse function is (which is positive for all real ). Noting that , we obtain i.e., . Thus, we get As a side note, the derivative of the inverse hyperbolic sine is ; thus, we have actually obtained an explicit formula for the inverse hyperbolic sine here, namely, , and we can also write .  (Oh, and it is , not ! For hyperbolic trigonometric functions, it is an area not an arc length we are talking about!)  "
+},
+{
+  "id": "exercises-integration-rules-parts-1",
+  "level": "2",
+  "url": "integration-rules.html#exercises-integration-rules-parts-1",
+  "type": "Checkpoint",
+  "number": "A.1.9",
+  "title": "",
+  "body": "Use integration by parts to evaluate the following:        "
+},
+{
+  "id": "exercises-integration-rules-parts-2",
+  "level": "2",
+  "url": "integration-rules.html#exercises-integration-rules-parts-2",
+  "type": "Checkpoint",
+  "number": "A.1.10",
+  "title": "",
+  "body": "Let . By integrating by parts twice, show that  "
+},
+{
+  "id": "exercises-integration-rules-substitution-1",
+  "level": "2",
+  "url": "integration-rules.html#exercises-integration-rules-substitution-1",
+  "type": "Checkpoint",
+  "number": "A.1.11",
+  "title": "",
+  "body": "Evaluate the following integrals:        "
+},
+{
+  "id": "exercises-integration-rules-substitution-2",
+  "level": "2",
+  "url": "integration-rules.html#exercises-integration-rules-substitution-2",
+  "type": "Checkpoint",
+  "number": "A.1.12",
+  "title": "",
+  "body": "Evaluate the following integrals using appropriate substitutions:     "
+},
+{
+  "id": "exercises-integration-rules-substitution-3",
+  "level": "2",
+  "url": "integration-rules.html#exercises-integration-rules-substitution-3",
+  "type": "Checkpoint",
+  "number": "A.1.13",
+  "title": "",
+  "body": "Evaluate the following integrals using appropriate substitutions:     "
+},
+{
+  "id": "improper-integrals",
+  "level": "1",
+  "url": "improper-integrals.html",
+  "type": "Section",
+  "number": "A.2",
+  "title": "Improper Integrals",
+  "body": " Improper Integrals  We begin by looking at the following two examples: We would like to determine the area  of the region under the graph of for , and  of the region under the graph of for .       The improper integral .       The improper integral .   The approach using Riemann sums does not work here: In the first case, partitioning into finitely many subintervals always gives at least one subinterval with infinite width; in the second case, the height of the first rectangle becomes infinite.  However, for we have and thus Since this limit exists (i.e., converges to a finite value), it is reasonable to set   Similarly, for we have and thus Again, since this limit exists, we set   So, in both situations we suceed in calculating the area, although the usual approach using Riemann sums does not work. Such integrals are called improper integrals.  However, this does not always work.   Neither does exist: Since for , and thus as , the integral does not converge. We also say that the integral diverges (to infinity) or that is not integrable over .  Nor does exist: Since for , and thus as , the integral does not converge. We also say that the integral diverges (to infinity) or that is not integrable over .   An integral can also be improper if the integrand is not defined at an interior point of the interval we are integrating over. E.g., the integral is improper, and we calculate   Diverging cross-section and finite volume  As we have seen above, the area enclosed by the graph of for diverges to infinity. However, the solid of revolution that we obtain by rotating this area around the -axis has finite volume: In general, rotating the area under over the interval around the -axis, yields a solid of revolution with volume . So, in the case for , we get the volume       The diverging (improper) integral .       The solid of revolution corresponding to . This solid of revolution with diverging cross section has finite volume.    Evaluate the integral .  "
+},
+{
+  "id": "figure-improper-integral-1onxsquared",
+  "level": "2",
+  "url": "improper-integrals.html#figure-improper-integral-1onxsquared",
+  "type": "Figure",
+  "number": "A.2.1",
+  "title": "",
+  "body": "    The improper integral .  "
+},
+{
+  "id": "figure-improper-integral-1onsqrtx",
+  "level": "2",
+  "url": "improper-integrals.html#figure-improper-integral-1onsqrtx",
+  "type": "Figure",
+  "number": "A.2.2",
+  "title": "",
+  "body": "    The improper integral .  "
+},
+{
+  "id": "example-improper-integral",
+  "level": "2",
+  "url": "improper-integrals.html#example-improper-integral",
+  "type": "Example",
+  "number": "A.2.3",
+  "title": "Diverging cross-section and finite volume.",
+  "body": " Diverging cross-section and finite volume  As we have seen above, the area enclosed by the graph of for diverges to infinity. However, the solid of revolution that we obtain by rotating this area around the -axis has finite volume: In general, rotating the area under over the interval around the -axis, yields a solid of revolution with volume . So, in the case for , we get the volume       The diverging (improper) integral .       The solid of revolution corresponding to . This solid of revolution with diverging cross section has finite volume.   "
+},
+{
+  "id": "exercise-improper-integrals",
+  "level": "2",
+  "url": "improper-integrals.html#exercise-improper-integrals",
+  "type": "Checkpoint",
+  "number": "A.2.6",
+  "title": "",
+  "body": "Evaluate the integral . "
+},
+{
+  "id": "integration-using-partial-fractions",
+  "level": "1",
+  "url": "integration-using-partial-fractions.html",
+  "type": "Section",
+  "number": "A.3",
+  "title": "Special Integration Techniques: Partial Fractions",
+  "body": " Special Integration Techniques: Partial Fractions  Integrals of rational functions can explicitly be calculated. More precisely, if are polynomials (with real coefficients) and for all , then we can evaluate the integral once we know the roots of (i.e., for which the polynomial becomes zero), since this enables us to find an antiderivative of the continuous function .  We first note that if the degree of is greater than or equal to the degree of , polynomial division yields where and are polynomials, and the degree of is strictly less than the degree of . Note that the polynomial can be easily integrated.  We now simplify the rational function using partial fractions. This is based on the following facts:   Every polynomial with real coefficients is the product of a constant, linear polynomials of the form with , and quadratic polynomials of the form with and (which is the same thing as saying that the polynomial has no real roots, but a pair of complex conjugate roots).  This result is a consequence of the so-called Fundamental Theorem of Algebra . see Theorem .  We can thus write the denominator as the product where , and (where means that there is no linear factors, and that there is no quadratic factor).  Assuming that (in other words, that the coefficient of the highest power of is ) and that and have no common factor, we can express using partial fractions. To this end, any factor of contributes and any factor contributes where are (uniquely determined) constants.  Therefore, expressing using partial fractions leads to a sum of expressions that can be individually integrated.   We look at two examples.   Using partial fractions: Only linear terms  We want to find an antiderivative of . Using partial fractions, we have to find real constants and such that To this end, we multiply this equation with the denominator to obtain Either by comparing coefficients or by using appropriate values for , this yields Thus, we have and we therefore find     Using partial fractions: Including a quadratic term  We want to find an antiderivative of . Since , the second factor in the denominator has no real roots. Using partial fractions, we here have to find real constants and such that To this end, we multply this equation with the denominator to obtain Either by comparing coefficients or by using appropriate values for , this yields Thus, we have and we therefore find   The only difficulty left now, are integrals with an integrand of the form . To this end, we note that is easy to integrate, so really all that is left are integrands of the form , or actually (after completing the square etc., compare ) integrands of the form . In order to evaluate the latter, one use a (recursive) reduction formula that is discussed in .  Evaluate the following indefinite integrals using partial fractions:       Evaluate the following indefinite integrals using partial fractions:       Let , where is a natural number. Use integration by parts to show that and hence establish the reduction formula for . Hence find .  Evaluate .    Integrate by splitting the integrand into partial fractions.  By making the substitution , show that   "
+},
+{
+  "id": "example-integration-using-partial-fractions-1",
+  "level": "2",
+  "url": "integration-using-partial-fractions.html#example-integration-using-partial-fractions-1",
+  "type": "Example",
+  "number": "A.3.1",
+  "title": "Using partial fractions: Only linear terms.",
+  "body": " Using partial fractions: Only linear terms  We want to find an antiderivative of . Using partial fractions, we have to find real constants and such that To this end, we multiply this equation with the denominator to obtain Either by comparing coefficients or by using appropriate values for , this yields Thus, we have and we therefore find   "
+},
+{
+  "id": "example-integration-using-partial-fractions-2",
+  "level": "2",
+  "url": "integration-using-partial-fractions.html#example-integration-using-partial-fractions-2",
+  "type": "Example",
+  "number": "A.3.2",
+  "title": "Using partial fractions: Including a quadratic term.",
+  "body": " Using partial fractions: Including a quadratic term  We want to find an antiderivative of . Since , the second factor in the denominator has no real roots. Using partial fractions, we here have to find real constants and such that To this end, we multply this equation with the denominator to obtain Either by comparing coefficients or by using appropriate values for , this yields Thus, we have and we therefore find  "
+},
+{
+  "id": "exercise-integration-partial-fractions-1",
+  "level": "2",
+  "url": "integration-using-partial-fractions.html#exercise-integration-partial-fractions-1",
+  "type": "Checkpoint",
+  "number": "A.3.3",
+  "title": "",
+  "body": "Evaluate the following indefinite integrals using partial fractions:      "
+},
+{
+  "id": "exercise-integration-partial-fractions-2",
+  "level": "2",
+  "url": "integration-using-partial-fractions.html#exercise-integration-partial-fractions-2",
+  "type": "Checkpoint",
+  "number": "A.3.4",
+  "title": "",
+  "body": "Evaluate the following indefinite integrals using partial fractions:     "
+},
+{
+  "id": "exercise-integration-partial-fractions-reduction-1",
+  "level": "2",
+  "url": "integration-using-partial-fractions.html#exercise-integration-partial-fractions-reduction-1",
+  "type": "Checkpoint",
+  "number": "A.3.5",
+  "title": "",
+  "body": " Let , where is a natural number. Use integration by parts to show that and hence establish the reduction formula for . Hence find .  Evaluate .  "
+},
+{
+  "id": "exercise-integration-partial-fractions-3",
+  "level": "2",
+  "url": "integration-using-partial-fractions.html#exercise-integration-partial-fractions-3",
+  "type": "Checkpoint",
+  "number": "A.3.6",
+  "title": "",
+  "body": " Integrate by splitting the integrand into partial fractions.  By making the substitution , show that  "
+},
+{
+  "id": "integration-using-trig-substitution",
+  "level": "1",
+  "url": "integration-using-trig-substitution.html",
+  "type": "Section",
+  "number": "A.4",
+  "title": "Special Integration Techniques: Trigonometric Substitutions (or the demise thereof)",
+  "body": " Special Integration Techniques: Trigonometric Substitutions (or the demise thereof)  There are four types of integrals that we can effectively compute using trigonometric substitutions. They are  ,  ,  , and  ,  where , are integers, is odd, and has one of the following three forms  ; in this case the domain of integration is contained in ,  ; in this case the domain of integration is contained in ,  ; in this case the domain of integration is contained either in or ,  where is some constant.  Note that if is even, we are in the situation of the last section, i.e., we have a rational function.   Approach using trigonometric functions  For trigonometric substitutions, the form of the term determines which substitution to use. If the integral involves Hyperbolic trigonometric functions can also be used, for substitute (note that ) and use the identity .   then substitute (note that ) and use the identity ;  then substitute (note that ) and use the Yes, we avoid mentioning the secant function here and do not write . If calculus textbooks use the secant and cosecant function excessively, alarm bells should ring probably, there is cleaner alternative way! identity ;  then substitute (note that ) and use the identity .  The outcome in each case is a function in and , and we got rid of the square root expression. So, let us now explore how we can integrate functions in and .    Integrating functions with sine and cosine  In order to evaluate an integral of the form , where is some function, one can use yet another substitution: If we put , elementary trigonometry yields the simple formulas and by differentiation we obtain What is the result on the integrals we consider in this section? After the two substitutions we now arrived at an integral of the form where and are polynomials in , i.e., the integrand is now a rational function in . Using partial fractions, see the previous section (Section ), we can now evaluate this integral.   This two-stage process should leave you wondering if we really need the trigonometric substitutions. After all, their only purpose, in some sense, is only to get rid of the quare root term before another substitution brings us back to .  In fact, the integrals of the four forms can be computed using one of two Recall that we needed a different trigonometric substitution for each of the three forms of . substitutions; namely, we let and Notice that the form of does not play a role here, only the power of the polynomial term.   Integrand with odd  Let us evaluate . This is an integral of the form where , and . Since is odd, we choose the substitution which by implicit differentiation yields and thus . We therefore obtain     Integrand with even  Let us evaluate . This is an integral of the form where , and . Since is even, we choose the substitution which by implicit differentiation yields and thus . Noting that , and thus , we obtain    Notice that the resulting integrands in are, as expected, again rational functions. As a consequence, compare the previous , the resulting integrals in involve only linear combinations of integral power functions, the functions , , and the inverse tangent function . In particular, we do not need the inverse sine or the inverse secant functions In fact, one has (where ) and (where and denotes the sign of ). One may obtain these identities, e.g., by noting that , which is obtained by the inverse function theorem , and calculating the anti-derivative of alternatively using the substitution discussed in this section. There are similar formulas for and as well as further formulas like and . Note that the inverse tangent is therefore the only inverse trigonometric function really needed (well, one also only needs one trigonometric function to calculate the values of any other one, so this is should not come as a surprise), and the inverse tangent function appears here through the partial fraction expansion, see Section . to compute integrals of the types considered in this section.  Find the following integrals:  where ;   where ;  where .   "
+},
+{
+  "id": "integration-using-trig-substitution-4",
+  "level": "2",
+  "url": "integration-using-trig-substitution.html#integration-using-trig-substitution-4",
+  "type": "Remark",
+  "number": "A.4.1",
+  "title": "Approach using trigonometric functions.",
+  "body": " Approach using trigonometric functions  For trigonometric substitutions, the form of the term determines which substitution to use. If the integral involves Hyperbolic trigonometric functions can also be used, for substitute (note that ) and use the identity .   then substitute (note that ) and use the identity ;  then substitute (note that ) and use the Yes, we avoid mentioning the secant function here and do not write . If calculus textbooks use the secant and cosecant function excessively, alarm bells should ring probably, there is cleaner alternative way! identity ;  then substitute (note that ) and use the identity .  The outcome in each case is a function in and , and we got rid of the square root expression. So, let us now explore how we can integrate functions in and .  "
+},
+{
+  "id": "integration-using-trig-substitution-5",
+  "level": "2",
+  "url": "integration-using-trig-substitution.html#integration-using-trig-substitution-5",
+  "type": "Note",
+  "number": "A.4.2",
+  "title": "Integrating functions with sine and cosine.",
+  "body": " Integrating functions with sine and cosine  In order to evaluate an integral of the form , where is some function, one can use yet another substitution: If we put , elementary trigonometry yields the simple formulas and by differentiation we obtain What is the result on the integrals we consider in this section? After the two substitutions we now arrived at an integral of the form where and are polynomials in , i.e., the integrand is now a rational function in . Using partial fractions, see the previous section (Section ), we can now evaluate this integral.  "
+},
+{
+  "id": "example-trig-substitution-demise-odd-1",
+  "level": "2",
+  "url": "integration-using-trig-substitution.html#example-trig-substitution-demise-odd-1",
+  "type": "Example",
+  "number": "A.4.3",
+  "title": "Integrand with odd <span class=\"process-math\">\\(n\\)<\/span>.",
+  "body": " Integrand with odd  Let us evaluate . This is an integral of the form where , and . Since is odd, we choose the substitution which by implicit differentiation yields and thus . We therefore obtain   "
+},
+{
+  "id": "example-trig-substitution-demise-even-1",
+  "level": "2",
+  "url": "integration-using-trig-substitution.html#example-trig-substitution-demise-even-1",
+  "type": "Example",
+  "number": "A.4.4",
+  "title": "Integrand with even <span class=\"process-math\">\\(n\\)<\/span>.",
+  "body": " Integrand with even  Let us evaluate . This is an integral of the form where , and . Since is even, we choose the substitution which by implicit differentiation yields and thus . Noting that , and thus , we obtain   "
+},
+{
+  "id": "integration-using-trig-substitution-11",
+  "level": "2",
+  "url": "integration-using-trig-substitution.html#integration-using-trig-substitution-11",
+  "type": "Checkpoint",
+  "number": "A.4.5",
+  "title": "",
+  "body": "Find the following integrals:  where ;   where ;  where .  "
+},
+{
+  "id": "integration-exercises",
+  "level": "1",
+  "url": "integration-exercises.html",
+  "type": "Section",
+  "number": "A.5",
+  "title": "Exercises",
+  "body": " Exercises  Show that , and use this result to evaluate the integral .  Sketch the curve between and . Show that Hence find the area under the curve by integration.  Evaluate the following integral: .  Show that, if and are distinct non-negative integers, then .  WeBWorK exercises:    Find an antiderivative of          as to the rd power we have (or this, plus any constant).        Find an antiderivative of          is . Thus we have (or this, plus any constant).        Consider the function . Let be the antiderivative of with .  Then               If and , then   .              Note: You can get full credit for this problem by just answering the last question correctly. The initial questions are meant as hints towards the final answer and also allow you the opportunity to get partial credit.  Consider the definite integral  Then the most appropriate substitution to simplify this integral is  =  Then where  =  After making the substitution and simplifying we obtain the integral where  =  =  =  This definite integral has value =                                       Note: You can get full credit for this problem by just answering the last question correctly. The initial questions are meant as hints towards the final answer and also allow you the opportunity to get partial credit.  Consider the indefinite integral  Then the most appropriate substitution to simplify this integral is  =  Then where  =  After making the substitution we obtain the integral where  =  This last integral is: =   (Leave out constant of integration from your answer.)  After substituting back for we obtain the following final form of the answer:  =   (Leave out constant of integration from your answer.)                                  Evaluate the integral by making the substitution .  Answer: +  Note: Your answer should be in terms of and not .              =        SOLUTION          Evaluate the indefinite integral.   +              Note: You can get full credit for this problem by just entering the answer to the last question correctly. The initial questions are meant as hints towards the final answer and also allow you the opportunity to get partial credit.  Consider the indefinite integral  Then the most appropriate substitution to simplify this integral is  = Then where  =  After making the substitution we obtain the integral where  =  This last integral is: =   (Leave out constant of integration from your answer.)  After substituting back for we obtain the following final form of the answer:  =   (Leave out constant of integration from your answer.)                                  Compute the indefinite integral. Answer:         SOLUTION  Using the trigonometric identity :         Using an upper-case \"C\" for any arbitrary constants, find the general indefinite integral  Integral =              Using an upper-case \"C\" for any arbitrary constants, find the general indefinite integral  Integral =              Evaluate the integral  Integral =              Evaluate the definite integral:                Calculate the following antiderivatives:  (a) =  .  (b) =  .  (c) =  .                        Note: You can get full credit for this problem by just entering the answer to the last question correctly. The initial questions are meant as hints towards the final answer and also allow you the opportunity to get partial credit.  Consider the indefinite integral  The most appropriate substitution to simplify this integral is where  =  We then have where  =  Hint: you need to back substitute for in terms of for this part.  After substituting into the original integral we obtain where  = +  To evaluate this integral rewrite the numerator as simplify, then integrate, thus obtaining where  = +  After substituting back for we obtain our final answer  = +                                  Evaluate the indefinite integral.   .              Evaluate the indefinite integral.   Answer:               Using an upper-case \"C\" for any arbitrary constants, find the general indefinite integral:  Integral =              =              Note: You can get full credit for this problem by just answering the last question correctly. The initial questions are meant as hints towards the final answer and also allow you the opportunity to get partial credit.  Consider the indefinite integral  Then the most appropriate substitution to simplify this integral is  =  Then where  =  After making the substitution and simplifying we obtain the integral where  =  This last integral is: =   (Leave out constant of integration from your answer.)  After substituting back for we obtain the following final form of the answer:  =   (Leave out constant of integration from your answer.)                                  Find the derivative of to complete the following integration formula:                 Find the derivative of to complete the following integration formula:                 Note: You can get full credit for this problem by just answering the last question correctly. The initial questions are meant as hints towards the final answer and also allow you the opportunity to get partial credit.  The integral MUST be evaluated by breaking it up into a sum of three integrals:   where  a =  c =  =  =  =  Thus =                                       Evaluate the integral  Integral =              Evaluate the integral  Answer:              This question summarizes a few simple facts about polynomials. Recall that a polynomial can be written in the form where we assume that . The degree of a polynomial is the largest exponent present, and so the degree of is . Fill in the blanks in the following questions:  The degree of is .  The degree of is .  The degree of (i.e., the square of ) is .  The -th derivative of is .                             Evaluate the indefinite integral.   Answer:               Evaluate the indefinite integral.    .              Evaluate the indefinite integral.   Answer:               Evaluate the definite integral.   Answer:            "
+},
+{
+  "id": "exercises-integration-rules-derivative-2",
+  "level": "2",
+  "url": "integration-exercises.html#exercises-integration-rules-derivative-2",
+  "type": "Checkpoint",
+  "number": "A.5.1",
+  "title": "",
+  "body": "Show that , and use this result to evaluate the integral . "
+},
+{
+  "id": "exercises-integration-rules-derivative-1",
+  "level": "2",
+  "url": "integration-exercises.html#exercises-integration-rules-derivative-1",
+  "type": "Checkpoint",
+  "number": "A.5.2",
+  "title": "",
+  "body": "Sketch the curve between and . Show that Hence find the area under the curve by integration. "
+},
+{
+  "id": "exercises-integration-rules-absolute-value-1",
+  "level": "2",
+  "url": "integration-exercises.html#exercises-integration-rules-absolute-value-1",
+  "type": "Checkpoint",
+  "number": "A.5.3",
+  "title": "",
+  "body": "Evaluate the following integral: . "
+},
+{
+  "id": "exercises-integration-rules-fourier",
+  "level": "2",
+  "url": "integration-exercises.html#exercises-integration-rules-fourier",
+  "type": "Checkpoint",
+  "number": "A.5.4",
+  "title": "",
+  "body": "Show that, if and are distinct non-negative integers, then . "
+},
+{
+  "id": "integration-exercises-7",
+  "level": "2",
+  "url": "integration-exercises.html#integration-exercises-7",
+  "type": "Checkpoint",
+  "number": "A.5.5",
+  "title": "",
+  "body": "  Find an antiderivative of          as to the rd power we have (or this, plus any constant).     "
+},
+{
+  "id": "integration-exercises-8",
+  "level": "2",
+  "url": "integration-exercises.html#integration-exercises-8",
+  "type": "Checkpoint",
+  "number": "A.5.6",
+  "title": "",
+  "body": "  Find an antiderivative of          is . Thus we have (or this, plus any constant).     "
+},
+{
+  "id": "integration-exercises-9",
+  "level": "2",
+  "url": "integration-exercises.html#integration-exercises-9",
+  "type": "Checkpoint",
+  "number": "A.5.7",
+  "title": "",
+  "body": "  Consider the function . Let be the antiderivative of with .  Then            "
+},
+{
+  "id": "integration-exercises-10",
+  "level": "2",
+  "url": "integration-exercises.html#integration-exercises-10",
+  "type": "Checkpoint",
+  "number": "A.5.8",
+  "title": "",
+  "body": "  If and , then   .           "
+},
+{
+  "id": "integration-exercises-11",
+  "level": "2",
+  "url": "integration-exercises.html#integration-exercises-11",
+  "type": "Checkpoint",
+  "number": "A.5.9",
+  "title": "",
+  "body": "  Note: You can get full credit for this problem by just answering the last question correctly. The initial questions are meant as hints towards the final answer and also allow you the opportunity to get partial credit.  Consider the definite integral  Then the most appropriate substitution to simplify this integral is  =  Then where  =  After making the substitution and simplifying we obtain the integral where  =  =  =  This definite integral has value =                                    "
+},
+{
+  "id": "integration-exercises-12",
+  "level": "2",
+  "url": "integration-exercises.html#integration-exercises-12",
+  "type": "Checkpoint",
+  "number": "A.5.10",
+  "title": "",
+  "body": "  Note: You can get full credit for this problem by just answering the last question correctly. The initial questions are meant as hints towards the final answer and also allow you the opportunity to get partial credit.  Consider the indefinite integral  Then the most appropriate substitution to simplify this integral is  =  Then where  =  After making the substitution we obtain the integral where  =  This last integral is: =   (Leave out constant of integration from your answer.)  After substituting back for we obtain the following final form of the answer:  =   (Leave out constant of integration from your answer.)                               "
+},
+{
+  "id": "integration-exercises-13",
+  "level": "2",
+  "url": "integration-exercises.html#integration-exercises-13",
+  "type": "Checkpoint",
+  "number": "A.5.11",
+  "title": "",
+  "body": "  Evaluate the integral by making the substitution .  Answer: +  Note: Your answer should be in terms of and not .           "
+},
+{
+  "id": "integration-exercises-14",
+  "level": "2",
+  "url": "integration-exercises.html#integration-exercises-14",
+  "type": "Checkpoint",
+  "number": "A.5.12",
+  "title": "",
+  "body": "  =        SOLUTION       "
+},
+{
+  "id": "integration-exercises-15",
+  "level": "2",
+  "url": "integration-exercises.html#integration-exercises-15",
+  "type": "Checkpoint",
+  "number": "A.5.13",
+  "title": "",
+  "body": "  Evaluate the indefinite integral.   +           "
+},
+{
+  "id": "integration-exercises-16",
+  "level": "2",
+  "url": "integration-exercises.html#integration-exercises-16",
+  "type": "Checkpoint",
+  "number": "A.5.14",
+  "title": "",
+  "body": "  Note: You can get full credit for this problem by just entering the answer to the last question correctly. The initial questions are meant as hints towards the final answer and also allow you the opportunity to get partial credit.  Consider the indefinite integral  Then the most appropriate substitution to simplify this integral is  = Then where  =  After making the substitution we obtain the integral where  =  This last integral is: =   (Leave out constant of integration from your answer.)  After substituting back for we obtain the following final form of the answer:  =   (Leave out constant of integration from your answer.)                               "
+},
+{
+  "id": "integration-exercises-17",
+  "level": "2",
+  "url": "integration-exercises.html#integration-exercises-17",
+  "type": "Checkpoint",
+  "number": "A.5.15",
+  "title": "",
+  "body": "  Compute the indefinite integral. Answer:         SOLUTION  Using the trigonometric identity :      "
+},
+{
+  "id": "integration-exercises-18",
+  "level": "2",
+  "url": "integration-exercises.html#integration-exercises-18",
+  "type": "Checkpoint",
+  "number": "A.5.16",
+  "title": "",
+  "body": "  Using an upper-case \"C\" for any arbitrary constants, find the general indefinite integral  Integral =           "
+},
+{
+  "id": "integration-exercises-19",
+  "level": "2",
+  "url": "integration-exercises.html#integration-exercises-19",
+  "type": "Checkpoint",
+  "number": "A.5.17",
+  "title": "",
+  "body": "  Using an upper-case \"C\" for any arbitrary constants, find the general indefinite integral  Integral =           "
+},
+{
+  "id": "integration-exercises-20",
+  "level": "2",
+  "url": "integration-exercises.html#integration-exercises-20",
+  "type": "Checkpoint",
+  "number": "A.5.18",
+  "title": "",
+  "body": "  Evaluate the integral  Integral =           "
+},
+{
+  "id": "integration-exercises-21",
+  "level": "2",
+  "url": "integration-exercises.html#integration-exercises-21",
+  "type": "Checkpoint",
+  "number": "A.5.19",
+  "title": "",
+  "body": "  Evaluate the definite integral:             "
+},
+{
+  "id": "integration-exercises-22",
+  "level": "2",
+  "url": "integration-exercises.html#integration-exercises-22",
+  "type": "Checkpoint",
+  "number": "A.5.20",
+  "title": "",
+  "body": "  Calculate the following antiderivatives:  (a) =  .  (b) =  .  (c) =  .                     "
+},
+{
+  "id": "integration-exercises-23",
+  "level": "2",
+  "url": "integration-exercises.html#integration-exercises-23",
+  "type": "Checkpoint",
+  "number": "A.5.21",
+  "title": "",
+  "body": "  Note: You can get full credit for this problem by just entering the answer to the last question correctly. The initial questions are meant as hints towards the final answer and also allow you the opportunity to get partial credit.  Consider the indefinite integral  The most appropriate substitution to simplify this integral is where  =  We then have where  =  Hint: you need to back substitute for in terms of for this part.  After substituting into the original integral we obtain where  = +  To evaluate this integral rewrite the numerator as simplify, then integrate, thus obtaining where  = +  After substituting back for we obtain our final answer  = +                               "
+},
+{
+  "id": "integration-exercises-24",
+  "level": "2",
+  "url": "integration-exercises.html#integration-exercises-24",
+  "type": "Checkpoint",
+  "number": "A.5.22",
+  "title": "",
+  "body": "  Evaluate the indefinite integral.   .           "
+},
+{
+  "id": "integration-exercises-25",
+  "level": "2",
+  "url": "integration-exercises.html#integration-exercises-25",
+  "type": "Checkpoint",
+  "number": "A.5.23",
+  "title": "",
+  "body": "  Evaluate the indefinite integral.   Answer:            "
+},
+{
+  "id": "integration-exercises-26",
+  "level": "2",
+  "url": "integration-exercises.html#integration-exercises-26",
+  "type": "Checkpoint",
+  "number": "A.5.24",
+  "title": "",
+  "body": "  Using an upper-case \"C\" for any arbitrary constants, find the general indefinite integral:  Integral =           "
+},
+{
+  "id": "integration-exercises-27",
+  "level": "2",
+  "url": "integration-exercises.html#integration-exercises-27",
+  "type": "Checkpoint",
+  "number": "A.5.25",
+  "title": "",
+  "body": "  =           "
+},
+{
+  "id": "integration-exercises-28",
+  "level": "2",
+  "url": "integration-exercises.html#integration-exercises-28",
+  "type": "Checkpoint",
+  "number": "A.5.26",
+  "title": "",
+  "body": "  Note: You can get full credit for this problem by just answering the last question correctly. The initial questions are meant as hints towards the final answer and also allow you the opportunity to get partial credit.  Consider the indefinite integral  Then the most appropriate substitution to simplify this integral is  =  Then where  =  After making the substitution and simplifying we obtain the integral where  =  This last integral is: =   (Leave out constant of integration from your answer.)  After substituting back for we obtain the following final form of the answer:  =   (Leave out constant of integration from your answer.)                               "
+},
+{
+  "id": "integration-exercises-29",
+  "level": "2",
+  "url": "integration-exercises.html#integration-exercises-29",
+  "type": "Checkpoint",
+  "number": "A.5.27",
+  "title": "",
+  "body": "  Find the derivative of to complete the following integration formula:              "
+},
+{
+  "id": "integration-exercises-30",
+  "level": "2",
+  "url": "integration-exercises.html#integration-exercises-30",
+  "type": "Checkpoint",
+  "number": "A.5.28",
+  "title": "",
+  "body": "  Find the derivative of to complete the following integration formula:              "
+},
+{
+  "id": "integration-exercises-31",
+  "level": "2",
+  "url": "integration-exercises.html#integration-exercises-31",
+  "type": "Checkpoint",
+  "number": "A.5.29",
+  "title": "",
+  "body": "  Note: You can get full credit for this problem by just answering the last question correctly. The initial questions are meant as hints towards the final answer and also allow you the opportunity to get partial credit.  The integral MUST be evaluated by breaking it up into a sum of three integrals:   where  a =  c =  =  =  =  Thus =                                    "
+},
+{
+  "id": "integration-exercises-32",
+  "level": "2",
+  "url": "integration-exercises.html#integration-exercises-32",
+  "type": "Checkpoint",
+  "number": "A.5.30",
+  "title": "",
+  "body": "  Evaluate the integral  Integral =           "
+},
+{
+  "id": "integration-exercises-33",
+  "level": "2",
+  "url": "integration-exercises.html#integration-exercises-33",
+  "type": "Checkpoint",
+  "number": "A.5.31",
+  "title": "",
+  "body": "  Evaluate the integral  Answer:           "
+},
+{
+  "id": "integration-exercises-34",
+  "level": "2",
+  "url": "integration-exercises.html#integration-exercises-34",
+  "type": "Checkpoint",
+  "number": "A.5.32",
+  "title": "",
+  "body": "  This question summarizes a few simple facts about polynomials. Recall that a polynomial can be written in the form where we assume that . The degree of a polynomial is the largest exponent present, and so the degree of is . Fill in the blanks in the following questions:  The degree of is .  The degree of is .  The degree of (i.e., the square of ) is .  The -th derivative of is .                          "
+},
+{
+  "id": "integration-exercises-35",
+  "level": "2",
+  "url": "integration-exercises.html#integration-exercises-35",
+  "type": "Checkpoint",
+  "number": "A.5.33",
+  "title": "",
+  "body": "  Evaluate the indefinite integral.   Answer:            "
+},
+{
+  "id": "integration-exercises-36",
+  "level": "2",
+  "url": "integration-exercises.html#integration-exercises-36",
+  "type": "Checkpoint",
+  "number": "A.5.34",
+  "title": "",
+  "body": "  Evaluate the indefinite integral.    .           "
+},
+{
+  "id": "integration-exercises-37",
+  "level": "2",
+  "url": "integration-exercises.html#integration-exercises-37",
+  "type": "Checkpoint",
+  "number": "A.5.35",
+  "title": "",
+  "body": "  Evaluate the indefinite integral.   Answer:            "
+},
+{
+  "id": "integration-exercises-38",
+  "level": "2",
+  "url": "integration-exercises.html#integration-exercises-38",
+  "type": "Checkpoint",
+  "number": "A.5.36",
+  "title": "",
+  "body": "  Evaluate the definite integral.   Answer:           "
+},
+{
+  "id": "backmatter-4",
+  "level": "1",
+  "url": "backmatter-4.html",
+  "type": "Index",
+  "number": "",
+  "title": "Index",
+  "body": " Index   "
+},
+{
+  "id": "backmatter-5",
+  "level": "1",
+  "url": "backmatter-5.html",
+  "type": "References",
+  "number": "",
+  "title": "Readings and References",
+  "body": " Readings and References  Gregory V. Bard. Sage for Undergraduates . American Mathematical Society, Providence, 2015.  Paul Blanchard, Robert L. Devaney, & Glen R. Hall. Differential Equations , third edition. Brooks\/Cole, Pacific Grove, CA, 2006.  Robert L. Borrelli & Courtney S. Coleman. Differential Equations: A Modeling Perspective , Second edition. John Wiley & Sons, New York, 2004.  William E. Boyce & Richard C. Diprima. Elementary Differential Equations and Boundary Value Problems , Eighth edition. John Wiley & Sons, New York, 2005.  Brauer, F. & C. Castillo-Chávez. Mathematical Models in Population Biology and Epidemiology , Texts in Applied Mathematics 40. Springer, New York, 2001.  Martin Braun. Differential Equations and Their Applications: An Introduction to Applied Mathematics , Fourth edition. Springer-Verlag, New York, 1992.  Nicholas Britton. Essential Mathematical Biology . Springer Undergraduate Series. Springer, New York, 2003.  Richard L. Burden & Douglas Faires. Numerical Analysis , Eighth edition Brooks\/Cole, Pacific Grove, CA, 2005.  Ward Cheney & David Kincaid. Numerical Mathematics and Computing . Fifth edition. Brooks\/Cole, Pacific Grove, CA, 2004.  C. Henry Edwards & David E. Penney. Elementary Differential Equations with Boundary Value Problems . Fifth edition. Prentice Hall, Upper Saddle River, NJ, 2004.  Elton, C. S. & M. Nicholson. The ten year cycle in the numbers of lynx in Canada,  Journal of Animal Ecology . 11 (1942), pp.215 244.  Morris W. Hirsch, Stephen Smale, & Robert L. Devaney. Differential Equations, Dynamical Systems, & an Introduction to Chaos , Second edition. Academic Press, San Diego, 2004.  L. D. Humphreys and R. Shammas. Finding unpredictable behavior in a simple ordinary differential equation, College Mathematics Journal 31(2000) 338 346.  A. C. Lazer and P. J. McKenna. Large amplitude periodic oscillations in suspension bridges: some new connections with nonlinear analysis, SIAM Review 32(1990) 537 578.  Edward N. Lorenz. Deterministic nonperiodic flow,  Journal of Atomospheric Science 20(1963), pp. 130 141.  Donald Ludwig, Dixon D. Jones, & Crawford S. Holling. Qualitative analysis of insect outbreak systems: the spruce budworm and forest,  The Journal of Animal Ecology (1978), pp. 315 332.  K. W. Malcolm, N. B. Sze, & J. Prather. Better protection of the ozone layer,  Nature 367(1994), pp. 505 508.  P. J. McKenna. Large torsional oscillations in suspension bridges revisited: fixing an old approximation, American Mathematical Monthly 106(1999) 1 18.  P. J. McKenna and Cillian Ò Tuama. Large torsional oscillations in suspension bridges visited again: vertical forcing creates torsional response, American Mathematical Monthly 108(2001) 738 745.  Perelson, A. S. & P. W. Nelson. Modeling Viral Infections in An Introduction to Mathematical Modeling in Physiology, Cell Biology, and Immunology . American Mathematical Society, Providence, 2002.  John Polking, Albert Boggess, & David Arnold. Differential Equations with Boundary Value Problems , second edition. Prentice Hall, Upper Saddle River, NJ, 2006.  Clifford Henry Taubes. Modeling Differential Equations in Biology , second edition. Cambridge University Press, Cambridge, U.K., 2008.  "
+},
+{
+  "id": "backmatter-6",
+  "level": "1",
+  "url": "backmatter-6.html",
   "type": "Colophon",
   "number": "",
   "title": "Colophon",

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<h3 class="heading"><span class="type">Paragraph</span></h3>
+<div class="para logical">
+<div class="para">Now let us add a damping force to our system. For example, we might add a dashpot, a mechanical device that resists motion, to our system. Think of a dashpot as that small cylinder that keeps your screen door from slamming shut. The simplest assumption would be to take the damping force of the dashpot to be proportional to the velocity of the mass, <span class="process-math">\(x'(t)\text{.}\)</span> Thus, we have will have an additional force,</div>
+<div class="displaymath process-math" data-contains-math-knowls=" ./knowl/xref/figure-firstlook-over-damped.html">
+\begin{equation*}
+F = -b x'
+\end{equation*}
+</div>
+<div class="para">acting on our mass, where <span class="process-math">\(b \gt 0\text{.}\)</span> Our new equation for the spring-mass system is</div>
+<div class="displaymath process-math" data-contains-math-knowls=" ./knowl/xref/figure-firstlook-over-damped.html">
+\begin{equation*}
+mx'' = -bx' - kx.
+\end{equation*}
+</div>
+<div class="para">or</div>
+<div class="displaymath process-math" data-contains-math-knowls=" ./knowl/xref/figure-firstlook-over-damped.html">
+\begin{equation*}
+mx'' + bx' + kx = 0,
+\end{equation*}
+</div>
+<div class="para">where <span class="process-math">\(m\text{,}\)</span> <span class="process-math">\(b\text{,}\)</span> and <span class="process-math">\(k\)</span> are all positive constants. If we let <span class="process-math">\(m = 1\text{,}\)</span> <span class="process-math">\(b = 3\text{,}\)</span> and <span class="process-math">\(k = 2\text{,}\)</span> then we would have an spring-mass system governed by the equation</div>
+<div class="displaymath process-math" data-contains-math-knowls=" ./knowl/xref/figure-firstlook-over-damped.html">
+\begin{equation*}
+x'' + 3x' + 2x = 0.
+\end{equation*}
+</div>
+<div class="para">We will learn how to solve equations of the form <span class="process-math">\(ax'' + bx' + cx = 0\)</span> in <code class="code-inline tex2jax_ignore">[cross-reference to target(s) "secondorder" missing or not unique]</code>, but let us assume that the solution is of the form <span class="process-math">\(x(t) = e^{rt}\)</span> for now. Then</div>
+<div class="displaymath process-math" data-contains-math-knowls=" ./knowl/xref/figure-firstlook-over-damped.html">
+\begin{align*}
+x'' + 3x' + 2x &amp; = r^2 e^{rt} + 3 r e^{rt} + 2 e^{rt}\\
+&amp; = e^{rt}(r^2 + 3r +2)\\
+&amp; = e^{rt}(r+2)(r+1)\\
+&amp; = 0.
+\end{align*}
+</div>
+<div class="para">Since <span class="process-math">\(e^{rt}\)</span> is never zero, it must be the case that <span class="process-math">\(r = -2\)</span> or <span class="process-math">\(r = -1\text{,}\)</span> if <span class="process-math">\(x(t) = e^{rt}\)</span> is to be a solution to our equation. Thus, we might guess that</div>
+<div class="displaymath process-math" data-contains-math-knowls=" ./knowl/xref/figure-firstlook-over-damped.html">
+\begin{equation*}
+x(t) = A e^{-t} + B e^{-2t}
+\end{equation*}
+</div>
+<div class="para">is a general solution to our equation. If the initial velocity of our mass is one unit per second and the initial position is zero, then we have the initial value problem</div>
+<div class="displaymath process-math" data-contains-math-knowls=" ./knowl/xref/figure-firstlook-over-damped.html">
+\begin{align*}
+x'' + 3x' + 2 x &amp; = 0\\
+x(0) &amp; = 0\\
+x'(0) &amp; = 1.
+\end{align*}
+</div>
+<div class="para">Using the fact that <span class="process-math">\(x'(t) = -A e^{-t} -2 B e^{-2t}\text{,}\)</span> our initial conditions give us the following system of linear equations,</div>
+<div class="displaymath process-math" data-contains-math-knowls=" ./knowl/xref/figure-firstlook-over-damped.html">
+\begin{align*}
+A + B &amp; = 0\\
+-A -2B &amp; = 1.
+\end{align*}
+</div>
+<div class="para">Thus, <span class="process-math">\(A = 1\)</span> and <span class="process-math">\(B = -1\text{,}\)</span> and our spring-mass system is modeled by the function</div>
+<div class="displaymath process-math" data-contains-math-knowls=" ./knowl/xref/figure-firstlook-over-damped.html">
+\begin{equation*}
+x(t) =  e^{-t} - e^{-2t}.
+\end{equation*}
+</div>
+<div class="para">Notice that the additional damping negates any oscillation in the system. In this case, we say that the system is <dfn class="terminology">over-damped</dfn> (<a href="sec-firstlook-spring-mass.html#figure-firstlook-over-damped" class="xref" data-knowl="./knowl/xref/figure-firstlook-over-damped.html" data-reveal-label="Reveal" data-close-label="Close" title="Figure 1.3.3">Figure 1.3.3</a>).</div>
+</div>
+<span class="incontext"><a class="internal" href="sec-firstlook-spring-mass.html#sec-firstlook-spring-mass-8">in-context</a></span>
+</body>
+</html>

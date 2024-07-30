@@ -100,4 +100,760 @@ one correct answer, enter your answers as a comma separated list.</p>
     <server-data sourceFilePath="UWI/Library/MiamiUOhio/DiffEq/Definitions_and_Terminology/Problem36_remove_help.pg" domain="https://webwork.cavehill.uwi.edu" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
     <pg source="UWI/Library/MiamiUOhio/DiffEq/Definitions_and_Terminology/Problem36_remove_help.pg"/>
   </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="18" xml:id="extracted-webwork-4" ww-id="webwork-4">
+    <static seed="4" source="Library/Michigan/Chap6Sec2/Q31.pg">
+      <statement><p>Find an antiderivative <m>P</m> of 
+<me>p(t) = \frac 1{\root 3\of{t^{2}}}.</me></p>
+<p><m>P(t) =</m> <fillin name="AnSwEr0001" characters="35"/></p>
+</statement>
+      <answer>
+        <p>
+          <m>3t^{\frac{1}{3}}</m>
+        </p>
+      </answer>
+      <solution><m>t</m> as <m>t</m> to the <m>-2/3</m>rd power
+we have <m>P(s) = 3 t^{1/3}</m> (or this, plus any constant).
+
+
+
+</solution>
+    </static>
+    <server-data sourceFilePath="Library/Michigan/Chap6Sec2/Q31.pg" domain="https://webwork.cavehill.uwi.edu" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/Michigan/Chap6Sec2/Q31.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="18" xml:id="extracted-webwork-5" ww-id="webwork-5">
+    <static seed="5" source="Library/Michigan/Chap6Sec2/Q17.pg">
+      <statement><p>Find an antiderivative <m>P</m> of 
+<me>p(s) = 5\sin\mathopen{}\left(5s\right).</me></p>
+<p><m>P(s) =</m> <fillin name="AnSwEr0001" characters="35"/></p>
+</statement>
+      <answer>
+        <p>
+          <m>-\cos\mathopen{}\left(5s\right)</m>
+        </p>
+      </answer>
+      <solution><m>\sin(x)</m> is <m>-\cos(x)</m>.  Thus 
+we have <m>P(s) = -\cos\mathopen{}\left(5s\right)</m> (or this, plus any constant).
+
+
+
+</solution>
+    </static>
+    <server-data sourceFilePath="Library/Michigan/Chap6Sec2/Q17.pg" domain="https://webwork.cavehill.uwi.edu" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/Michigan/Chap6Sec2/Q17.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="18" xml:id="extracted-webwork-6" ww-id="webwork-6">
+    <static seed="6" source="Library/Rochester/setDerivatives20Antideriv/s3_10_8func_mo.pg">
+      <statement><p>Consider the function <m>\displaystyle f(x) = \frac{7}{x^{2}}-\frac{2}{x^{6}}</m>. Let <m>F(x)</m> be the antiderivative of <m>f(x)</m> with <m>F(1) = 0</m>.</p>
+<p>Then <m>F(x) =</m> <fillin name="AnSwEr0001" characters="40"/></p>
+</statement>
+      <answer>
+        <p>
+          <m>\frac{-7}{\left(2-1\right)x^{2-1}}+\frac{2}{\left(6-1\right)x^{6-1}}+6.6</m>
+        </p>
+      </answer>
+    </static>
+    <server-data sourceFilePath="Library/Rochester/setDerivatives20Antideriv/s3_10_8func_mo.pg" domain="https://webwork.cavehill.uwi.edu" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/Rochester/setDerivatives20Antideriv/s3_10_8func_mo.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="18" xml:id="extracted-webwork-7" ww-id="webwork-7">
+    <static seed="7" source="Library/NAU/setCalcI/antiExp.pg">
+      <statement><p>If <m>\displaystyle f'(x) = 5 x e^{x^2}</m> and <m>f(0) = 3</m>,
+then</p>
+<p><m>f(x) =</m> <fillin name="AnSwEr0001" characters="30"/> .</p>
+</statement>
+      <answer>
+        <p>
+          <m>2.5\exp\mathopen{}\left(xx\right)+3-2.5</m>
+        </p>
+      </answer>
+    </static>
+    <server-data sourceFilePath="Library/NAU/setCalcI/antiExp.pg" domain="https://webwork.cavehill.uwi.edu" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/NAU/setCalcI/antiExp.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="18" xml:id="extracted-webwork-8" ww-id="webwork-8">
+    <static seed="8" source="Library/OSU/accelerated_calculus_and_analytic_geometry_i/hmwk5/prob6.pg">
+      <statement><p><alert> Note:</alert> You can get full credit for this problem by just answering the
+last question correctly. The initial questions are meant as hints towards
+the final answer and also allow you the opportunity to get partial credit.</p>
+<p>Consider the definite integral <m>\int_0^1 x^2\sqrt{6 x + 8}\,dx</m></p>
+<p>Then the most appropriate substitution to simplify this integral is</p>
+<p><m>u</m> =  <fillin name="AnSwEr0001" characters="20"/></p>
+<p>Then <m>dx = f(x)\,du</m> where</p>
+<p><m>f(x)</m> =  <fillin name="AnSwEr0002" characters="20"/></p>
+<p>After making the substitution and simplifying we obtain the integral <m>\int_a^b g(u)\,du</m> where</p>
+<p><m>g(u)</m> =  <fillin name="AnSwEr0003" characters="20"/></p>
+<p><m>a</m> = <fillin name="AnSwEr0004" characters="20"/></p>
+<p><m>b</m> = <fillin name="AnSwEr0005" characters="20"/></p>
+<p>This definite integral has value
+ =  <fillin name="AnSwEr0006" characters="20"/></p>
+</statement>
+      <answer>
+        <p>
+          <m>6x+8</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>0.166667</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>\frac{\left(\frac{u-8}{6}\right)^{2}\sqrt{u}}{6}</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>8</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>14</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>1.17717524889781</m>
+        </p>
+      </answer>
+    </static>
+    <server-data sourceFilePath="Library/OSU/accelerated_calculus_and_analytic_geometry_i/hmwk5/prob6.pg" domain="https://webwork.cavehill.uwi.edu" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/OSU/accelerated_calculus_and_analytic_geometry_i/hmwk5/prob6.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="18" xml:id="extracted-webwork-9" ww-id="webwork-9">
+    <static seed="9" source="Library/Utah/Quantitative_Analysis/set8_Indefinite_Integrals/pr_4.pg">
+      <statement><p><alert> Note:</alert> You can get full credit for this problem by just answering the last
+question correctly. The initial questions are meant as hints towards the final
+answer and also allow you the opportunity to get partial credit.</p>
+<p>Consider the indefinite integral 
+<m>\displaystyle \int x^{5}\left(7+15 x^{6}\right)^{11}\, dx</m></p>
+<p>Then the most appropriate substitution to simplify this integral is</p>
+<p><m>u</m> =  <fillin name="AnSwEr0001" characters="20"/></p>
+<p>Then <m>dx = f(x)\,du</m> where</p>
+<p><m>f(x)</m> =  <fillin name="AnSwEr0002" characters="20"/></p>
+<p>After making the substitution we obtain the integral <m>\displaystyle \int g(u)\,du</m> where</p>
+<p><m>g(u)</m> =  <fillin name="AnSwEr0003" characters="20"/></p>
+<p>This last integral is:
+ =  <fillin name="AnSwEr0004" characters="20"/> <m>+ C</m></p>
+<p>(Leave out constant of integration from your answer.)</p>
+<p>After substituting back for <m>u</m> we obtain the following final form of the answer:</p>
+<p>=  <fillin name="AnSwEr0005" characters="20"/> <m>+ C</m></p>
+<p>(Leave out constant of integration from your answer.)</p>
+</statement>
+      <answer>
+        <p>
+          <m>7+15x^{6}</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>\frac{1}{90x^{5}}</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>\frac{u^{11}}{90}</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>\frac{u^{12}}{1080}</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>\frac{\left(7+15x^{6}\right)^{12}}{1080}</m>
+        </p>
+      </answer>
+    </static>
+    <server-data sourceFilePath="Library/Utah/Quantitative_Analysis/set8_Indefinite_Integrals/pr_4.pg" domain="https://webwork.cavehill.uwi.edu" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/Utah/Quantitative_Analysis/set8_Indefinite_Integrals/pr_4.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="18" xml:id="extracted-webwork-10" ww-id="webwork-10">
+    <static seed="10" source="UWI/Library/Utah/Quantitative_Analysis/set11_Indefinite_Integrals/s1p3.pg">
+      <statement><p>Evaluate the integral
+<me>\int x^4 (x^5 - 11)^{9} dx ,</me>
+by making the substitution <m>u = x^5 -11</m>.</p>
+<p>Answer: <fillin name="AnSwEr0001" characters="30"/> + <m>C</m></p>
+<p><alert> Note:</alert>  Your answer should be in terms of <m>x</m> and not <m>u</m>.</p>
+</statement>
+      <answer>
+        <p>
+          <m>\frac{1}{10}\frac{1}{5}\mathopen{}\left(x^{5}-11\right)^{10}</m>
+        </p>
+      </answer>
+    </static>
+    <server-data sourceFilePath="UWI/Library/Utah/Quantitative_Analysis/set11_Indefinite_Integrals/s1p3.pg" domain="https://webwork.cavehill.uwi.edu" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="UWI/Library/Utah/Quantitative_Analysis/set11_Indefinite_Integrals/s1p3.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="18" xml:id="extracted-webwork-11" ww-id="webwork-11">
+    <static seed="11" source="Library/ma122DB/set12/s5_4_25.pg">
+      <statement><p><m>\displaystyle \int_0^{2} u^{3}(\sqrt{u}+\sqrt[3]{u})\, du</m> =  <fillin name="AnSwEr0001" characters="25"/></p>
+</statement>
+      <answer>
+        <p>
+          <m>9.6803310726649</m>
+        </p>
+      </answer>
+      <solution><p>SOLUTION</p>
+<p><me>\begin{array}{rcl} \displaystyle\int_0^{2} u^{3}(\sqrt{u}+\sqrt[3]{u})\, du
+\amp =\amp   \displaystyle \int_0^{2} u^{3}(u^{1/2}+u^{1/3})\, du
+\\ \amp =\amp  \displaystyle  \int_0^{2} (u^{{\frac{7}{2}}}+u^{{\frac{10}{3}}})\, du
+\\ \amp =\amp  \displaystyle  \left. {\frac{2}{9}} u^{{\frac{9}{2}}}+ {\frac{3}{13}} u^{{\frac{13}{3}}} \right]_0^{2}
+\\ \amp =\amp  \displaystyle   {\frac{2}{9}} 2^{{\frac{9}{2}}}+ {\frac{3}{13}} 2^{{\frac{13}{3}}} 
+\end{array}</me></p>
+</solution>
+    </static>
+    <server-data sourceFilePath="Library/ma122DB/set12/s5_4_25.pg" domain="https://webwork.cavehill.uwi.edu" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/ma122DB/set12/s5_4_25.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="18" xml:id="extracted-webwork-12" ww-id="webwork-12">
+    <static seed="12" source="UWI/Library/Utah/Quantitative_Analysis/set11_Indefinite_Integrals/s1p6.pg">
+      <statement><p>Evaluate the indefinite integral.</p>
+<p><me>\int x^2 e^{x^3} dx</me></p>
+<p><fillin name="AnSwEr0001" characters="30"/> + <m>C</m></p>
+</statement>
+      <answer>
+        <p>
+          <m>0.333333e^{x^{3}}</m>
+        </p>
+      </answer>
+    </static>
+    <server-data sourceFilePath="UWI/Library/Utah/Quantitative_Analysis/set11_Indefinite_Integrals/s1p6.pg" domain="https://webwork.cavehill.uwi.edu" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="UWI/Library/Utah/Quantitative_Analysis/set11_Indefinite_Integrals/s1p6.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="18" xml:id="extracted-webwork-13" ww-id="webwork-13">
+    <static seed="13" source="Library/OSU/accelerated_calculus_and_analytic_geometry_i/hmwk5/prob2.pg">
+      <statement><p><alert> Note:</alert> You can get full credit for this problem by just entering the
+answer to the last question correctly. The initial questions are meant as
+hints towards the final answer and also allow you the opportunity to get
+partial credit.</p>
+<p>Consider the indefinite integral <m>\displaystyle \int \cos^{12}(5 t)\sin(5 t)\, dt</m></p>
+<p>Then the most appropriate substitution to simplify this integral is</p>
+<p><m>u</m> =  <fillin name="AnSwEr0001" characters="20"/>
+Then <m>dt = f(t)\,du</m> where</p>
+<p><m>f(t)</m> =  <fillin name="AnSwEr0002" characters="20"/></p>
+<p>After making the substitution we obtain the integral <m>\displaystyle \int g(u)\,du</m> where</p>
+<p><m>g(u)</m> =  <fillin name="AnSwEr0003" characters="20"/></p>
+<p>This last integral is:
+ =  <fillin name="AnSwEr0004" characters="20"/> <m>+ C</m></p>
+<p>(Leave out constant of integration from your answer.)</p>
+<p>After substituting back for <m>u</m> we obtain the following final form of the answer:</p>
+<p>=  <fillin name="AnSwEr0005" characters="20"/> <m>+ C</m></p>
+<p>(Leave out constant of integration from your answer.)</p>
+</statement>
+      <answer>
+        <p>
+          <m>\cos\mathopen{}\left(5t\right)</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>\frac{-1}{5\sin\mathopen{}\left(5t\right)}</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>\frac{-u^{12}}{5}</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>\frac{-u^{13}}{65}</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>\frac{-\cos^{13}\mathopen{}\left(5t\right)}{65}</m>
+        </p>
+      </answer>
+    </static>
+    <server-data sourceFilePath="Library/OSU/accelerated_calculus_and_analytic_geometry_i/hmwk5/prob2.pg" domain="https://webwork.cavehill.uwi.edu" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/OSU/accelerated_calculus_and_analytic_geometry_i/hmwk5/prob2.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="18" xml:id="extracted-webwork-14" ww-id="webwork-14">
+    <static seed="14" source="Library/ma122DB/set12/s5_4_14.pg">
+      <statement><p>Compute the indefinite integral.
+<me>\int \frac{1-\sin^2x}{\cos x} dx</me>
+Answer: <fillin name="AnSwEr0001" characters="15"/> <m>+ \ C</m></p>
+</statement>
+      <answer>
+        <p>
+          <m>\sin\mathopen{}\left(x\right)</m>
+        </p>
+      </answer>
+      <solution><p>SOLUTION</p>
+<p>Using the trigonometric identity <m>1 - \sin^2x = \cos x</m>:
+<me>\int \frac{1-\sin^2x}{\cos x} \,dx  
+= \int \frac{\cos^2x}{\cos x} \, dx  
+= \int \cos x \, dx  
+= \sin x + C</me></p>
+</solution>
+    </static>
+    <server-data sourceFilePath="Library/ma122DB/set12/s5_4_14.pg" domain="https://webwork.cavehill.uwi.edu" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/ma122DB/set12/s5_4_14.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="18" xml:id="extracted-webwork-15" ww-id="webwork-15">
+    <static seed="15" source="Library/UCSB/Stewart5_5_4/Stewart5_5_4_13.pg">
+      <statement><p>Using an upper-case "C" for any arbitrary constants, find the general indefinite integral
+<me>\int {\frac{7 \sin(x)}{1-\sin^2(x)}}\,dx</me></p>
+<p>Integral = <fillin name="AnSwEr0001" characters="40"/></p>
+</statement>
+      <answer>
+        <p>
+          <m>7\sec\mathopen{}\left(x\right)+C</m>
+        </p>
+      </answer>
+    </static>
+    <server-data sourceFilePath="Library/UCSB/Stewart5_5_4/Stewart5_5_4_13.pg" domain="https://webwork.cavehill.uwi.edu" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/UCSB/Stewart5_5_4/Stewart5_5_4_13.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="18" xml:id="extracted-webwork-16" ww-id="webwork-16">
+    <static seed="16" source="Library/UCSB/Stewart5_5_4/Stewart5_5_4_14.pg">
+      <statement><p>Using an upper-case "C" for any arbitrary constants, find the general indefinite integral
+<me>\int {\frac{8 \sin(2x)}{\sin(x)}}\,dx</me></p>
+<p>Integral = <fillin name="AnSwEr0001" characters="40"/></p>
+</statement>
+      <answer>
+        <p>
+          <m>16\sin\mathopen{}\left(x\right)+C</m>
+        </p>
+      </answer>
+    </static>
+    <server-data sourceFilePath="Library/UCSB/Stewart5_5_4/Stewart5_5_4_14.pg" domain="https://webwork.cavehill.uwi.edu" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/UCSB/Stewart5_5_4/Stewart5_5_4_14.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="18" xml:id="extracted-webwork-17" ww-id="webwork-17">
+    <static seed="17" source="Library/UCSB/Stewart5_5_4/Stewart5_5_4_37.pg">
+      <statement><p>Evaluate the integral
+<me>\int_{1}^{\,e} {\frac{-9 x^2  - 9 x  - 7}{x}}\,dx</me></p>
+<p>Integral = <fillin name="AnSwEr0001" characters="30"/></p>
+</statement>
+      <answer>
+        <p>
+          <m>-51.2152889013193</m>
+        </p>
+      </answer>
+    </static>
+    <server-data sourceFilePath="Library/UCSB/Stewart5_5_4/Stewart5_5_4_37.pg" domain="https://webwork.cavehill.uwi.edu" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/UCSB/Stewart5_5_4/Stewart5_5_4_37.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="18" xml:id="extracted-webwork-18" ww-id="webwork-18">
+    <static seed="18" source="UWI/Library/UVA-Stew5e/setUVA-Stew5e-C05S04-IndefInts/5-4-22.pg">
+      <statement><p>Evaluate the definite integral:</p>
+<p><m>\displaystyle{ \int_{3}^{9} \frac{t^{10} - t^{6}}{t^{8}} \,dt} =</m>
+   <fillin name="AnSwEr0001" characters="45"/></p>
+</statement>
+      <answer>
+        <p>
+          <m>233.777777777778</m>
+        </p>
+      </answer>
+    </static>
+    <server-data sourceFilePath="UWI/Library/UVA-Stew5e/setUVA-Stew5e-C05S04-IndefInts/5-4-22.pg" domain="https://webwork.cavehill.uwi.edu" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="UWI/Library/UVA-Stew5e/setUVA-Stew5e-C05S04-IndefInts/5-4-22.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="18" xml:id="extracted-webwork-19" ww-id="webwork-19">
+    <static seed="19" source="Library/Union/setIntBasic/an7_2_13.pg">
+      <statement><p>Calculate the following antiderivatives:</p>
+<p>(a) <m>\displaystyle\int x\mathopen{}\left(-6+x^{6}\right)  \, dx</m> = <fillin name="AnSwEr0001" characters="40"/> <m>{} + C</m>.</p>
+<p>(b) <m>\displaystyle\int \frac{-3x^{9}+12x^{6}}{x^{-5}}  \, dx</m> = <fillin name="AnSwEr0002" characters="40"/> <m>{} + C</m>.</p>
+<p>(c) <m>\displaystyle\int \left(2+x^{6}\right)^{2}  \,dx</m> = <fillin name="AnSwEr0003" characters="40"/> <m>{} + C</m>.</p>
+</statement>
+      <answer>
+        <p>
+          <m>\frac{-6}{2}x^{2}+\frac{1}{8}x^{8}</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>\frac{-3}{15}x^{15}+\frac{12}{12}x^{12}</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>4x+\frac{4}{7}x^{7}+\frac{1}{13}x^{13}</m>
+        </p>
+      </answer>
+    </static>
+    <server-data sourceFilePath="Library/Union/setIntBasic/an7_2_13.pg" domain="https://webwork.cavehill.uwi.edu" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/Union/setIntBasic/an7_2_13.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="18" xml:id="extracted-webwork-20" ww-id="webwork-20">
+    <static seed="20" source="Library/OSU/accelerated_calculus_and_analytic_geometry_i/hmwk6/prob6.pg">
+      <statement><p><alert> Note:</alert> You can get full credit for this problem by just entering the
+answer to the last question correctly. The initial questions are meant as
+hints towards the final answer and also allow you the opportunity to get
+partial credit.</p>
+<p>Consider the indefinite integral
+<me>\int\frac{3}{3+e^x}\,dx</me></p>
+<p>The most appropriate substitution to simplify this integral is
+<m>u = f(x)</m> where</p>
+<p><m>f(x)</m> =  <fillin name="AnSwEr0001" characters="20"/></p>
+<p>We then have
+<me>dx = g(u)\,du</me>
+where</p>
+<p><m>g(u)</m> =  <fillin name="AnSwEr0002" characters="20"/></p>
+<p>Hint: you need to back substitute for <m>x</m> in terms of <m>u</m> for this part.</p>
+<p>After substituting into the original integral we
+obtain
+<m>\int h(u)\, du</m>
+where</p>
+<p><m>h(u)</m> =  <fillin name="AnSwEr0003" characters="20"/> + <m>C</m></p>
+<p>To evaluate this integral rewrite the numerator as
+<me>3 = u - (u - 3)</me>
+simplify, then integrate, thus obtaining
+<me>\int h(u)\, du = H(u)</me>
+where</p>
+<p><m>H(u)</m> =   <fillin name="AnSwEr0004" characters="20"/> + <m>C</m></p>
+<p>After substituting back for <m>u</m> we obtain our final answer</p>
+<p><m>\int\frac{3}{3+e^x}\,dx</m> =   <fillin name="AnSwEr0005" characters="20"/> + <m>C</m></p>
+</statement>
+      <answer>
+        <p>
+          <m>3+e^{x}</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>\frac{1}{u-3}</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>\frac{3}{u\mathopen{}\left(u-3\right)}</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>\ln\mathopen{}\left(u-3\right)-\ln\mathopen{}\left(u\right)</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>x-\ln\mathopen{}\left(e^{x}+3\right)</m>
+        </p>
+      </answer>
+    </static>
+    <server-data sourceFilePath="Library/OSU/accelerated_calculus_and_analytic_geometry_i/hmwk6/prob6.pg" domain="https://webwork.cavehill.uwi.edu" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/OSU/accelerated_calculus_and_analytic_geometry_i/hmwk6/prob6.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="18" xml:id="extracted-webwork-21" ww-id="webwork-21">
+    <static seed="21" source="Library/ma122DB/set12/s5_5_28.pg">
+      <statement><p>Evaluate the indefinite integral.</p>
+<p><m>\displaystyle \int 4e^{4x}\sin\mathopen{}\left(e^{4x}\right) dx =</m>
+<fillin name="AnSwEr0001" characters="15"/>.</p>
+</statement>
+      <answer>
+        <p>
+          <m>C-\cos\mathopen{}\left(e^{4x}\right)</m>
+        </p>
+      </answer>
+    </static>
+    <server-data sourceFilePath="Library/ma122DB/set12/s5_5_28.pg" domain="https://webwork.cavehill.uwi.edu" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/ma122DB/set12/s5_5_28.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="18" xml:id="extracted-webwork-22" ww-id="webwork-22">
+    <static seed="22" source="Library/ma122DB/set12/s5_5_31.pg">
+      <statement><p>Evaluate the indefinite integral.</p>
+<p><me>\int \frac{5 \; dx}{x \ln (4 x)}</me></p>
+<p>Answer: <fillin name="AnSwEr0001" characters="55"/> <m>+ \ C</m></p>
+</statement>
+      <answer>
+        <p>
+          <m>5\ln\mathopen{}\left(\left|\ln\mathopen{}\left(4x\right)\right|\right)</m>
+        </p>
+      </answer>
+    </static>
+    <server-data sourceFilePath="Library/ma122DB/set12/s5_5_31.pg" domain="https://webwork.cavehill.uwi.edu" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/ma122DB/set12/s5_5_31.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="18" xml:id="extracted-webwork-23" ww-id="webwork-23">
+    <static seed="23" source="Library/UCSB/Stewart5_5_4/Stewart5_5_4_10.pg">
+      <statement><p>Using an upper-case "C" for any arbitrary constants, find the general indefinite integral:
+<me>\int {\left(-6 x^2 + 4 +\frac{-7}{x^2+1}\right)}\,dx</me></p>
+<p>Integral = <fillin name="AnSwEr0001" characters="40"/></p>
+</statement>
+      <answer>
+        <p>
+          <m>\frac{1}{3}\mathopen{}\left(-6\right)x^{3}+4x+-7\arctan\mathopen{}\left(x\right)+C</m>
+        </p>
+      </answer>
+    </static>
+    <server-data sourceFilePath="Library/UCSB/Stewart5_5_4/Stewart5_5_4_10.pg" domain="https://webwork.cavehill.uwi.edu" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/UCSB/Stewart5_5_4/Stewart5_5_4_10.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="18" xml:id="extracted-webwork-24" ww-id="webwork-24">
+    <static seed="24" source="Library/ma122DB/set12/s5_5_55.pg">
+      <statement><p><m>\displaystyle \int_1^{6} \frac{1}{x^2}\sqrt{1 +\frac{1}{x}}\, dx</m> = <fillin name="AnSwEr0001" characters="20"/></p>
+</statement>
+      <answer>
+        <p>
+          <m>1.04552206670385</m>
+        </p>
+      </answer>
+    </static>
+    <server-data sourceFilePath="Library/ma122DB/set12/s5_5_55.pg" domain="https://webwork.cavehill.uwi.edu" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/ma122DB/set12/s5_5_55.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="18" xml:id="extracted-webwork-25" ww-id="webwork-25">
+    <static seed="25" source="Library/OSU/accelerated_calculus_and_analytic_geometry_i/hmwk5/prob4.pg">
+      <statement><p><alert> Note:</alert> You can get full credit for this problem by just answering the
+last question correctly. The initial questions are meant as hints towards
+the final answer and also allow you the opportunity to get partial credit.</p>
+<p>Consider the indefinite integral <m>\int \frac{1}{5 x +7 \sqrt{x}}\, dx</m></p>
+<p>Then the most appropriate substitution to simplify this integral is</p>
+<p><m>u</m> =  <fillin name="AnSwEr0001" characters="20"/></p>
+<p>Then <m>dx = f(x)\,du</m> where</p>
+<p><m>f(x)</m> =  <fillin name="AnSwEr0002" characters="20"/></p>
+<p>After making the substitution and simplifying we obtain the integral <m>\int g(u)\,du</m> where</p>
+<p><m>g(u)</m> =  <fillin name="AnSwEr0003" characters="20"/></p>
+<p>This last integral is:
+ =  <fillin name="AnSwEr0004" characters="20"/> <m>+ C</m></p>
+<p>(Leave out constant of integration from your answer.)</p>
+<p>After substituting back for <m>u</m> we obtain the following final form of the answer:</p>
+<p>=  <fillin name="AnSwEr0005" characters="20"/> <m>+ C</m></p>
+<p>(Leave out constant of integration from your answer.)</p>
+</statement>
+      <answer>
+        <p>
+          <m>5\sqrt{x}+7</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>\frac{2\sqrt{x}}{5}</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>\frac{2}{5u}</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>\frac{2\ln\mathopen{}\left(u\right)}{5}</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>\frac{2\ln\mathopen{}\left(5\sqrt{x}+7\right)}{5}</m>
+        </p>
+      </answer>
+    </static>
+    <server-data sourceFilePath="Library/OSU/accelerated_calculus_and_analytic_geometry_i/hmwk5/prob4.pg" domain="https://webwork.cavehill.uwi.edu" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/OSU/accelerated_calculus_and_analytic_geometry_i/hmwk5/prob4.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="18" xml:id="extracted-webwork-26" ww-id="webwork-26">
+    <static seed="26" source="Library/UCSB/Stewart5_5_4/Stewart5_5_4_1.pg">
+      <statement><p>Find the derivative of <m>f(x) = \sqrt{x^2+1} + C</m> to complete the following integration formula:</p>
+<p><m>\int</m> <fillin name="AnSwEr0001" characters="30"/> <m>dx = \sqrt{x^2+1} + C</m></p>
+</statement>
+      <answer>
+        <p>
+          <m>\frac{x}{\sqrt{x^{2}+1}}</m>
+        </p>
+      </answer>
+    </static>
+    <server-data sourceFilePath="Library/UCSB/Stewart5_5_4/Stewart5_5_4_1.pg" domain="https://webwork.cavehill.uwi.edu" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/UCSB/Stewart5_5_4/Stewart5_5_4_1.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="18" xml:id="extracted-webwork-27" ww-id="webwork-27">
+    <static seed="27" source="Library/UCSB/Stewart5_5_4/Stewart5_5_4_4.pg">
+      <statement><p>Find the derivative of <m>f(x) = -\frac{\sqrt{x^2+a^2}}{a^2 x} + C</m> to complete the following integration formula:</p>
+<p><m>\int</m> <fillin name="AnSwEr0001" characters="30"/> <m>dx = -\frac{\sqrt{x^2+a^2}}{a^2 x} + C</m></p>
+</statement>
+      <answer>
+        <p>
+          <m>\frac{1}{x^{2}\sqrt{x^{2}+a^{2}}}</m>
+        </p>
+      </answer>
+    </static>
+    <server-data sourceFilePath="Library/UCSB/Stewart5_5_4/Stewart5_5_4_4.pg" domain="https://webwork.cavehill.uwi.edu" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/UCSB/Stewart5_5_4/Stewart5_5_4_4.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="18" xml:id="extracted-webwork-28" ww-id="webwork-28">
+    <static seed="28" source="Library/OSU/accelerated_calculus_and_analytic_geometry_i/hmwk5/prob1.pg">
+      <statement><p><alert> Note:</alert> You can get full credit for this problem by just answering the
+last question correctly. The initial questions are meant as hints towards
+the final answer and also allow you the opportunity to get partial credit.</p>
+<p>The integral <m>\int_{-1}^{4}\left|6 x^2 - x^3  - 5 x\right|\, dx</m>
+MUST be evaluated by breaking it up into a sum of three integrals:
+<me>\int_{-1}^a\left|6 x^2 - x^3  - 5 x\right|\, dx +</me>
+<me>\int_a^c\left|6 x^2 - x^3  - 5 x\right|\, dx +</me>
+<me>\int_c^{4}\left|6 x^2 - x^3  - 5 x\right|\, dx</me>
+where</p>
+<p>a =  <fillin name="AnSwEr0001" characters="20"/></p>
+<p>c =  <fillin name="AnSwEr0002" characters="20"/></p>
+<p><m>\int_{-1}^a\left|6 x^2 - x^3  - 5 x\right|\, dx</m> =  <fillin name="AnSwEr0003" characters="20"/></p>
+<p><m>\int_a^c\left|6 x^2 - x^3  - 5 x\right|\, dx</m> =  <fillin name="AnSwEr0004" characters="20"/></p>
+<p><m>\int_c^{4}\left|6 x^2 - x^3  - 5 x\right|\, dx</m> =  <fillin name="AnSwEr0005" characters="20"/></p>
+<p>Thus
+<m>\int_{-1}^{4}\left|6 x^2 - x^3  - 5 x\right|\, dx</m> =  <fillin name="AnSwEr0006" characters="20"/></p>
+</statement>
+      <answer>
+        <p>
+          <m>0</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>1</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>4.75</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>0.75</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>24.75</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>30.25</m>
+        </p>
+      </answer>
+    </static>
+    <server-data sourceFilePath="Library/OSU/accelerated_calculus_and_analytic_geometry_i/hmwk5/prob1.pg" domain="https://webwork.cavehill.uwi.edu" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/OSU/accelerated_calculus_and_analytic_geometry_i/hmwk5/prob1.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="18" xml:id="extracted-webwork-29" ww-id="webwork-29">
+    <static seed="29" source="Library/UCSB/Stewart5_5_4/Stewart5_5_4_39.pg">
+      <statement><p>Evaluate the integral
+<me>\int_{-1}^{\,2} {(-3 x  - 9 |x|)}\,dx</me></p>
+<p>Integral = <fillin name="AnSwEr0001" characters="30"/></p>
+</statement>
+      <answer>
+        <p>
+          <m>-27</m>
+        </p>
+      </answer>
+    </static>
+    <server-data sourceFilePath="Library/UCSB/Stewart5_5_4/Stewart5_5_4_39.pg" domain="https://webwork.cavehill.uwi.edu" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/UCSB/Stewart5_5_4/Stewart5_5_4_39.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="18" xml:id="extracted-webwork-30" ww-id="webwork-30">
+    <static seed="30" source="Library/UCSB/Stewart5_5_4/Stewart5_5_4_40.pg">
+      <statement><p>Evaluate the integral <m>\displaystyle \int_{0}^{2\pi} \!\!\!\! |\sin x| \, dx.</m></p>
+<p>Answer: <fillin name="AnSwEr0001" characters="20"/></p>
+</statement>
+      <answer>
+        <p>
+          <m>4</m>
+        </p>
+      </answer>
+    </static>
+    <server-data sourceFilePath="Library/UCSB/Stewart5_5_4/Stewart5_5_4_40.pg" domain="https://webwork.cavehill.uwi.edu" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/UCSB/Stewart5_5_4/Stewart5_5_4_40.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="18" xml:id="extracted-webwork-31" ww-id="webwork-31">
+    <static seed="31" source="UWI/Library/Utah/AP_Calculus_I/set6_The_Integral/q4.pg">
+      <statement><p>This question summarizes a few simple facts about polynomials.  Recall that a
+polynomial <m>p</m> can be written in the form <me>p(x) = \sum_{i=0}^n
+\alpha_i x^i</me> where we assume that <m>\alpha_n\neq 0</m>.  The degree of
+a polynomial is the largest exponent present, and so the degree of
+<m>p</m> is <m>n</m>.  Fill in the blanks in the following questions:</p>
+<p>The degree of <m>p'(x)</m> is 
+<fillin name="AnSwEr0001" characters="5"/>.</p>
+<p>The degree of <m>\int p(x) \hbox{d}x</m> is 
+<fillin name="AnSwEr0002" characters="5"/>.</p>
+<p>The degree of <m>p^2(x)</m> (i.e., the square of <m>p</m>) is
+<fillin name="AnSwEr0003" characters="5"/>.</p>
+<p>The <m>(n+1)</m>-th derivative of <m>p</m> is
+<fillin name="AnSwEr0004" characters="5"/>.</p>
+</statement>
+      <answer>
+        <p>
+          <m>n-1</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>n+1</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>2n</m>
+        </p>
+      </answer>
+      <answer>
+        <p>
+          <m>0</m>
+        </p>
+      </answer>
+    </static>
+    <server-data sourceFilePath="UWI/Library/Utah/AP_Calculus_I/set6_The_Integral/q4.pg" domain="https://webwork.cavehill.uwi.edu" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="UWI/Library/Utah/AP_Calculus_I/set6_The_Integral/q4.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="18" xml:id="extracted-webwork-32" ww-id="webwork-32">
+    <static seed="32" source="Library/Rochester/setIntegrals12Methods/mec_int2.pg">
+      <statement><p>Evaluate the indefinite integral.</p>
+<p><me>\int \frac{ ( \arctan x )^{6}}{1+x^2} dx</me></p>
+<p>Answer:  <fillin name="AnSwEr0001" characters="40"/> <m>+ \ C</m></p>
+</statement>
+      <answer>
+        <p>
+          <m>\frac{\left(\arctan\mathopen{}\left(x\right)\right)^{7}}{7}</m>
+        </p>
+      </answer>
+    </static>
+    <server-data sourceFilePath="Library/Rochester/setIntegrals12Methods/mec_int2.pg" domain="https://webwork.cavehill.uwi.edu" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/Rochester/setIntegrals12Methods/mec_int2.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="18" xml:id="extracted-webwork-33" ww-id="webwork-33">
+    <static seed="33" source="Library/NAU/setCalcI/simple_int.pg">
+      <statement><p>Evaluate the indefinite integral.</p>
+<p><m>\displaystyle \int \left ( 7 \sin(t) + 8 \cos(t)  - 7 \sec^2(t)  -  e^t + \frac{5}{\sqrt{1-t^2}} + \frac{6}{1+t^2} \right) dt =</m></p>
+<p><fillin name="AnSwEr0001" characters="60"/> <m>+ C</m>.</p>
+</statement>
+      <answer>
+        <p>
+          <m>-7\cos\mathopen{}\left(t\right)+8\sin\mathopen{}\left(t\right)+\left(-7\right)\tan\mathopen{}\left(t\right)+\left(-1\right)e^{t}+5\arcsin\mathopen{}\left(t\right)+6\arctan\mathopen{}\left(t\right)</m>
+        </p>
+      </answer>
+    </static>
+    <server-data sourceFilePath="Library/NAU/setCalcI/simple_int.pg" domain="https://webwork.cavehill.uwi.edu" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/NAU/setCalcI/simple_int.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="18" xml:id="extracted-webwork-34" ww-id="webwork-34">
+    <static seed="34" source="UWI/Library/Utah/Calculus_II/set15_Practice/sc5_5_29a.pg">
+      <statement><p>Evaluate the indefinite integral.</p>
+<p><me>\int \frac{x + 4}{x^2 + 8 x +17} \, dx</me></p>
+<p>Answer: <fillin name="AnSwEr0001" characters="30"/> <m>+C</m></p>
+</statement>
+      <answer>
+        <p>
+          <m>0.5\ln\mathopen{}\left(x^{2}+8x+17\right)</m>
+        </p>
+      </answer>
+    </static>
+    <server-data sourceFilePath="UWI/Library/Utah/Calculus_II/set15_Practice/sc5_5_29a.pg" domain="https://webwork.cavehill.uwi.edu" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="UWI/Library/Utah/Calculus_II/set15_Practice/sc5_5_29a.pg"/>
+  </webwork-reps>
+  <webwork-reps version="2" ww_major_version="2" ww_minor_version="18" xml:id="extracted-webwork-35" ww-id="webwork-35">
+    <static seed="35" source="Library/ma122DB/set12/s5_5_70.pg">
+      <statement><p>Evaluate the definite integral.</p>
+<p><me>\int_{-17 }^{ 17 } x^{9} \sqrt{x^2+x^8+9}\,\cos(x)\,dx</me></p>
+<p>Answer: <fillin name="AnSwEr0001" characters="30"/></p>
+</statement>
+      <answer>
+        <p>
+          <m>0</m>
+        </p>
+      </answer>
+    </static>
+    <server-data sourceFilePath="Library/ma122DB/set12/s5_5_70.pg" domain="https://webwork.cavehill.uwi.edu" course-id="anonymous" user-id="anonymous" course-password="anonymous" language="en-US"/>
+    <pg source="Library/ma122DB/set12/s5_5_70.pg"/>
+  </webwork-reps>
 </webwork-representations>
